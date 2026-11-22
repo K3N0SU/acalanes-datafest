@@ -1,0 +1,214 @@
+/* Your week. Uses the site's tokens from styles.css, with fallbacks so it also works on its own. */
+
+.cm {
+  --cm-ink: var(--c-ink, #ecedef);
+  --cm-mute: var(--c-mute, #8d9097);
+  --cm-dim: var(--c-dim, #5a5d63);
+  --cm-line: var(--c-line, #2b2c31);
+  --cm-panel: var(--c-panel, #1e1f23);
+  --cm-route: var(--c-route, #3e6ae1);
+  --cm-surge: var(--c-surge, #e5484d);
+  --cm-amber: #d9a441;
+  --cm-r: var(--radius, 6px);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px) var(--gutter, 24px);
+  color: var(--cm-ink);
+  font-family: var(--font, system-ui, sans-serif);
+}
+
+.cm-eyebrow {
+  margin: 0 0 10px;
+  font-size: var(--t-14, 14px);
+  color: var(--cm-mute);
+}
+.cm-title {
+  margin: 0;
+  font-size: var(--t-31, 31px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.cm-lede { margin: 14px 0 0; max-width: 60ch; color: var(--cm-mute); }
+.cm-trip { margin: 10px 0 0; color: var(--cm-mute); font-size: var(--t-14, 14px); }
+
+.cm-head { margin-bottom: 28px; }
+.cm-head--week { display: flex; gap: 24px; align-items: flex-start; justify-content: space-between; }
+
+/* ---------- setup ---------- */
+.cm-setup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  padding: 24px;
+  background: var(--cm-panel);
+  border: 1px solid var(--cm-line);
+  border-radius: calc(var(--cm-r) * 2);
+}
+.cm-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.cm-field--wide, .cm-actions, .cm-setup .cm-fine { grid-column: 1 / -1; }
+.cm-field label, .cm-label { font-size: var(--t-14, 14px); color: var(--cm-mute); }
+.cm-input {
+  appearance: none;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 36px 10px 12px;
+  color: var(--cm-ink);
+  font: inherit;
+  background: #141518 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238d9097' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-r);
+}
+.cm-input:focus-visible, .cm-btn:focus-visible, .cm-day:focus-visible, .cm-rowbtn:focus-visible, .cm-cal:focus-visible, .cm-link:focus-visible {
+  outline: 2px solid var(--cm-route);
+  outline-offset: 2px;
+}
+.cm-days { display: flex; flex-wrap: wrap; gap: 8px; }
+.cm-day {
+  min-width: 52px;
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--cm-mute);
+  font: inherit;
+  background: transparent;
+  border: 1px solid var(--cm-line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.cm-day.is-on { color: var(--cm-ink); background: color-mix(in srgb, var(--cm-route) 22%, transparent); border-color: var(--cm-route); }
+.cm-actions { display: flex; gap: 10px; }
+
+.cm-btn {
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--cm-ink);
+  font: inherit;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-r);
+  cursor: pointer;
+}
+.cm-btn:hover { border-color: var(--cm-mute); }
+.cm-btn--primary { background: var(--cm-route); border-color: var(--cm-route); }
+.cm-btn--primary:hover { filter: brightness(1.1); border-color: var(--cm-route); }
+.cm-edit { flex: none; }
+
+.cm-fine { margin: 20px 0 0; font-size: var(--t-12, 12.8px); color: var(--cm-dim); }
+.cm-link { padding: 0; color: var(--cm-mute); font: inherit; text-decoration: underline; background: none; border: 0; cursor: pointer; }
+
+/* ---------- week ---------- */
+.cm-notes { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 8px; }
+.cm-note {
+  padding: 12px 14px;
+  font-size: var(--t-14, 14px);
+  color: var(--cm-mute);
+  border: 1px solid color-mix(in srgb, var(--cm-amber) 40%, var(--cm-line));
+  border-left: 3px solid var(--cm-amber);
+  border-radius: var(--cm-r);
+}
+.cm-note strong { color: var(--cm-ink); font-weight: 500; }
+.cm-note a { color: var(--cm-mute); }
+
+.cm-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--cm-line); }
+.cm-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 16px;
+  border-bottom: 1px solid var(--cm-line);
+}
+.cm-rowbtn {
+  display: grid;
+  grid-template-columns: 56px 116px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 4px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.cm-rowbtn:hover .cm-what { text-decoration: underline; text-decoration-color: var(--cm-dim); text-underline-offset: 3px; }
+.cm-date { display: flex; flex-direction: column; line-height: 1.1; }
+.cm-dow { font-size: var(--t-12, 12.8px); letter-spacing: 0.08em; text-transform: uppercase; color: var(--cm-mute); }
+.cm-dom { font-size: var(--t-25, 25px); font-weight: 500; }
+
+.cm-chip {
+  justify-self: start;
+  margin-top: 4px;
+  padding: 3px 10px;
+  font-size: var(--t-12, 12.8px);
+  white-space: nowrap;
+  color: var(--cm-mute);
+  border: 1px solid var(--cm-line);
+  border-radius: 999px;
+}
+.cm-chip--service, .cm-chip--event, .cm-chip--busier { color: #fff; background: var(--cm-surge); border-color: var(--cm-surge); }
+.cm-chip--busier { background: color-mix(in srgb, var(--cm-surge) 70%, #000); }
+.cm-chip--quieter { color: var(--cm-ink); border-color: color-mix(in srgb, var(--cm-route) 60%, var(--cm-line)); }
+.cm-chip--fyi { color: var(--cm-amber); border-color: color-mix(in srgb, var(--cm-amber) 50%, var(--cm-line)); }
+.cm-chip--off { color: var(--cm-dim); }
+
+.cm-body p { margin: 0; }
+.cm-what { font-weight: 500; }
+.cm-what--quiet { font-weight: 400; color: var(--cm-mute); }
+.cm-why { margin-top: 4px !important; color: var(--cm-mute); font-size: var(--t-14, 14px); }
+.cm-do { margin-top: 6px !important; font-size: var(--t-14, 14px); }
+.cm-row--service .cm-do, .cm-row--event .cm-do, .cm-row--busier .cm-do { color: var(--cm-ink); }
+.cm-row--service .cm-do::before, .cm-row--event .cm-do::before, .cm-row--busier .cm-do::before { content: "→ "; color: var(--cm-surge); }
+.cm-row--off .cm-dom, .cm-row--off .cm-dow { color: var(--cm-dim); }
+
+.cm-cal, .cm-src {
+  font-size: var(--t-14, 14px);
+  white-space: nowrap;
+}
+.cm-cal {
+  min-height: 40px;
+  padding: 0 14px;
+  margin-right: 4px;
+  color: var(--cm-ink);
+  font-family: inherit;
+  background: transparent;
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-r);
+  cursor: pointer;
+}
+.cm-cal:hover { border-color: var(--cm-mute); }
+.cm-src { position: absolute; right: 4px; bottom: 6px; font-size: var(--t-12, 12.8px); color: var(--cm-dim); }
+.cm-row:has(.cm-cal) .cm-src { right: 8px; }
+
+.cm-best {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: var(--cm-panel);
+  border: 1px solid var(--cm-line);
+  border-radius: calc(var(--cm-r) * 2);
+}
+.cm-best-title { margin: 0 0 4px; font-size: var(--t-14, 14px); color: var(--cm-mute); }
+.cm-best-text { margin: 0; }
+
+@media (max-width: 680px) {
+  .cm { padding-left: 16px; padding-right: 16px; }
+  .cm-title { font-size: var(--t-25, 25px); }
+  .cm-setup { grid-template-columns: 1fr; padding: 18px; }
+  .cm-head--week { flex-direction: column; gap: 14px; }
+  .cm-row { grid-template-columns: 1fr; }
+  .cm-rowbtn { grid-template-columns: 44px minmax(0, 1fr); gap: 6px 14px; padding-bottom: 8px; }
+  .cm-rowbtn .cm-chip { grid-column: 2; margin-top: 0; }
+  .cm-rowbtn .cm-body { grid-column: 2; }
+  .cm-cal { justify-self: start; margin: 0 0 14px 58px; }
+  .cm-src { position: static; margin: -6px 0 14px 58px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .cm-day { transition: none; } }
+
+/* rider commute planner hidden: the page is for BART planners now */
+#yourweek { display: none !important; }
+a[href="#yourweek"] { display: none !important; }

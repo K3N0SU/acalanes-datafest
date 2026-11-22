@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rushover: the right number of cars, every hour</title>
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Rushover tells BART how many cars each station and hour needs, from an hourly forecast for all 50 stations.">
+  <meta name="theme-color" content="#16171a">
+  <link rel="preload" href="./assets/fonts/barlow-semicondensed-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/vendor/maplibre/maplibre-gl.css">
+  <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="./src/guide.css">
+  <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
+</head>
+<body class="is-loading" data-version="drive" data-mode="home">
+  <script>/* a shared trip link (#CIVC/2/19) opens on the result, so the home headline never flashes first; main.js uses the same test */
+    if (/^#[A-Z0-9]{4}\//.test(location.hash)) document.body.dataset.mode = "plan";</script>
+  <a class="skip" href="#planner" data-copy="nav.skip">Skip to the planner</a>
+  <div class="cine cine--top" aria-hidden="true"></div>
+  <div class="cine cine--bottom" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#home" id="brand" style="display:inline-flex;align-items:center;gap:10px"><svg width="46" height="12" viewBox="0 0 46 12" aria-hidden="true" style="flex:none"><rect x="0" y="1" width="8" height="10" rx="2" fill="currentColor"/><rect x="9.5" y="1" width="8" height="10" rx="2" fill="currentColor"/><rect x="19" y="1" width="8" height="10" rx="2" fill="currentColor"/><rect x="29" y="1.5" width="7" height="9" rx="2" fill="none" stroke="currentColor" stroke-opacity=".45"/><rect x="38.5" y="1.5" width="7" height="9" rx="2" fill="none" stroke="currentColor" stroke-opacity=".45"/></svg><span>Rushover</span></a>
+    <nav aria-label="Sections">
+      <ul class="nav__links">
+        <li><a href="#worth">What it is worth</a></li>
+        <li><a href="#planner" data-copy="nav.trip">The forecast</a></li>
+        <li><a href="#yourweek" data-copy="nav.commute">Station week</a></li>
+        <li><a href="#why" data-copy="nav.why">This week</a></li>
+        <li><a href="#how" data-copy="nav.how">How it works</a></li>
+        <li><a href="#proof" data-copy="nav.proof">Proof</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <span id="home" class="anchor" aria-hidden="true"></span>
+    <section class="hero" id="planner" data-section="planner" aria-label="Crowd planner">
+      <div class="hero__map" id="map">
+        <div class="map__tip" id="map-tip" role="presentation"></div>
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="pitch" id="pitch">
+        <h1 class="pitch__title" data-copy="pitch.title">BART pays for every car it runs, full or empty.</h1>
+        <p class="pitch__sub" data-copy="pitch.sub">Rushover tells BART how many cars to run each hour. Same crowding standard, 5 to 12% fewer cars than a timetable.</p>
+
+        <div id="hero-program"></div>
+
+        <form class="query" id="query" aria-label="Predict a crowd">
+          <label class="query__field query__field--station">
+            <span class="query__label" data-copy="query.station">Station</span>
+            <select id="q-station" required></select>
+          </label>
+          <label class="query__field">
+            <span class="query__label" data-copy="query.day">Day</span>
+            <select id="q-day" required></select>
+          </label>
+          <label class="query__field">
+            <span class="query__label" data-copy="query.time">Time</span>
+            <select id="q-hour" required></select>
+          </label>
+          <button class="query__go" type="submit">
+            <span data-copy="query.go">Show the hour</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <button type="button" class="pitch__try" id="try" hidden></button>
+
+        <div class="pitch__more">
+          <a class="pitch__alt" href="#yourweek">
+            <b data-copy="alt.commute.t">Plan one line every week?</b>
+            <span data-copy="alt.commute.s">Save it once. We flag the days that break the timetable.</span>
+          </a>
+          <a class="pitch__alt" href="#why">
+            <b data-copy="alt.week.t">What's unusual next week</b>
+            <span data-copy="alt.week.s">Games, concerts and closures, and the stations they fill.</span>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" class="chip" id="chip" aria-label="Change the station or hour">
+        <span id="chip-text"></span>
+        <span class="chip__edit" data-copy="chip.edit">Change</span>
+      </button>
+
+      <div class="hud">
+        <div class="panel instrument" id="instrument">
+          <p class="intro" data-copy="hero.intro">Hourly crowds at all 50 BART stations for next week. Pick a station and an hour to see riders expected and cars needed.</p>
+
+          <div class="picker" id="picker">
+            <button class="picker__button" id="picker-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="picker-panel">
+              <span id="station-name">Embarcadero</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="picker__panel" id="picker-panel">
+              <label class="sr-only" for="picker-search" data-copy="picker.label">Find a station</label>
+              <input class="picker__search" id="picker-search" type="text" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-expanded="true" aria-controls="picker-list" aria-autocomplete="list" placeholder="Find a station">
+              <ul class="picker__list" id="picker-list" role="listbox" aria-label="Stations"></ul>
+            </div>
+          </div>
+          <p class="when" id="when" aria-live="polite"></p>
+          <div class="locate">
+            <button type="button" class="locate__btn" id="locate" title="Location stays on this device">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="8" r="4.2" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></svg>
+              <span id="locate-label" data-copy="loc.button">Nearest station</span>
+            </button>
+            <span class="locate__msg" id="locate-msg" aria-live="polite"></span>
+          </div>
+
+          <hr class="rule">
+          <div class="readout">
+            <span class="readout__num" id="readout-num">0</span>
+            <span class="readout__unit" data-copy="readout.unit">riders entering or leaving this station that hour</span>
+          </div>
+
+          <div class="level">
+            <div class="level__meter" id="level-meter" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <span class="level__word" id="level-word"></span>
+            <span class="level__detail" id="level-detail"></span>
+          </div>
+
+          <div class="cause" id="cause" hidden></div>
+          <hr class="rule">
+          <div class="tip" id="tip" aria-live="polite"></div>
+
+          <div class="legend" aria-label="Map key">
+            <span><i class="lg lg--ring" aria-hidden="true"></i><span data-copy="legend.crowd">Glow and rings: crowd this hour</span></span>
+            <span><i class="lg lg--train" aria-hidden="true"></i><span data-copy="legend.trains">Trains on BART's timetable</span></span>
+          </div>
+        </div>
+
+        <div class="mapctl panel" role="group" aria-label="Map view">
+          <button type="button" class="ctl" id="ctl-in" aria-label="Zoom in"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <button type="button" class="ctl" id="ctl-out" aria-label="Zoom out"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <button type="button" class="ctl" id="ctl-all" aria-label="Show the whole network"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 6V2.5H6M10 2.5h3.5V6M13.5 10v3.5H10M6 13.5H2.5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="ctl" id="ctl-locate" aria-label="Find the nearest station"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 2L2 7.2l5.3 1.5L8.8 14z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="ctl" id="ctl-focus" aria-label="Fly back to the chosen station"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="2.2" fill="currentColor"/><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+
+
+        <div class="panel console">
+          <div class="days" id="days" role="radiogroup" aria-label="Day"><span class="days__ind" aria-hidden="true"></span></div>
+          <div class="scrub">
+            <svg class="scrub__chart" id="scrub-chart" viewBox="0 0 240 44" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <label class="sr-only" for="hour" data-copy="scrub.label">Hour of day</label>
+            <input type="range" id="hour" min="0" max="23" step="1" value="17">
+            <output class="scrub__bubble" id="hour-bubble" for="hour" aria-hidden="true">5 PM</output>
+            <div class="scrub__ticks" aria-hidden="true"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>11 PM</span></div>
+          </div>
+          <button class="btn" id="play" type="button" aria-pressed="false">
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path id="play-icon" d="M2 1l9 5-9 5z" fill="currentColor"/></svg>
+            <span id="play-label" data-copy="play.start">Play the day</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worth" data-section="worth" aria-labelledby="worth-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="worth-title">What it is worth to BART</h2>
+            <p class="lede">BART pays for every car it runs, full or empty. Capacity is planned as expected riders plus a safety margin, and the worse the forecast, the bigger the margin. A better forecast gives the same protection against crowding with fewer cars. Our first try, sizing cars from a forecast trained on average error, only tied a good timetable. Retraining on the cost of running short is what worked.</p>
+          </div>
+        </div>
+        <div id="range-body"></div>
+        <div id="worth-body"></div>
+      </div>
+    </section>
+
+
+    <section class="section section--story" id="why" data-section="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="why-title" data-copy="why.title">The days a timetable cannot know</h2>
+            <p class="lede" data-copy="why.lede">Games, concerts and closures next week: what changes, why, and where BART needs more room. Each comes with its source.</p>
+          </div>
+        </div>
+        <div class="stories" id="stories"></div>
+      </div>
+    </section>
+
+    <section class="section" id="yourweek" data-section="yourweek" aria-label="Your week"></section>
+
+    <section class="section" id="how" data-section="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="how-title" data-copy="how.title">How the plan is made</h2>
+            <p class="lede" data-copy="how.lede">This shows how we turn riders expected at each station and hour into a car count. Each part is tested on data it never saw. The language models find and read events. They never write a rider count.</p>
+          </div>
+        </div>
+        <ol class="engine">
+          <li>
+            <h3 data-copy="how.1.t">It learns the ordinary day</h3>
+            <p data-copy="how.1.p">A gradient-boosted forecasting model trained on 222 million trips and hourly weather, 2021 to 2025. Walk-forward tested: each year is predicted by a model that never saw it.</p>
+            <p class="engine__num"><span class="num" id="how-1-n">13.1%</span> <span id="how-1-s">error in 2025, against 20.1% for repeating last week</span></p>
+          </li>
+          <li>
+            <h3 data-copy="how.2.t">It corrects for what repeats</h3>
+            <p data-copy="how.2.p">Self-checking corrections for recurring conditions like Pride, football Saturdays and holidays. 23 were tried; only the 3 that beat the model on a held-out year were kept.</p>
+            <p class="engine__num"><span class="num">40.2% → 26.8%</span> <span data-copy="how.2.n">error on Pride Sunday</span></p>
+          </li>
+          <li>
+            <h3 data-copy="how.3.t">It reads the city</h3>
+            <p data-copy="how.3.p">An agentic web search finds next week's games, concerts and BART service notices near every station. Every claim must carry a source the system has opened; unsourced claims are dropped.</p>
+            <p class="engine__num"><span class="num" id="how-3-n">0</span> <span id="how-3-s">events found for next week, each with a source</span></p>
+          </li>
+          <li>
+            <h3 data-copy="how.4.t">It reasons about the exception</h3>
+            <p data-copy="how.4.p">A multi-agent harness, with Claude leading DeepSeek specialists, plans each event's crowd. Code holds the plan to curves measured at real past games and logs every override.</p>
+            <p class="engine__num"><span class="num">17.2% → 9.6%</span> <span data-copy="how.4.n">error at Embarcadero's busiest Giants-game hour</span></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="day" data-section="day" aria-labelledby="day-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="day-title"></h2>
+            <p class="lede" id="day-lede"></p>
+          </div>
+        </div>
+        <svg class="daychart" id="daychart" role="img" aria-labelledby="day-title"></svg>
+        <div class="chart-notes" id="day-notes">
+          <span class="k-out" data-copy="day.key.out">Leaving the station</span>
+          <span class="k-in" data-copy="day.key.in">Entering</span>
+          <span class="k-add" data-copy="day.key.add">Added by events</span>
+          <span class="k-best" data-copy="day.key.best">Lightest nearby hour</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="week" data-section="week" aria-labelledby="week-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="week-title" data-copy="week.title">The whole week at a glance</h2>
+            <p class="lede" data-copy="week.lede">This shows riders expected at every hour this week. Brighter means more riders and less room to run. Pick a square to load it above.</p>
+          </div>
+        </div>
+        <div class="week" id="weekgrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="events" data-section="events" aria-labelledby="events-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="events-title" data-copy="events.title">Games, concerts and closures</h2>
+            <p class="lede" data-copy="events.lede">This shows the events next week that call for longer trains, and how many riders each one adds. Riders are added from crowds measured at real past games.</p>
+          </div>
+        </div>
+        <div id="events-body"></div>
+      </div>
+    </section>
+
+    <section class="section" id="proof" data-section="proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="proof-title" data-copy="proof.title">Tested on a year it never saw</h2>
+            <p class="lede" id="proof-lede"></p>
+          </div>
+        </div>
+        <div class="proof">
+          <div>
+            <div class="vs__key" aria-hidden="true"><span></span><span data-copy="proof.key.ours">Our forecast</span><span data-copy="proof.key.theirs">Same hour last week</span></div>
+            <div class="vs" id="proof-vs"></div>
+            <p class="proof__note" data-copy="proof.note">Error is the share of riders the forecast got wrong, across every station and hour of 2025. The model was trained only on earlier years.</p>
+          </div>
+          <figure class="gamechart-fig" style="margin:0">
+            <div class="gamechart-head"><h3 id="game-title"></h3><span id="game-sub"></span></div>
+            <svg class="gamechart" id="gamechart" role="img" aria-labelledby="game-title"></svg>
+            <figcaption class="figcap" id="game-cap"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="limits" data-section="limits" aria-labelledby="limits-title">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 id="limits-title" data-copy="limits.title">What this cannot tell BART</h2>
+          </div>
+        </div>
+        <ol class="limits">
+          <li data-copy="limits.1">There is no hourly data for 2026 yet, so next week's forecast can only be checked once the week has happened.</li>
+          <li data-copy="limits.2">Event crowds are measured on baseball games. For concerts and other events, the harness reasons from those curves within fixed limits.</li>
+          <li data-copy="limits.3">Gate counts show people entering and leaving a station, not how full a train car is.</li>
+          <li data-copy="limits.4">The weather input is itself a forecast, and it gets less certain several days out.</li>
+          <li data-copy="limits.5">Past game days sit inside the model's own history, which blurs the everyday baseline at stadium stations.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <h3 data-copy="foot.title">Rushover</h3>
+      <p data-copy="foot.team">Built at Acalanes Data Fest 2026 in Oakland by K3N0SU and InterstellarApx.</p>
+    </div>
+    <div>
+      <h3 data-copy="foot.sources">Data</h3>
+      <ul>
+        <li><a href="https://www.bart.gov/about/reports/ridership" rel="noopener">BART hourly ridership, 2021 to 2025</a></li>
+        <li><a href="https://www.bart.gov/schedules/developers/gtfs" rel="noopener">BART GTFS track and station map</a></li>
+        <li><a href="https://open-meteo.com/" rel="noopener">Open-Meteo weather forecast and history</a></li>
+        <li><a href="https://statsapi.mlb.com/" rel="noopener">MLB schedules and attendance</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/guide.js"></script>
+  <script type="module" src="./src/heroplan.js"></script>
+  <script type="module" src="./src/range.js"></script>
+  <script type="module" src="./src/worth.js"></script>
+</body>
+</html>

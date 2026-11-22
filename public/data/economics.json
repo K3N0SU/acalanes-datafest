@@ -1,0 +1,178 @@
+{
+ "average_fare": 4.63,
+ "average_fare_source": "BART FY2025: $243.9M fare revenue on 52.7M trips",
+ "sizing_trains_by_forecast": {
+  "standard": "capacity covers riders in 95% of hours, 2025",
+  "less_capacity_than_a_fixed_timetable": {
+   "station level": 0.0762,
+   "system level": 0.0476
+  },
+  "less_capacity_than_a_4_week_average": {
+   "station level": 0.1339,
+   "system level": 0.126
+  },
+  "car_hours_a_year": [
+   111100,
+   312500
+  ],
+  "electricity_dollars_a_year": [
+   2070000,
+   5820000
+  ],
+  "share_of_operating_budget": [
+   0.00195,
+   0.00549
+  ],
+  "fewer_crowded_hours_with_the_same_cars": {
+   "station": 0.6098,
+   "system": 0.6406
+  },
+  "precedent": "BART said running shorter trains from September 2023 saved about $12M a year",
+  "note": "electricity only, so a floor"
+ },
+ "bart_timetable": {
+  "source": {
+   "gtfs": "BART GTFS feed, https://www.bart.gov/dev/schedules/google_transit.zip",
+   "feed_version": "72",
+   "riders": "BART hourly origin-destination ridership, 2025, summed to system entries",
+   "ntd": "FTA National Transit Database 2024, BART vehicle revenue hours"
+  },
+  "train_hours": {
+   "week": 6084.5,
+   "annual_x52": 316394
+  },
+  "ntd_check": {
+   "car_hours_2024": 2333890,
+   "implied_cars_per_train": 7.38,
+   "plausible_range": [
+    6,
+    10
+   ],
+   "plausible": true
+  },
+  "limits": [
+   "The feed lists trains, not how many cars each train has.",
+   "Scheduled service, not what actually ran (cancellations and delays are not included).",
+   "The current schedule is compared with 2025 riders; the timetable changed during and after 2025.",
+   "Train-hours are first to last stop of each trip; deadhead and layover time is not counted.",
+   "Riders are station entries in the hour they entered; a trip spans more than one train-hour.",
+   "Annual figure is a typical week times 52, ignoring holidays and special schedules."
+  ]
+ },
+ "events_next_30_days": {
+  "window": [
+   "2026-11-21",
+   "2026-12-20"
+  ],
+  "events": 53,
+  "attendance": 596916,
+  "event_trips_on_bart": 75687,
+  "fare_revenue": 350400
+ },
+ "surges_2025": {
+  "station_days_with_a_surge_nobody_planned_for": 83,
+  "riders": 206199,
+  "fares": 954700,
+  "share_arriving_within_4_hours": 0.699,
+  "search_agent_found_the_cause": "18 of 24 tested"
+ },
+ "return_trips_2025": {
+  "rows_crunched": 9143257,
+  "riders_not_carried_home": 28632,
+  "fares": 132600,
+  "by_venue": [
+   {
+    "venue": "Arena concerts at Oakland Arena (found by the search agent)",
+    "events": 9,
+    "share_not_carried_home": 0.039,
+    "leave_by_hour": {
+     "22:00": 179,
+     "23:00": 1428,
+     "0:00": 715,
+     "1:00": 22,
+     "2:00": 1
+    },
+    "come_from": {
+     "San Francisco and Peninsula": 0.327,
+     "South Alameda and San Jose": 0.244,
+     "Oakland core": 0.149,
+     "Berkeley and Richmond": 0.144,
+     "Tri-Valley (Dublin line)": 0.073,
+     "Contra Costa (Antioch line)": 0.063
+    }
+   },
+   {
+    "venue": "Giants night games at Oracle Park",
+    "events": 47,
+    "share_not_carried_home": 0.107,
+    "leave_by_hour": {
+     "20:00": 35,
+     "21:00": 273,
+     "22:00": 738,
+     "23:00": 409,
+     "0:00": 62,
+     "1:00": 3
+    },
+    "come_from": {
+     "Contra Costa (Antioch line)": 0.266,
+     "Berkeley and Richmond": 0.194,
+     "Oakland core": 0.176,
+     "Tri-Valley (Dublin line)": 0.143,
+     "San Francisco and Peninsula": 0.12,
+     "South Alameda and San Jose": 0.101
+    }
+   },
+   {
+    "venue": "Giants day games at Oracle Park",
+    "events": 34,
+    "share_not_carried_home": 0.251,
+    "leave_by_hour": {
+     "14:00": 23,
+     "15:00": 143,
+     "16:00": 631,
+     "17:00": 553,
+     "18:00": 128,
+     "19:00": 31,
+     "20:00": 59,
+     "21:00": 23
+    },
+    "come_from": {
+     "Contra Costa (Antioch line)": 0.304,
+     "Tri-Valley (Dublin line)": 0.19,
+     "Berkeley and Richmond": 0.169,
+     "Oakland core": 0.144,
+     "South Alameda and San Jose": 0.106,
+     "San Francisco and Peninsula": 0.087
+    }
+   },
+   {
+    "venue": "Cal football at Memorial Stadium",
+    "events": 6,
+    "share_not_carried_home": 0.19,
+    "leave_by_hour": {
+     "15:00": -3,
+     "16:00": 27,
+     "17:00": 103,
+     "18:00": 137,
+     "19:00": 138,
+     "20:00": 60,
+     "21:00": 66,
+     "22:00": 114,
+     "23:00": 268,
+     "0:00": 226,
+     "1:00": 22,
+     "2:00": 2
+    },
+    "come_from": {
+     "San Francisco and Peninsula": 0.325,
+     "Berkeley and Richmond": 0.237,
+     "Contra Costa (Antioch line)": 0.15,
+     "South Alameda and San Jose": 0.147,
+     "Oakland core": 0.092,
+     "Tri-Valley (Dublin line)": 0.05
+    }
+   }
+  ],
+  "what_it_corrected": "we had assumed nobody rides after midnight; the trip data shows about a third of arena concert riders leave in the midnight hour"
+ }
+}

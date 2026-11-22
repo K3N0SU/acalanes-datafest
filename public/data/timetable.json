@@ -1,0 +1,663 @@
+{
+ "source": {
+  "gtfs": "BART GTFS feed, https://www.bart.gov/dev/schedules/google_transit.zip",
+  "feed_version": "72",
+  "riders": "BART hourly origin-destination ridership, 2025, summed to system entries",
+  "ntd": "FTA National Transit Database 2024, BART vehicle revenue hours"
+ },
+ "days": {
+  "weekday": {
+   "date_used": "2026-12-02",
+   "service_ids": [
+    "2026_08_10-DX-MVS-Weekday-015",
+    "2026_08_10-DX19-Weekday-001",
+    "2026_08_10-DX20-Weekday-001"
+   ],
+   "trips": 1021,
+   "train_hours": 930.7,
+   "trips_running_by_hour": {
+    "5": 75,
+    "6": 104,
+    "7": 107,
+    "8": 108,
+    "9": 108,
+    "10": 108,
+    "11": 108,
+    "12": 108,
+    "13": 108,
+    "14": 108,
+    "15": 108,
+    "16": 108,
+    "17": 108,
+    "18": 108,
+    "19": 97,
+    "20": 83,
+    "21": 77,
+    "22": 74,
+    "23": 69,
+    "24": 36
+   },
+   "avg_trains_in_service_by_hour": {
+    "5": 38.9,
+    "6": 51.0,
+    "7": 53.2,
+    "8": 53.3,
+    "9": 53.4,
+    "10": 53.3,
+    "11": 53.3,
+    "12": 53.4,
+    "13": 53.3,
+    "14": 53.3,
+    "15": 53.4,
+    "16": 53.3,
+    "17": 53.3,
+    "18": 53.4,
+    "19": 47.8,
+    "20": 35.9,
+    "21": 31.4,
+    "22": 29.2,
+    "23": 28.4,
+    "24": 20.0
+   },
+   "trips_per_route": {
+    "Grey-S": 185,
+    "Grey-N": 185,
+    "Yellow-S": 115,
+    "Yellow-N": 115,
+    "Orange-S": 60,
+    "Orange-N": 60,
+    "Blue-S": 59,
+    "Blue-N": 59,
+    "Green-N": 48,
+    "Green-S": 45,
+    "Red-S": 45,
+    "Red-N": 45
+   }
+  },
+  "saturday": {
+   "date_used": "2026-12-05",
+   "service_ids": [
+    "2026_08_10-SA-MVS-Saturday-015",
+    "2026_08_10-SA19-Saturday-001",
+    "2026_08_10-SA20-Saturday-001"
+   ],
+   "trips": 883,
+   "train_hours": 760.1,
+   "trips_running_by_hour": {
+    "5": 15,
+    "6": 64,
+    "7": 89,
+    "8": 92,
+    "9": 93,
+    "10": 93,
+    "11": 93,
+    "12": 93,
+    "13": 93,
+    "14": 93,
+    "15": 93,
+    "16": 93,
+    "17": 93,
+    "18": 93,
+    "19": 88,
+    "20": 80,
+    "21": 77,
+    "22": 74,
+    "23": 69,
+    "24": 36
+   },
+   "avg_trains_in_service_by_hour": {
+    "5": 3.7,
+    "6": 31.6,
+    "7": 42.2,
+    "8": 44.5,
+    "9": 44.7,
+    "10": 44.6,
+    "11": 44.6,
+    "12": 44.7,
+    "13": 44.6,
+    "14": 44.6,
+    "15": 44.7,
+    "16": 44.6,
+    "17": 44.6,
+    "18": 44.7,
+    "19": 42.3,
+    "20": 35.3,
+    "21": 31.4,
+    "22": 29.2,
+    "23": 28.4,
+    "24": 20.0
+   },
+   "trips_per_route": {
+    "Grey-S": 175,
+    "Grey-N": 175,
+    "Yellow-S": 69,
+    "Yellow-N": 69,
+    "Orange-S": 57,
+    "Orange-N": 57,
+    "Blue-S": 55,
+    "Blue-N": 55,
+    "Green-N": 45,
+    "Green-S": 42,
+    "Red-S": 42,
+    "Red-N": 42
+   }
+  },
+  "sunday": {
+   "date_used": "2026-12-06",
+   "service_ids": [
+    "2026_08_10-SU-MVS-Sunday-015",
+    "2026_08_10-SU19-Sunday-001",
+    "2026_08_10-SU20-Sunday-001"
+   ],
+   "trips": 785,
+   "train_hours": 670.9,
+   "trips_running_by_hour": {
+    "5": 0,
+    "6": 0,
+    "7": 17,
+    "8": 64,
+    "9": 89,
+    "10": 92,
+    "11": 93,
+    "12": 93,
+    "13": 93,
+    "14": 93,
+    "15": 93,
+    "16": 93,
+    "17": 93,
+    "18": 93,
+    "19": 88,
+    "20": 80,
+    "21": 77,
+    "22": 74,
+    "23": 69,
+    "24": 36
+   },
+   "avg_trains_in_service_by_hour": {
+    "5": 0.0,
+    "6": 0.0,
+    "7": 3.8,
+    "8": 31.6,
+    "9": 42.3,
+    "10": 44.5,
+    "11": 44.6,
+    "12": 44.7,
+    "13": 44.6,
+    "14": 44.6,
+    "15": 44.7,
+    "16": 44.6,
+    "17": 44.6,
+    "18": 44.7,
+    "19": 42.3,
+    "20": 35.3,
+    "21": 31.4,
+    "22": 29.2,
+    "23": 28.4,
+    "24": 20.0
+   },
+   "trips_per_route": {
+    "Grey-S": 156,
+    "Grey-N": 156,
+    "Yellow-S": 63,
+    "Yellow-N": 63,
+    "Orange-S": 51,
+    "Orange-N": 51,
+    "Blue-S": 49,
+    "Blue-N": 49,
+    "Green-N": 39,
+    "Green-S": 36,
+    "Red-S": 36,
+    "Red-N": 36
+   }
+  }
+ },
+ "train_hours": {
+  "week": 6084.5,
+  "annual_x52": 316394
+ },
+ "ntd_check": {
+  "car_hours_2024": 2333890,
+  "implied_cars_per_train": 7.38,
+  "plausible_range": [
+   6,
+   10
+  ],
+  "plausible": true
+ },
+ "riders_per_train": {
+  "weekday": {
+   "by_hour": [
+    {
+     "hour": 5,
+     "avg_entries": 2140,
+     "trains_running": 75,
+     "entries_per_train": 28.5
+    },
+    {
+     "hour": 6,
+     "avg_entries": 6340,
+     "trains_running": 104,
+     "entries_per_train": 61.0
+    },
+    {
+     "hour": 7,
+     "avg_entries": 12905,
+     "trains_running": 107,
+     "entries_per_train": 120.6
+    },
+    {
+     "hour": 8,
+     "avg_entries": 18147,
+     "trains_running": 108,
+     "entries_per_train": 168.0
+    },
+    {
+     "hour": 9,
+     "avg_entries": 12903,
+     "trains_running": 108,
+     "entries_per_train": 119.5
+    },
+    {
+     "hour": 10,
+     "avg_entries": 7432,
+     "trains_running": 108,
+     "entries_per_train": 68.8
+    },
+    {
+     "hour": 11,
+     "avg_entries": 6195,
+     "trains_running": 108,
+     "entries_per_train": 57.4
+    },
+    {
+     "hour": 12,
+     "avg_entries": 6208,
+     "trains_running": 108,
+     "entries_per_train": 57.5
+    },
+    {
+     "hour": 13,
+     "avg_entries": 6635,
+     "trains_running": 108,
+     "entries_per_train": 61.4
+    },
+    {
+     "hour": 14,
+     "avg_entries": 7702,
+     "trains_running": 108,
+     "entries_per_train": 71.3
+    },
+    {
+     "hour": 15,
+     "avg_entries": 10379,
+     "trains_running": 108,
+     "entries_per_train": 96.1
+    },
+    {
+     "hour": 16,
+     "avg_entries": 15223,
+     "trains_running": 108,
+     "entries_per_train": 141.0
+    },
+    {
+     "hour": 17,
+     "avg_entries": 20062,
+     "trains_running": 108,
+     "entries_per_train": 185.8
+    },
+    {
+     "hour": 18,
+     "avg_entries": 15210,
+     "trains_running": 108,
+     "entries_per_train": 140.8
+    },
+    {
+     "hour": 19,
+     "avg_entries": 8193,
+     "trains_running": 97,
+     "entries_per_train": 84.5
+    },
+    {
+     "hour": 20,
+     "avg_entries": 4920,
+     "trains_running": 83,
+     "entries_per_train": 59.3
+    },
+    {
+     "hour": 21,
+     "avg_entries": 4133,
+     "trains_running": 77,
+     "entries_per_train": 53.7
+    },
+    {
+     "hour": 22,
+     "avg_entries": 3605,
+     "trains_running": 74,
+     "entries_per_train": 48.7
+    },
+    {
+     "hour": 23,
+     "avg_entries": 2684,
+     "trains_running": 69,
+     "entries_per_train": 38.9
+    },
+    {
+     "hour": 24,
+     "avg_entries": 1108,
+     "trains_running": 36,
+     "entries_per_train": 30.8
+    }
+   ],
+   "busiest_hour": {
+    "hour": 17,
+    "avg_entries": 20062,
+    "trains_running": 108,
+    "entries_per_train": 185.8
+   },
+   "emptiest_hour": {
+    "hour": 22,
+    "avg_entries": 3605,
+    "trains_running": 74,
+    "entries_per_train": 48.7
+   },
+   "busiest_to_emptiest_ratio": 3.82,
+   "three_emptiest_hours": [
+    22,
+    21,
+    11
+   ]
+  },
+  "saturday": {
+   "by_hour": [
+    {
+     "hour": 5,
+     "avg_entries": 56,
+     "trains_running": 15,
+     "entries_per_train": 3.8
+    },
+    {
+     "hour": 6,
+     "avg_entries": 1321,
+     "trains_running": 64,
+     "entries_per_train": 20.6
+    },
+    {
+     "hour": 7,
+     "avg_entries": 2746,
+     "trains_running": 89,
+     "entries_per_train": 30.9
+    },
+    {
+     "hour": 8,
+     "avg_entries": 4040,
+     "trains_running": 92,
+     "entries_per_train": 43.9
+    },
+    {
+     "hour": 9,
+     "avg_entries": 4960,
+     "trains_running": 93,
+     "entries_per_train": 53.3
+    },
+    {
+     "hour": 10,
+     "avg_entries": 5683,
+     "trains_running": 93,
+     "entries_per_train": 61.1
+    },
+    {
+     "hour": 11,
+     "avg_entries": 6661,
+     "trains_running": 93,
+     "entries_per_train": 71.6
+    },
+    {
+     "hour": 12,
+     "avg_entries": 7335,
+     "trains_running": 93,
+     "entries_per_train": 78.9
+    },
+    {
+     "hour": 13,
+     "avg_entries": 7473,
+     "trains_running": 93,
+     "entries_per_train": 80.4
+    },
+    {
+     "hour": 14,
+     "avg_entries": 7606,
+     "trains_running": 93,
+     "entries_per_train": 81.8
+    },
+    {
+     "hour": 15,
+     "avg_entries": 7839,
+     "trains_running": 93,
+     "entries_per_train": 84.3
+    },
+    {
+     "hour": 16,
+     "avg_entries": 8379,
+     "trains_running": 93,
+     "entries_per_train": 90.1
+    },
+    {
+     "hour": 17,
+     "avg_entries": 8491,
+     "trains_running": 93,
+     "entries_per_train": 91.3
+    },
+    {
+     "hour": 18,
+     "avg_entries": 7805,
+     "trains_running": 93,
+     "entries_per_train": 83.9
+    },
+    {
+     "hour": 19,
+     "avg_entries": 6067,
+     "trains_running": 88,
+     "entries_per_train": 68.9
+    },
+    {
+     "hour": 20,
+     "avg_entries": 4606,
+     "trains_running": 80,
+     "entries_per_train": 57.6
+    },
+    {
+     "hour": 21,
+     "avg_entries": 4383,
+     "trains_running": 77,
+     "entries_per_train": 56.9
+    },
+    {
+     "hour": 22,
+     "avg_entries": 4040,
+     "trains_running": 74,
+     "entries_per_train": 54.6
+    },
+    {
+     "hour": 23,
+     "avg_entries": 3133,
+     "trains_running": 69,
+     "entries_per_train": 45.4
+    },
+    {
+     "hour": 24,
+     "avg_entries": 1981,
+     "trains_running": 36,
+     "entries_per_train": 55.0
+    }
+   ],
+   "busiest_hour": {
+    "hour": 17,
+    "avg_entries": 8491,
+    "trains_running": 93,
+    "entries_per_train": 91.3
+   },
+   "emptiest_hour": {
+    "hour": 6,
+    "avg_entries": 1321,
+    "trains_running": 64,
+    "entries_per_train": 20.6
+   },
+   "busiest_to_emptiest_ratio": 4.43,
+   "three_emptiest_hours": [
+    6,
+    7,
+    8
+   ]
+  },
+  "sunday": {
+   "by_hour": [
+    {
+     "hour": 5,
+     "avg_entries": 6,
+     "trains_running": 0,
+     "entries_per_train": null
+    },
+    {
+     "hour": 6,
+     "avg_entries": 12,
+     "trains_running": 0,
+     "entries_per_train": null
+    },
+    {
+     "hour": 7,
+     "avg_entries": 184,
+     "trains_running": 17,
+     "entries_per_train": 10.8
+    },
+    {
+     "hour": 8,
+     "avg_entries": 2767,
+     "trains_running": 64,
+     "entries_per_train": 43.2
+    },
+    {
+     "hour": 9,
+     "avg_entries": 4155,
+     "trains_running": 89,
+     "entries_per_train": 46.7
+    },
+    {
+     "hour": 10,
+     "avg_entries": 4887,
+     "trains_running": 92,
+     "entries_per_train": 53.1
+    },
+    {
+     "hour": 11,
+     "avg_entries": 5609,
+     "trains_running": 93,
+     "entries_per_train": 60.3
+    },
+    {
+     "hour": 12,
+     "avg_entries": 5946,
+     "trains_running": 93,
+     "entries_per_train": 63.9
+    },
+    {
+     "hour": 13,
+     "avg_entries": 5992,
+     "trains_running": 93,
+     "entries_per_train": 64.4
+    },
+    {
+     "hour": 14,
+     "avg_entries": 5923,
+     "trains_running": 93,
+     "entries_per_train": 63.7
+    },
+    {
+     "hour": 15,
+     "avg_entries": 5979,
+     "trains_running": 93,
+     "entries_per_train": 64.3
+    },
+    {
+     "hour": 16,
+     "avg_entries": 6353,
+     "trains_running": 93,
+     "entries_per_train": 68.3
+    },
+    {
+     "hour": 17,
+     "avg_entries": 6405,
+     "trains_running": 93,
+     "entries_per_train": 68.9
+    },
+    {
+     "hour": 18,
+     "avg_entries": 5651,
+     "trains_running": 93,
+     "entries_per_train": 60.8
+    },
+    {
+     "hour": 19,
+     "avg_entries": 4444,
+     "trains_running": 88,
+     "entries_per_train": 50.5
+    },
+    {
+     "hour": 20,
+     "avg_entries": 3541,
+     "trains_running": 80,
+     "entries_per_train": 44.3
+    },
+    {
+     "hour": 21,
+     "avg_entries": 3139,
+     "trains_running": 77,
+     "entries_per_train": 40.8
+    },
+    {
+     "hour": 22,
+     "avg_entries": 2490,
+     "trains_running": 74,
+     "entries_per_train": 33.7
+    },
+    {
+     "hour": 23,
+     "avg_entries": 1837,
+     "trains_running": 69,
+     "entries_per_train": 26.6
+    },
+    {
+     "hour": 24,
+     "avg_entries": 1855,
+     "trains_running": 36,
+     "entries_per_train": 51.5
+    }
+   ],
+   "busiest_hour": {
+    "hour": 17,
+    "avg_entries": 6405,
+    "trains_running": 93,
+    "entries_per_train": 68.9
+   },
+   "emptiest_hour": {
+    "hour": 7,
+    "avg_entries": 184,
+    "trains_running": 17,
+    "entries_per_train": 10.8
+   },
+   "busiest_to_emptiest_ratio": 6.38,
+   "three_emptiest_hours": [
+    7,
+    22,
+    21
+   ]
+  }
+ },
+ "limits": [
+  "The feed lists trains, not how many cars each train has.",
+  "Scheduled service, not what actually ran (cancellations and delays are not included).",
+  "The current schedule is compared with 2025 riders; the timetable changed during and after 2025.",
+  "Train-hours are first to last stop of each trip; deadhead and layover time is not counted.",
+  "Riders are station entries in the hour they entered; a trip spans more than one train-hour.",
+  "Annual figure is a typical week times 52, ignoring holidays and special schedules."
+ ]
+}

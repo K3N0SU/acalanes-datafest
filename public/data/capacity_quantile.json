@@ -1,0 +1,35 @@
+{
+ "what": "Capacity needed so riders fit in 95% of station-hours (entries + exits, 5am to midnight, 2025), from trees trained on a 95th-percentile loss versus the average forecast plus one flat margin. Both are tuned on 2024 only.",
+ "standard": 0.95,
+ "cost_trained": {
+  "coverage_2024": 0.95,
+  "coverage_2025": 0.9564,
+  "correction": 0.9769,
+  "capacity_per_rider": 1.2312,
+  "raw_coverage_2025": 0.9681,
+  "raw_capacity_per_rider": 1.2603
+ },
+ "margin_method": {
+  "margin": 0.3398,
+  "coverage_2024": 0.95,
+  "coverage_2025": 0.9557,
+  "capacity_per_rider": 1.3422
+ },
+ "less_capacity_than_margin_method": 0.0827,
+ "verdict": "Trained on the cost of running short, the model covers riders in 96% of 2025 station-hours with 8.3% less capacity than a flat safety margin on the average forecast.",
+ "other_quantiles": [],
+ "training": {
+  "rows": 1500000,
+  "seconds": 148,
+  "settings": {
+   "loss": "quantile",
+   "quantile": 0.95,
+   "train_from": "2022-01-01",
+   "max_iter": 300,
+   "learning_rate": 0.08,
+   "max_leaf_nodes": 127,
+   "min_samples_leaf": 40,
+   "random_state": 7
+  }
+ }
+}

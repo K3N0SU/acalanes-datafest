@@ -1,0 +1,79 @@
+/* Sign-in button in the nav and the account panel. Uses the site's own tokens, so it follows every theme. */
+
+.nav > nav { margin-left: auto; }
+
+.acct-btn {
+  margin-left: 12px; height: 36px; padding: 0 16px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--c-ink) 22%, transparent);
+  background: transparent; color: var(--c-ink); font: inherit; font-size: 15px; font-weight: 500; white-space: nowrap; cursor: pointer;
+  transition: border-color .25s var(--ease), background-color .25s var(--ease), color .25s var(--ease), transform .15s var(--ease);
+}
+.acct-btn:hover { border-color: color-mix(in srgb, var(--c-ink) 55%, transparent); }
+.acct-btn:active { transform: scale(.97); }
+.acct-btn.is-in { background: var(--c-ink); color: var(--c-canvas); border-color: var(--c-ink); }
+
+.acct {
+  width: min(404px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto;
+  padding: 30px 28px 26px; border: 1px solid var(--c-line); border-radius: calc(var(--radius) + 6px);
+  background: var(--c-panel); color: var(--c-ink);
+}
+.acct::backdrop { background: rgb(0 0 0 / .6); }
+.acct[open] { animation: acct-in .28s var(--ease); }
+@keyframes acct-in { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .acct[open] { animation: none; } }
+
+.acct__close {
+  position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; display: grid; place-items: center;
+  border: 0; border-radius: 50%; background: transparent; color: var(--c-mute); cursor: pointer;
+}
+.acct__close:hover { color: var(--c-ink); background: color-mix(in srgb, var(--c-ink) 8%, transparent); }
+
+.acct h2 { margin: 0 0 8px; font-family: var(--f-display, inherit); font-size: 30px; font-weight: 600; line-height: 1.1; letter-spacing: .005em; }
+.acct__lede, .acct__sync { margin: 0 0 22px; color: var(--c-mute); font-size: 15px; line-height: 1.45; }
+.acct__who { margin: 0 0 6px; font-size: 17px; font-weight: 500; overflow-wrap: anywhere; }
+
+.acct__google, .acct__primary, .acct__ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 44px; padding: 0 18px;
+  border-radius: var(--radius); font: inherit; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: border-color .25s var(--ease), background-color .25s var(--ease), opacity .2s var(--ease), transform .15s var(--ease);
+}
+.acct__google { width: 100%; border: 1px solid color-mix(in srgb, var(--c-ink) 22%, transparent); background: transparent; color: var(--c-ink); }
+.acct__google:hover, .acct__ghost:hover { border-color: color-mix(in srgb, var(--c-ink) 55%, transparent); }
+.acct__primary { border: 1px solid var(--c-ink); background: var(--c-ink); color: var(--c-canvas); }
+.acct__primary:hover { opacity: .88; }
+.acct__ghost { border: 1px solid color-mix(in srgb, var(--c-ink) 22%, transparent); background: transparent; color: var(--c-ink); }
+.acct__google:active, .acct__primary:active, .acct__ghost:active { transform: scale(.98); }
+
+.acct__or { display: flex; align-items: center; gap: 12px; margin: 18px 0 14px; color: var(--c-dim); font-size: 13px; }
+.acct__or::before, .acct__or::after { content: ""; flex: 1; height: 1px; background: var(--c-line); }
+
+.acct__form { display: grid; gap: 12px; }
+.acct__field { display: grid; gap: 6px; font-size: 13px; color: var(--c-mute); }
+.acct__field input {
+  height: 44px; padding: 0 12px; border: 1px solid var(--c-line); border-radius: var(--radius);
+  background: var(--c-canvas); color: var(--c-ink); font: inherit; font-size: 16px;
+}
+.acct__field input:hover { border-color: color-mix(in srgb, var(--c-ink) 30%, transparent); }
+.acct__row { display: flex; gap: 10px; margin-top: 4px; }
+.acct__row > * { flex: 1; }
+
+.acct__danger {
+  margin-top: 18px; padding: 6px 0; border: 0; background: transparent; color: var(--c-mute);
+  font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.acct__danger:hover { color: var(--c-surge); }
+
+.acct__msg { min-height: 1.4em; margin: 14px 0 0; color: var(--c-surge); font-size: 14px; line-height: 1.4; }
+.acct__msg:empty { margin-top: 0; min-height: 0; }
+
+.acct :is(button, input, a):focus-visible, .acct-btn:focus-visible { outline: 2px solid var(--c-route); outline-offset: 2px; }
+.acct.is-busy :is(button, input) { opacity: .55; cursor: progress; }
+
+/* six links plus the button stop fitting on one line under about 880px: drop the links there, as phones already do */
+.nav__links a { white-space: nowrap; }
+@media (max-width: 900px) { .nav__links { display: none; } }
+
+@media (max-width: 760px) {
+  .acct-btn { height: 34px; padding: 0 14px; font-size: 14px; }
+  .acct { padding: 26px 20px 22px; }
+}

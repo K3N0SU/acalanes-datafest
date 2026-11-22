@@ -1,0 +1,16 @@
+date,category,stations,hour_from,hour_to,source
+2022-06-26,Pride Sunday,,0,24,rule: last Sunday of June
+2022-06-25,Pride Saturday,,0,24,rule: day before Pride Sunday
+2022-05-15,Bay to Breakers,,0,24,rule: third Sunday of May
+2023-06-25,Pride Sunday,,0,24,rule: last Sunday of June
+2023-06-24,Pride Saturday,,0,24,rule: day before Pride Sunday
+2023-05-21,Bay to Breakers,,0,24,rule: third Sunday of May
+2024-06-30,Pride Sunday,,0,24,rule: last Sunday of June
+2024-06-29,Pride Saturday,,0,24,rule: day before Pride Sunday
+2024-05-19,Bay to Breakers,,0,24,rule: third Sunday of May
+2025-06-29,Pride Sunday,,0,24,rule: last Sunday of June
+2025-06-28,Pride Saturday,,0,24,rule: day before Pride Sunday
+2025-05-18,Bay to Breakers,,0,24,rule: third Sunday of May
+2026-06-28,Pride Sunday,,0,24,rule: last Sunday of June
+2026-06-27,Pride Saturday,,0,24,rule: day before Pride Sunday
+2026-05-17,Bay to Breakers,,0,24,rule: third Sunday of May

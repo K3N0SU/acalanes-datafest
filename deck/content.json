@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "title": "Rushover",
+    "event": "Acalanes Data Fest 2026",
+    "team": "K3N0SU and InterstellarApx",
+    "minutes": 4
+  },
+  "slides": [
+    {
+      "id": "title",
+      "layout": "title",
+      "kicker": "Acalanes Data Fest 2026",
+      "title": "Rushover",
+      "subtitle": "The right number of cars, every hour.",
+      "subtitle2": "What a better crowd forecast is worth to BART.",
+      "footer": "K3N0SU and InterstellarApx",
+      "seconds": 10,
+      "notes": "We're Rushover. BART pays for every train car it runs, full or empty. We built a model that tells BART how many cars each hour needs.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "question",
+      "layout": "statement_stats",
+      "kicker": "The question",
+      "title": "BART pays for every car it runs, full or empty.",
+      "body": "Fares brought in $243.9M in fiscal 2025 and covered 23% of operating costs. The fiscal 2027 gap is about $375M. Our question: how many cars does each hour need?",
+      "stats": [
+        {
+          "value": "222M",
+          "label": "trips, 2021 to 2025, every station and hour"
+        },
+        {
+          "value": "50",
+          "label": "stations"
+        },
+        {
+          "value": "5 yrs",
+          "label": "of hourly weather joined in"
+        },
+        {
+          "value": "757",
+          "label": "games with start time and attendance"
+        }
+      ],
+      "callout": "Found in the data: BART has not published hourly counts for 2026. The file exists and is empty. So we test on 2025, and say so.",
+      "seconds": 22,
+      "notes": "BART has a money problem. Fares cover only 23 percent of operating costs, and the 2027 gap is about 375 million dollars. So our question: how many cars does each hour need? We used every BART trip from 2021 through 2025: 222 million, at 50 stations, joined to weather and 757 games.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "how",
+      "layout": "pipeline",
+      "kicker": "What we built",
+      "title": "A forecasting ensemble, and an agent harness for the days it cannot know.",
+      "steps": [
+        {
+          "name": "Ensemble forecaster",
+          "what": "Gradient-boosted trees, a transformer, deep neural networks and cosine-similarity retrieval of similar days. Five forecasters, blended."
+        },
+        {
+          "name": "Gated corrections",
+          "what": "23 candidate corrections for repeating conditions. Each must improve held-out 2024 to be switched on. 3 passed."
+        },
+        {
+          "name": "Retrieval, verified",
+          "what": "League schedule feeds plus web search. Our code fetches every cited page. Claims that cannot be verified are dropped."
+        },
+        {
+          "name": "Multi-agent reasoning",
+          "what": "Three specialist agents (crowd, access, timing) run in parallel. A lead agent cross-checks them against measured curves. Guardrails in code bound every parameter."
+        }
+      ],
+      "callout": "The rule: no language model ever writes a rider number. It can only scale curves measured on real games, inside fixed limits, and every override is logged.",
+      "seconds": 15,
+      "notes": "We built two things. A forecast for every station and hour. And agents that find next week's games and concerts, with code that opens every source page. No language model ever writes a rider number.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "model",
+      "layout": "two_column",
+      "kicker": "The model, plainly",
+      "title": "Five forecasters, blended. Neural networks carry 60% of it.",
+      "left_heading": "What it is",
+      "left": [
+        "Neural networks, trained by backpropagation: a small transformer that reads a station's last 8 same-weekday days, and deep feed-forward networks averaged over 3 random starts.",
+        "Gradient-boosted decision trees: hundreds of small yes/no trees, each fixing the mistakes of the ones before. 34 inputs.",
+        "Similar-day retrieval: the 10 most alike past days, found by cosine similarity.",
+        "Weights: 60% networks, 20% trees, 20% similar days. Best network alone 12.9%, trees alone 13.1%, blended 12.7%."
+      ],
+      "right_heading": "How we tested it",
+      "right": [
+        "Time order, not a random split. Train on earlier years, make every choice on 2024, then score 2025 once.",
+        "A random split would let the model see next week while predicting this week, because its inputs include last week's counts.",
+        "Compared against six simple methods, including the obvious one: the same hour last week."
+      ],
+      "seconds": 12,
+      "notes": "The forecast blends five models: neural networks, including a transformer, gradient-boosted trees, and similar-day matching. Every choice was made on 2024, and 2025 was scored once.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "result",
+      "layout": "chart_stats",
+      "kicker": "The result",
+      "title": "On a year it never saw, it beats every simple method.",
+      "chart": {
+        "caption": "Share of riders the forecast got wrong, all stations and hours, 2025. Lower is better. Figures on the right are for the tree models, which run the live site.",
+        "bars": [
+          {
+            "label": "Same hour last week",
+            "value": 20.1
+          },
+          {
+            "label": "Best method with no training",
+            "value": 14.7
+          },
+          {
+            "label": "Tree models alone",
+            "value": 13.1
+          },
+          {
+            "label": "Best neural network alone",
+            "value": 12.9
+          },
+          {
+            "label": "Final blend",
+            "value": 12.7,
+            "highlight": true
+          }
+        ],
+        "unit": "%"
+      },
+      "stats": [
+        {
+          "value": "4.0%",
+          "label": "error on the whole system's daily total"
+        },
+        {
+          "value": "74%",
+          "label": "of the time it names a station's busiest hour, within an hour"
+        },
+        {
+          "value": "92%",
+          "label": "of packed hours flagged in advance"
+        }
+      ],
+      "seconds": 9,
+      "notes": "On 2025, a year it never saw, last week's count is off by 20 percent. Our blend is off by 12.7.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "worth",
+      "layout": "chart_stats",
+      "kicker": "What it is worth",
+      "title": "Same crowding standard, fewer cars.",
+      "chart": {
+        "caption": "Capacity run per rider, every plan held to one standard: room for riders in 95% of 2025 station-hours. The best timetable gets its own margin per station, weekday and hour. Models chosen on 2024.",
+        "bars": [
+          {
+            "label": "Same hour last week",
+            "value": 1.57
+          },
+          {
+            "label": "Average of last 4 weeks",
+            "value": 1.41
+          },
+          {
+            "label": "Plain timetable",
+            "value": 1.39
+          },
+          {
+            "label": "Best timetable",
+            "value": 1.32
+          },
+          {
+            "label": "Our blend (average error)",
+            "value": 1.32
+          },
+          {
+            "label": "Our trees (cost of running short)",
+            "value": 1.22,
+            "highlight": true
+          }
+        ],
+        "unit": "x"
+      },
+      "stats": [
+        {
+          "value": "5-12%",
+          "label": "fewer cars, same crowding standard: 5-8% against the best timetable, 10-12% against a plain one"
+        },
+        {
+          "value": "$2.1-5.8M",
+          "label": "a year, about, in electricity alone. BART's 2023 shorter-train switch, the same lever, saved about $12M."
+        },
+        {
+          "value": "61-64%",
+          "label": "fewer overcrowded hours, if BART keeps the same number of cars as the best timetable"
+        }
+      ],
+      "seconds": 45,
+      "notes": "Here is what that is worth. BART plans cars as expected riders plus a safety margin. A worse forecast means a bigger margin. Our first answer failed: a good timetable tied our blend, because the blend was trained to be right on average. Running short costs more than running long. So we retrained on that cost. That model needs 5 to 8 percent fewer cars than the best timetable, and 10 to 12 percent fewer than a plain one. That is 2 to 6 million dollars a year in electricity alone. BART's own switch to shorter trains saved about 12 million. Same lever, set every day.",
+      "speaker": "Mohammed"
+    },
+    {
+      "id": "exceptions",
+      "layout": "before_after",
+      "kicker": "The days that break the pattern",
+      "title": "The days a timetable cannot know.",
+      "rows": [
+        {
+          "label": "Giants game, busiest hour at Embarcadero",
+          "before": "17.2%",
+          "after": "9.6%",
+          "note": "81 games in 2025"
+        },
+        {
+          "label": "Cal football at Downtown Berkeley",
+          "before": "29.1%",
+          "after": "19.1%",
+          "note": "its own measured curve"
+        },
+        {
+          "label": "Football with no football data at all",
+          "before": "34.3%",
+          "after": "23.5%",
+          "note": "multi-agent reasoning from baseball alone, 19 games"
+        },
+        {
+          "label": "Pride Sunday",
+          "before": "40.2%",
+          "after": "26.8%",
+          "note": "a gated correction, learned on earlier years"
+        }
+      ],
+      "before_label": "model alone",
+      "after_label": "with the harness",
+      "callout": "In 2025: 83 station-days with a surge nobody planned for, 206,000 riders, about $955,000 in fares. Given only a date, a station and the peak hour, the search agents found the cause of 18 of 24 tested surges, each with a page that opened.",
+      "seconds": 17,
+      "notes": "A timetable cannot know about next week's game. With the event layer, the busiest hour of a Giants game goes from 17 percent error to under 10. And the agents found the cause of 18 of 24 real surges.",
+      "speaker": "Mohammed"
+    },
+    {
+      "id": "failures",
+      "layout": "table",
+      "kicker": "What went wrong",
+      "title": "Most of what we tried did not work. That is the finding.",
+      "columns": [
+        "What we tried",
+        "What happened",
+        "What we did"
+      ],
+      "rows": [
+        [
+          "Our first transformer",
+          "13.7% on 2025. Worse than the trees at 13.1%.",
+          "Added deep networks (3 random starts each), blended: 12.7%"
+        ],
+        [
+          "Reward-driven online weighting",
+          "Rewarded for low error: 13.0% on 2024. Fixed weights: 12.8%.",
+          "Kept fixed weights. Weekly error is mostly noise."
+        ],
+        [
+          "Sizing cars from our best average forecast",
+          "Tied a timetable with its own margins: 1.32 vs 1.32",
+          "Retrained on the cost of running short: 1.22"
+        ],
+        [
+          "23 corrections: gas prices, daylight, festivals, more",
+          "20 made no difference or hurt",
+          "A gate: on only if it helps on 2024. 3 passed."
+        ],
+        [
+          "Trusting the search agent's links",
+          "It invented a page that did not exist",
+          "We fetch every page. 12 of 33 claims were dropped."
+        ],
+        [
+          "Assuming nobody rides after midnight",
+          "9 million trip rows: 31% of concert riders leave in the midnight hour",
+          "Threw out our own 'stranded riders' estimate"
+        ]
+      ],
+      "seconds": 19,
+      "notes": "Most of what we tried failed. Of 23 corrections, 20 did nothing. The search agent invented a page, so now our code opens every link. And we assumed nobody rides after midnight. Nine million trip rows said 31 percent of concert riders do.",
+      "speaker": "Mohammed"
+    },
+    {
+      "id": "limits",
+      "layout": "closing",
+      "kicker": "What we still don't know",
+      "title": "Four honest limits, and what comes next.",
+      "points": [
+        {
+          "head": "Gate counts, not train loads.",
+          "text": "We see entries and exits, not how full each train is. BART has that; we don't."
+        },
+        {
+          "head": "Train length must flex.",
+          "text": "Savings assume it can change day by day. BART already changes it by schedule."
+        },
+        {
+          "head": "Electricity only.",
+          "text": "Car wear and maintenance are not counted, so the dollars are a floor."
+        },
+        {
+          "head": "No 2026 hourly data.",
+          "text": "The file is empty. Everything is tested on 2025."
+        }
+      ],
+      "next": "Next: BART's train-load data and live counts, so the plan checks itself every day.",
+      "closing": "Run the cars riders need.",
+      "seconds": 12,
+      "notes": "Our limits: we see gate counts, not how full each train is, we only counted electricity, and there is no 2026 hourly data yet. Now, the tool itself.",
+      "speaker": "Hengyi"
+    },
+    {
+      "id": "methods",
+      "layout": "table",
+      "kicker": "Backup: methods and sources",
+      "title": "Every technique here comes from published work.",
+      "columns": [
+        "Technique",
+        "Where we used it",
+        "Paper"
+      ],
+      "rows": [
+        [
+          "Transformer (attention)",
+          "Reads a station's last 8 same-weekday days. 30% of the final blend.",
+          "Vaswani et al., Attention Is All You Need, 2017"
+        ],
+        [
+          "Backpropagation",
+          "How the transformer and the deep networks are trained",
+          "Rumelhart, Hinton, Williams, Nature, 1986"
+        ],
+        [
+          "Gradient-boosted trees",
+          "20% of the blend, and the live forecast on the site",
+          "Friedman, 2001; Ke et al. (LightGBM), 2017"
+        ],
+        [
+          "Blending models",
+          "Five forecasters, weights chosen on 2024",
+          "Wolpert, Stacked Generalization, 1992"
+        ],
+        [
+          "Reconciling levels",
+          "Tested: 12.8% to 12.7% on an earlier blend; added nothing to the final one",
+          "Hyndman et al., 2011"
+        ],
+        [
+          "Out-of-time testing",
+          "Choose on 2024, score 2025 once. No random split.",
+          "Tashman, 2000"
+        ]
+      ],
+      "seconds": 0,
+      "notes": "Backup slide for questions. Not part of the five minutes."
+    }
+  ],
+  "demo": {
+    "title": "Website, 1 minute",
+    "speaker": "Hengyi talks, Mohammed clicks",
+    "seconds": 60,
+    "before": "Have the site open at the top in the browser: http://127.0.0.1:5180. The calculator is empty until you press Calculate. Switch from the slides with Alt+Tab.",
+    "steps": [
+      {
+        "do": "Show the top of the site. Leave All 50 stations, Tue Nov 24, 5 AM to 12 AM, 10 cars. Press Calculate.",
+        "say": "This is Rushover. A planner picks a day and a time range and presses Calculate. First, the riders we predict for every hour, and the room the model says to run."
+      },
+      {
+        "do": "Click the \"Cars to run\" tab.",
+        "say": "Then the cars. Grey is what BART runs today, from its real timetable. Blue is what Rushover would run: the same 53 trains, with the length set by the model."
+      },
+      {
+        "do": "Set From to 10 AM and To to 3 PM. Press Calculate, then click \"Cars to run\".",
+        "say": "Midday, BART has the same 53 trains out as at rush hour. Rushover says four and five-car trains are enough: about 800 fewer car-hours, around 15 thousand dollars of electricity that day, if today's trains run at their average length."
+      },
+      {
+        "do": "Station: Downtown Berkeley. Day: Sat Nov 28. From 5 AM, To 12 AM. Press Calculate. Then click \"Cars to run\".",
+        "say": "And it is not only rush hours. Saturday, Cal plays Pittsburgh at 4:30. Riders at Downtown Berkeley peak at 3 PM, and again at 9 when the game lets out. Rushover asks for ten-car trains at 2 and 3 PM, and eight at 9."
+      },
+      {
+        "do": "Click \"Full program, station planner and download\" and scroll to the bar chart.",
+        "say": "The whole day exports as a program. And this is the test behind it: every plan held to the same standard on 2025. Ours needs the least. Thank you."
+      }
+    ]
+  }
+}

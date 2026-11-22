@@ -1,0 +1,54 @@
+{
+ "crowd_predictor": {
+  "Athletics 2024": {
+   "games": 80,
+   "station": "COLS",
+   "attendance_error_plain_guess": 0.5024,
+   "attendance_error_predictor": 0.3869,
+   "rider_error_model_alone": 0.6169,
+   "rider_error_event_layer_plain_guess": 0.4804,
+   "rider_error_event_layer_with_predictor": 0.446,
+   "rider_error_if_attendance_were_known": 0.3451
+  },
+  "Giants 2024": {
+   "games": 80,
+   "station": "EMBR",
+   "attendance_error_plain_guess": 0.119,
+   "attendance_error_predictor": 0.1179,
+   "rider_error_model_alone": 0.1903,
+   "rider_error_event_layer_plain_guess": 0.1622,
+   "rider_error_event_layer_with_predictor": 0.1627,
+   "rider_error_if_attendance_were_known": 0.1644
+  },
+  "Giants 2025": {
+   "games": 81,
+   "station": "EMBR",
+   "attendance_error_plain_guess": 0.1127,
+   "attendance_error_predictor": 0.1645,
+   "rider_error_model_alone": 0.1985,
+   "rider_error_event_layer_plain_guess": 0.1446,
+   "rider_error_event_layer_with_predictor": 0.1475,
+   "rider_error_if_attendance_were_known": 0.1456
+  }
+ },
+ "crowd_predictor_inputs": [
+  "team_id",
+  "opp",
+  "dow",
+  "month",
+  "night",
+  "game_no",
+  "opening_day",
+  "prev_season",
+  "prev_vs_opp",
+  "season_so_far"
+ ],
+ "football_curve": {
+  "games_tested": 6,
+  "games_learned_from": 13,
+  "station": "DBRK",
+  "rider_error_model_alone": 0.2906,
+  "rider_error_borrowed_baseball_curve": 0.4079,
+  "rider_error_football_curve": 0.1907
+ }
+}

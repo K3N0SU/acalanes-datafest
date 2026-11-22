@@ -1,0 +1,121 @@
+/* How-to-use layer and the opening sequence. Additive: nothing here restyles what styles.css lays out. */
+
+:root { --f-mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace; }
+
+/* ---- opening: two bars draw back, then the headline comes up line by line */
+.cine { position: fixed; left: 0; right: 0; height: 11vh; z-index: 60; background: #0d0e10; pointer-events: none;
+  transition: transform 1.4s var(--ease) .1s; }
+.cine--top { top: 0; transform: translateY(-101%); }
+.cine--bottom { bottom: 0; transform: translateY(101%); }
+.is-loading .cine { transform: none; transition: none; }
+
+.pitch__eyebrow, .pitch__title, .pitch__sub, .pitch .query, .steps, .pitch__try, .pitch__more {
+  transition: opacity 1s var(--ease), transform 1.2s var(--ease), filter 1s var(--ease); }
+.is-loading .pitch__eyebrow, .is-loading .pitch__title, .is-loading .pitch__sub, .is-loading .pitch .query,
+.is-loading .steps, .is-loading .pitch__try, .is-loading .pitch__more { opacity: 0; transform: translateY(26px); filter: blur(10px); }
+.pitch__eyebrow { transition-delay: .25s; }
+.pitch__title { transition-delay: .4s; }
+.pitch__sub { transition-delay: .58s; }
+.pitch .query { transition-delay: .74s; }
+.steps { transition-delay: .88s; }
+.pitch__try { transition-delay: .98s; }
+.pitch__more { transition-delay: 1.06s; }
+
+/* film grain over everything, and a vignette that pulls the eye to the middle of the map */
+body::after { content: ""; position: fixed; inset: 0; z-index: 55; pointer-events: none; opacity: .055;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(115% 85% at 55% 42%, transparent 52%, color-mix(in srgb, var(--c-canvas) 72%, #000) 100%); }
+
+.pitch__eyebrow { margin: 0 0 18px; font: 500 11px/1.4 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--c-mute); }
+.pitch__eyebrow::before { content: ""; display: inline-block; width: 28px; height: 1px; margin-right: 12px; vertical-align: middle; background: var(--c-route); }
+
+/* numbered section labels, counted in whatever order the sections are shown */
+main { counter-reset: sec; }
+.section .section__head h2::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) " /"; display: block; margin-bottom: 14px;
+  font: 500 11px/1 var(--f-mono); letter-spacing: .18em; color: var(--c-mute); }
+
+/* ---- the three steps under the form */
+.steps { list-style: none; margin: 18px 0 0; padding: 0; width: min(880px, 100%); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--c-ink) 12%, transparent); }
+.steps li { padding: 12px 18px 0 0; font-size: var(--t-14); line-height: 1.4; color: var(--c-mute); }
+.steps li + li { padding-left: 18px; border-left: 1px solid color-mix(in srgb, var(--c-ink) 12%, transparent); }
+.steps i { display: block; margin-bottom: 4px; font: 500 11px/1 var(--f-mono); letter-spacing: .18em; font-style: normal; color: var(--c-route); }
+.steps b { color: var(--c-ink); font-weight: 600; }
+[data-mode="plan"] .steps { display: none; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .steps li, .steps li + li { padding: 10px 0; border-left: 0; }
+  .steps li + li { border-top: 1px solid color-mix(in srgb, var(--c-ink) 10%, transparent); }
+  .steps i { display: inline; margin-right: 8px; }
+}
+@media (min-width: 761px) and (max-height: 860px) { .pitch__more { display: none; } }
+
+/* ---- labels on the timeline at the bottom of a result */
+[data-mode="plan"] .console { padding-top: 30px; }
+[data-mode="plan"] .days::before, [data-mode="plan"] .scrub::before { position: absolute; top: -20px; left: 4px; white-space: nowrap;
+  font: 500 10.5px/1 var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--c-mute); }
+[data-mode="plan"] .days::before { content: "Day"; }
+[data-mode="plan"] .scrub::before { content: "Hour: drag to change  ·  grey = ordinary crowd  ·  red = added by an event"; left: 0; }
+@media (max-width: 1080px) { [data-mode="plan"] .scrub::before { content: "Hour: drag to change"; } }
+@media (max-width: 760px) { [data-mode="plan"] .console { padding-top: 34px; } }
+
+/* map buttons say what they do on hover */
+.mapctl .ctl { position: relative; }
+.mapctl .ctl:hover::after, .mapctl .ctl:focus-visible::after { content: attr(aria-label); position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%);
+  white-space: nowrap; padding: 6px 10px; border: 1px solid var(--c-line); border-radius: var(--radius); background: var(--c-panel); color: var(--c-ink);
+  font-size: var(--t-12); pointer-events: none; }
+@media (max-width: 760px) { .mapctl .ctl:hover::after, .mapctl .ctl:focus-visible::after { display: none; } }
+
+/* ---- the notes */
+.guide-open { margin-top: 14px; padding: 0; background: none; border: 0; color: var(--c-mute); font-size: var(--t-12); text-align: left;
+  text-decoration: underline; text-decoration-color: var(--c-dim); text-underline-offset: 3px; }
+.guide-open:hover { color: var(--c-ink); text-decoration-color: var(--c-route); }
+#guide-nav { color: var(--c-ink); }
+
+.guide { position: fixed; inset: 0; z-index: 70; background: color-mix(in srgb, var(--c-canvas) 55%, transparent); animation: guide-in .35s var(--ease); }
+[data-mode="home"] .guide { background: color-mix(in srgb, var(--c-canvas) 82%, transparent); }
+/* the card sits above the outlines, in the middle; beside the result panel when it is pointing at things */
+.guide__card { position: fixed; z-index: 74; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(430px, calc(100vw - 24px));
+  max-height: calc(100svh - 48px); overflow: auto; padding: 22px 24px 0; background: var(--c-panel);
+  border: 1px solid color-mix(in srgb, var(--c-ink) 18%, transparent); border-radius: var(--radius); animation: guide-in .35s var(--ease); }
+.guide__card--side { left: 408px; top: 128px; transform: none; width: 384px; max-height: calc(100svh - 128px - 168px); }
+.guide__eyebrow { margin: 0 0 10px; font: 500 11px/1 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--c-route); }
+.guide__title { margin: 0 0 6px; font-size: var(--t-31); font-weight: 300; letter-spacing: -.02em; line-height: 1.1; }
+.guide__list { margin: 0; padding: 0; list-style: none; counter-reset: g; }
+.guide__list li { position: relative; padding: 9px 0 9px 36px; border-top: 1px solid var(--c-line); counter-increment: g; }
+.guide__list li:first-child { border-top: 0; }
+.guide__list li::before { content: counter(g); position: absolute; left: 0; top: 10px; width: 22px; height: 22px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--c-ink); color: var(--c-canvas); font: 600 11px/1 var(--f-mono); }
+.guide__list b { display: block; font-weight: 600; font-size: var(--t-14); }
+.guide__list span { display: block; margin-top: 1px; color: var(--c-mute); font-size: 13px; line-height: 1.4; }
+.guide__row { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; gap: 10px; margin: 8px -24px 0; padding: 12px 24px 16px; background: var(--c-panel);
+  border-top: 1px solid var(--c-line); }
+.guide__ok, .guide__try { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--c-ink); font-weight: 600; font-size: var(--t-14); transition: transform .2s var(--ease); }
+.guide__ok { background: var(--c-ink); color: var(--c-canvas); }
+.guide__try { background: none; color: var(--c-ink); border-color: color-mix(in srgb, var(--c-ink) 30%, transparent); }
+.guide__ok:active, .guide__try:active { transform: scale(.97); }
+
+.guide__box { position: fixed; z-index: 71; pointer-events: none; border: 1px solid color-mix(in srgb, var(--c-ink) 70%, transparent); border-radius: var(--radius);
+  animation: guide-in .5s var(--ease); }
+.guide__mark { position: fixed; z-index: 72; pointer-events: none; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--c-ink); color: var(--c-canvas); font: 600 12px/1 var(--f-mono); animation: guide-in .5s var(--ease); }
+@keyframes guide-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 760px) {
+  .guide__card { top: auto; bottom: 12px; transform: translateX(-50%); max-height: 70svh; padding: 18px 20px 0; }
+  .guide__row { margin: 8px -20px 0; padding: 12px 20px 14px; }
+}
+@media (min-width: 761px) and (max-width: 1100px) { .guide__card--side { left: auto; right: 16px; width: 340px; } }
+@media (prefers-reduced-motion: reduce) {
+  .cine { display: none; }
+  .is-loading .pitch__eyebrow, .is-loading .pitch__title, .is-loading .pitch__sub, .is-loading .pitch .query,
+  .is-loading .steps, .is-loading .pitch__try, .is-loading .pitch__more { opacity: 1; transform: none; filter: none; }
+  .guide, .guide__box, .guide__mark { animation: none; }
+}
+
+/* section headings carry no numbers */
+.section .section__head h2::before { content: none; display: none; }
+
+/* demo polish: hero eyebrow clear of sticky nav */
+.pitch .pitch__eyebrow, .pitch__eyebrow { margin-top: 28px !important; }

@@ -1,0 +1,144 @@
+{
+ "experiments": [
+  {
+   "name": "A. Small transformer",
+   "what_it_is": "A 2-layer attention network that reads the same station's last 8 same-weekday hourly profiles plus weekday, month, holiday, rain and temperature, and predicts the 24 hourly counts.",
+   "settings_chosen_on_2024": "d_model 64, 4 heads, 2 layers, AdamW with one-cycle schedule, 24 epochs max, early stopping on Nov-Dec 2023; trained 2022 to Oct 2023 for the 2024 check, 2022 to Oct 2024 for 2025; level-weighted absolute error",
+   "error_2024": 0.1355,
+   "error_2025": 0.1369,
+   "training_seconds": {
+    "2024_run": 150,
+    "2025_run": 341
+   }
+  },
+  {
+   "name": "B. Cosine analog days",
+   "what_it_is": "For each station, direction and day, finds the 10 most similar earlier days (by shape of recent weeks, weekday, month, holiday) and averages their hourly profile, rescaled to the current level.",
+   "settings_chosen_on_2024": "k=10, candidates from 2022 on, weights {'shape': 1.0, 'trend': 0.5, 'dow': 2, 'month': 0.5, 'special': 2.0, 'weather': 0} (weather weight 0 won); 72-setting grid on 2024",
+   "error_2024": 0.1438,
+   "error_2025": 0.1486,
+   "training_seconds": 1.6162
+  },
+  {
+   "name": "C. Online weighting (Hedge) of forecasters",
+   "what_it_is": "Each station, direction and hour-block keeps weights over several forecasters and shifts weight toward those with smaller recent absolute error, using only outcomes 7 or more days old.",
+   "settings_chosen_on_2024": {
+    "core_members_from_2023": {
+     "error_2024": 0.1371463422874136,
+     "eta": 1,
+     "gamma": 0.99,
+     "block_hours": 24,
+     "members": [
+      "best",
+      "lag7",
+      "mean4",
+      "med8",
+      "ewm8",
+      "lag364_grown"
+     ]
+    },
+    "all_members_from_2024": {
+     "error_2024": 0.12979503641543633,
+     "eta": 1,
+     "gamma": 0.99,
+     "block_hours": 24,
+     "members": [
+      "best",
+      "lag7",
+      "mean4",
+      "med8",
+      "ewm8",
+      "lag364_grown",
+      "analog",
+      "transformer"
+     ]
+    }
+   },
+   "error_2024": 0.1298,
+   "error_2025": null,
+   "training_seconds": 17,
+   "note": "Not carried to 2025: the fixed blend scored lower on 2024. Also tried: NNLS blend weights fitted on 2023 (members without A and B) scored 0.1401 on 2024; NNLS on all members fitted on 2024 scored 0.1364"
+  }
+ ],
+ "other_2024_blends": {
+  "blend_best+transformer": {
+   "error_2024": 0.12964675968181544,
+   "weights": {
+    "best": 0.44999999999999996,
+    "transformer": 0.55
+   }
+  },
+  "blend_best+analog": {
+   "error_2024": 0.13085548656044735,
+   "weights": {
+    "best": 0.55,
+    "analog": 0.45
+   }
+  },
+  "blend_best+transformer+analog": {
+   "error_2024": 0.12755104767487885,
+   "weights": {
+    "best": 0.35,
+    "transformer": 0.4,
+    "analog": 0.25
+   }
+  }
+ },
+ "final_choice": {
+  "name": "Fixed blend of current best, transformer and analog days",
+  "weights": {
+   "best": 0.35,
+   "transformer": 0.4,
+   "analog": 0.25
+  },
+  "how_chosen": "lowest 2024 error among: current best alone, fixed blends, online weighting. Weights were picked on a 0.05 grid on 2024 itself, so the 2024 number is optimistic; the 2025 number uses those weights unchanged with members trained only on data before 2025.",
+  "error_2024_by_segment": {
+   "all": 0.1275510481732892,
+   "ordinary_days": 0.12112832222922534,
+   "weekends": 0.2063580113271446,
+   "busiest_quarter": 0.10530734112029498
+  },
+  "error_2025_by_segment": {
+   "all": 0.1283952199476032,
+   "ordinary_days": 0.12325644130641558,
+   "weekends": 0.1887865926666661,
+   "busiest_quarter": 0.10573672458491623
+  }
+ },
+ "current_best_baseline": {
+  "2024": {
+   "all": 0.13792278685828707,
+   "ordinary_days": 0.13052950155752296,
+   "weekends": 0.20531439333401408,
+   "busiest_quarter": 0.11942849021686235
+  },
+  "2025": {
+   "all": 0.13051002179367008,
+   "ordinary_days": 0.12631394739381457,
+   "weekends": 0.18420432412425664,
+   "busiest_quarter": 0.1110373229712114
+  }
+ },
+ "members_alone_2025_by_segment": {
+  "transformer": {
+   "all": 0.13690875470638275,
+   "ordinary_days": 0.12961934506893158,
+   "weekends": 0.19720149040222168,
+   "busiest_quarter": 0.1127123311161995
+  },
+  "analog": {
+   "all": 0.14862272143363953,
+   "ordinary_days": 0.14147904515266418,
+   "weekends": 0.21769274771213531,
+   "busiest_quarter": 0.12230508029460907
+  }
+ },
+ "leakage_checks": [
+  "Every sequence input is c.Y at day d-7*j for j=1..8 (asserted: first target day index >= 56); no same-day or later ridership enters any model input.",
+  "Only calendar, holiday flag and the target day's weather are taken from day d itself.",
+  "Analog days: a candidate day must satisfy day <= d-7, so its outcome was known 7 days ahead; feature standardisation uses only days before the test year.",
+  "Transformer: training days are all before the test year, early stopping uses Nov-Dec of the year before; 2025 labels were never used for any choice.",
+  "Online weighting: the weight for day d is computed from losses of days <= d-7 (checked by construction in the cumulative-loss lookup).",
+  "Sanity check: the current-best arrays reproduce 0.1379 (2024) and 0.1305 (2025) with this loading code."
+ ]
+}

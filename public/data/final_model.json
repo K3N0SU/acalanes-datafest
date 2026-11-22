@@ -1,0 +1,98 @@
+{
+ "pred_2024": {
+  "all": 0.1379,
+  "ordinary": 0.1305,
+  "weekends": 0.2053,
+  "busiest_quarter": 0.1194,
+  "station_hour_ordinary": 0.1093,
+  "station_day_ordinary": 0.0678,
+  "system_hour_ordinary": 0.0655,
+  "system_day_ordinary": 0.0479
+ },
+ "adv_pred_2024": {
+  "all": 0.1276,
+  "ordinary": 0.1211,
+  "weekends": 0.2064,
+  "busiest_quarter": 0.1053,
+  "station_hour_ordinary": 0.1001,
+  "station_day_ordinary": 0.0602,
+  "system_hour_ordinary": 0.0591,
+  "system_day_ordinary": 0.0418
+ },
+ "lvl_pred_2024": {
+  "all": 0.1274,
+  "ordinary": 0.1205,
+  "weekends": 0.2049,
+  "busiest_quarter": 0.105,
+  "station_hour_ordinary": 0.0994,
+  "station_day_ordinary": 0.0594,
+  "system_hour_ordinary": 0.0585,
+  "system_day_ordinary": 0.0414
+ },
+ "nn_pred_2024": {
+  "all": 0.1269,
+  "ordinary": 0.1202,
+  "weekends": 0.2054,
+  "busiest_quarter": 0.105,
+  "station_hour_ordinary": 0.0993,
+  "station_day_ordinary": 0.0601,
+  "system_hour_ordinary": 0.0594,
+  "system_day_ordinary": 0.043
+ },
+ "pred_2025": {
+  "all": 0.1305,
+  "ordinary": 0.1263,
+  "weekends": 0.1842,
+  "busiest_quarter": 0.111,
+  "station_hour_ordinary": 0.1048,
+  "station_day_ordinary": 0.0612,
+  "system_hour_ordinary": 0.0596,
+  "system_day_ordinary": 0.0405
+ },
+ "adv_pred_2025": {
+  "all": 0.1284,
+  "ordinary": 0.1233,
+  "weekends": 0.1888,
+  "busiest_quarter": 0.1057,
+  "station_hour_ordinary": 0.1023,
+  "station_day_ordinary": 0.0627,
+  "system_hour_ordinary": 0.0617,
+  "system_day_ordinary": 0.0446
+ },
+ "lvl_pred_2025": {
+  "all": 0.1274,
+  "ordinary": 0.1225,
+  "weekends": 0.1881,
+  "busiest_quarter": 0.1047,
+  "station_hour_ordinary": 0.1015,
+  "station_day_ordinary": 0.0618,
+  "system_hour_ordinary": 0.0607,
+  "system_day_ordinary": 0.0437
+ },
+ "nn_pred_2025": {
+  "all": 0.1266,
+  "ordinary": 0.1218,
+  "weekends": 0.1872,
+  "busiest_quarter": 0.104,
+  "station_hour_ordinary": 0.1009,
+  "station_day_ordinary": 0.0618,
+  "system_hour_ordinary": 0.061,
+  "system_day_ordinary": 0.0443
+ },
+ "final_2025": {
+  "all": 0.1266,
+  "ordinary": 0.1218,
+  "weekends": 0.1872,
+  "busiest_quarter": 0.104,
+  "station_hour_ordinary": 0.1009,
+  "station_day_ordinary": 0.0618,
+  "system_hour_ordinary": 0.061,
+  "system_day_ordinary": 0.0443
+ },
+ "final_is": "neural blend",
+ "reconciliation_check_2024": {
+  "before": 0.1269,
+  "after": 0.1269,
+  "adopted": false
+ }
+}

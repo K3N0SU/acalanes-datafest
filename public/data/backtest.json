@@ -1,0 +1,428 @@
+{
+ "stations": [
+  "12TH",
+  "16TH",
+  "19TH",
+  "24TH",
+  "ANTC",
+  "ASHB",
+  "BALB",
+  "BAYF",
+  "BERY",
+  "CAST",
+  "CIVC",
+  "COLM",
+  "COLS",
+  "CONC",
+  "DALY",
+  "DBRK",
+  "DELN",
+  "DUBL",
+  "EMBR",
+  "FRMT",
+  "FTVL",
+  "GLEN",
+  "HAYW",
+  "LAFY",
+  "LAKE",
+  "MCAR",
+  "MLBR",
+  "MLPT",
+  "MONT",
+  "NBRK",
+  "NCON",
+  "OAKL",
+  "ORIN",
+  "PCTR",
+  "PHIL",
+  "PITT",
+  "PLZA",
+  "POWL",
+  "RICH",
+  "ROCK",
+  "SANL",
+  "SBRN",
+  "SFIA",
+  "SHAY",
+  "SSAN",
+  "UCTY",
+  "WARM",
+  "WCRK",
+  "WDUB",
+  "WOAK"
+ ],
+ "features": [
+  "lag7",
+  "lag14",
+  "lag21",
+  "lag28",
+  "mean8",
+  "med8",
+  "lag364",
+  "hour",
+  "dow",
+  "month",
+  "holiday",
+  "day_after_tg",
+  "xmas_week",
+  "station",
+  "kind",
+  "rain_h",
+  "rain_3h",
+  "rain_day",
+  "rain_day_lag7",
+  "tmax_day",
+  "wind_max_day",
+  "std8",
+  "ewm8",
+  "lag7_prev_hour",
+  "lag7_next_hour",
+  "day_total_lag7",
+  "day_total_4wk",
+  "station_trend",
+  "system_trend",
+  "yoy_growth",
+  "lag364_grown",
+  "lag7_was_special",
+  "lag364_was_special",
+  "week_of_year"
+ ],
+ "setup": "v2, deeper, absolute error",
+ "layer1": {
+  "2023": {
+   "train_years": [
+    2022,
+    2022
+   ],
+   "station_hours": 876000,
+   "riders": 49148692,
+   "all": {
+    "model": 0.14575415798032665,
+    "last_week": 0.19657418131828308,
+    "last_4_weeks": 0.17141389846801758
+   },
+   "ordinary_days": {
+    "model": 0.14055384974644686,
+    "last_week": 0.17900946736335754,
+    "last_4_weeks": 0.1512218862771988
+   },
+   "rainy_days": {
+    "model": 0.17820686457719243,
+    "last_week": 0.24400125443935394,
+    "last_4_weeks": 0.213759183883667,
+    "station_days": 2431
+   },
+   "holidays": {
+    "model": 0.30338174866879103,
+    "last_week": 0.7289817333221436,
+    "last_4_weeks": 0.7834584712982178
+   },
+   "mae": {
+    "model": 16.355311000672184,
+    "last_week": 22.05790901184082,
+    "last_4_weeks": 19.23463249206543
+   },
+   "ordinary_days_by_level": {
+    "station, direction, hour": {
+     "model": 0.14055384974644689,
+     "last_week": 0.17900946736335754
+    },
+    "station, hour": {
+     "model": 0.11864034362885716,
+     "last_week": 0.15173792839050293
+    },
+    "station, whole day": {
+     "model": 0.07312698723522236,
+     "last_week": 0.09801654517650604
+    },
+    "whole system, hour": {
+     "model": 0.06891618710331385,
+     "last_week": 0.09709080308675766
+    },
+    "whole system, whole day": {
+     "model": 0.048852587536911365,
+     "last_week": 0.07375781983137131
+    }
+   },
+   "ordinary_days_by_volume": {
+    "under 100 riders": {
+     "model": 0.21170196894908389,
+     "last_week": 0.2847984731197357,
+     "noise_floor": 0.10746169352993971,
+     "share_of_riders": 0.06410800665616989,
+     "station_hours": 189189
+    },
+    "100 to 300": {
+     "model": 0.1254255198957279,
+     "last_week": 0.17355157434940338,
+     "noise_floor": 0.05769566942330501,
+     "share_of_riders": 0.24442827701568604,
+     "station_hours": 128336
+    },
+    "300 to 1,000": {
+     "model": 0.09822612463669265,
+     "last_week": 0.13650035858154297,
+     "noise_floor": 0.03467788016112738,
+     "share_of_riders": 0.44183704257011414,
+     "station_hours": 82709
+    },
+    "1,000 to 3,000": {
+     "model": 0.10200820422262409,
+     "last_week": 0.12441372126340866,
+     "noise_floor": 0.020347961270446482,
+     "share_of_riders": 0.20115064084529877,
+     "station_hours": 12562
+    },
+    "over 3,000": {
+     "model": 0.21643798042943166,
+     "last_week": 0.1180446445941925,
+     "noise_floor": 0.014477912981123582,
+     "share_of_riders": 0.048476021736860275,
+     "station_hours": 1204
+    }
+   },
+   "noise_floor": {
+    "station, direction, hour": 0.057601354414283115,
+    "station, hour": 0.04185128429802182
+   }
+  },
+  "2024": {
+   "train_years": [
+    2022,
+    2023
+   ],
+   "station_hours": 878400,
+   "riders": 51841276,
+   "all": {
+    "model": 0.13792278685828707,
+    "last_week": 0.19938595592975616,
+    "last_4_weeks": 0.16860395669937134
+   },
+   "ordinary_days": {
+    "model": 0.13052950155752296,
+    "last_week": 0.1795968860387802,
+    "last_4_weeks": 0.14759120345115662
+   },
+   "rainy_days": {
+    "model": 0.1646495700873608,
+    "last_week": 0.24840475618839264,
+    "last_4_weeks": 0.21832795441150665,
+    "station_days": 2253
+   },
+   "holidays": {
+    "model": 0.370063564437562,
+    "last_week": 0.8207396268844604,
+    "last_4_weeks": 0.8283799290657043
+   },
+   "mae": {
+    "model": 16.279811612499163,
+    "last_week": 23.534658432006836,
+    "last_4_weeks": 19.901283264160156
+   },
+   "ordinary_days_by_level": {
+    "station, direction, hour": {
+     "model": 0.13052950155752294,
+     "last_week": 0.1795968860387802
+    },
+    "station, hour": {
+     "model": 0.10931963612503727,
+     "last_week": 0.15333972871303558
+    },
+    "station, whole day": {
+     "model": 0.06784558283225087,
+     "last_week": 0.10189108550548553
+    },
+    "whole system, hour": {
+     "model": 0.06552983756983273,
+     "last_week": 0.10220295935869217
+    },
+    "whole system, whole day": {
+     "model": 0.047876894941147545,
+     "last_week": 0.07837405800819397
+    }
+   },
+   "ordinary_days_by_volume": {
+    "under 100 riders": {
+     "model": 0.2069718133921352,
+     "last_week": 0.29698988795280457,
+     "noise_floor": 0.10697131194748245,
+     "share_of_riders": 0.05693724378943443,
+     "station_hours": 182048
+    },
+    "100 to 300": {
+     "model": 0.1171693254479723,
+     "last_week": 0.17614930868148804,
+     "noise_floor": 0.05807930909873666,
+     "share_of_riders": 0.2377861887216568,
+     "station_hours": 131389
+    },
+    "300 to 1,000": {
+     "model": 0.09637301223374659,
+     "last_week": 0.1390841156244278,
+     "noise_floor": 0.034731916676040885,
+     "share_of_riders": 0.4478091895580292,
+     "station_hours": 87944
+    },
+    "1,000 to 3,000": {
+     "model": 0.10153303714763075,
+     "last_week": 0.12753984332084656,
+     "noise_floor": 0.020416243659498772,
+     "share_of_riders": 0.2044101506471634,
+     "station_hours": 13642
+    },
+    "over 3,000": {
+     "model": 0.10861639308793922,
+     "last_week": 0.11667579412460327,
+     "noise_floor": 0.013272455537189826,
+     "share_of_riders": 0.05305727571249008,
+     "station_hours": 1377
+    }
+   },
+   "noise_floor": {
+    "station, direction, hour": 0.05621239817675638,
+    "station, hour": 0.040820092194976364
+   }
+  },
+  "2025": {
+   "train_years": [
+    2022,
+    2024
+   ],
+   "station_hours": 876000,
+   "riders": 54507356,
+   "all": {
+    "model": 0.13051003137109457,
+    "last_week": 0.2004716694355011,
+    "last_4_weeks": 0.17564278841018677
+   },
+   "ordinary_days": {
+    "model": 0.12631394739381457,
+    "last_week": 0.1825244277715683,
+    "last_4_weeks": 0.1541866958141327
+   },
+   "rainy_days": {
+    "model": 0.14399446459477347,
+    "last_week": 0.2463761568069458,
+    "last_4_weeks": 0.24594533443450928,
+    "station_days": 1459
+   },
+   "holidays": {
+    "model": 0.27127496352817393,
+    "last_week": 0.8025434613227844,
+    "last_4_weeks": 0.8954250812530518
+   },
+   "mae": {
+    "model": 16.2414537477521,
+    "last_week": 24.94790267944336,
+    "last_4_weeks": 21.85804557800293
+   },
+   "ordinary_days_by_level": {
+    "station, direction, hour": {
+     "model": 0.12631393784800243,
+     "last_week": 0.1825244128704071
+    },
+    "station, hour": {
+     "model": 0.10481216838815607,
+     "last_week": 0.15645158290863037
+    },
+    "station, whole day": {
+     "model": 0.061211162274575355,
+     "last_week": 0.1061553806066513
+    },
+    "whole system, hour": {
+     "model": 0.059628244330287725,
+     "last_week": 0.1071389764547348
+    },
+    "whole system, whole day": {
+     "model": 0.0405154046436513,
+     "last_week": 0.0845353901386261
+    }
+   },
+   "ordinary_days_by_volume": {
+    "under 100 riders": {
+     "model": 0.2743992886321024,
+     "last_week": 0.3506452441215515,
+     "noise_floor": 0.1032777988455409,
+     "share_of_riders": 0.050718385726213455,
+     "station_hours": 172510
+    },
+    "100 to 300": {
+     "model": 0.10934135799084262,
+     "last_week": 0.16871421039104462,
+     "noise_floor": 0.05778827921100038,
+     "share_of_riders": 0.2303633987903595,
+     "station_hours": 133819
+    },
+    "300 to 1,000": {
+     "model": 0.08727598354231766,
+     "last_week": 0.1432807743549347,
+     "noise_floor": 0.03466444724513359,
+     "share_of_riders": 0.44987592101097107,
+     "station_hours": 92594
+    },
+    "1,000 to 3,000": {
+     "model": 0.09384495609025871,
+     "last_week": 0.1349131464958191,
+     "noise_floor": 0.020501648587068412,
+     "share_of_riders": 0.20616120100021362,
+     "station_hours": 14585
+    },
+    "over 3,000": {
+     "model": 0.11285234704062522,
+     "last_week": 0.11974043399095535,
+     "noise_floor": 0.013159369832418322,
+     "share_of_riders": 0.06288110464811325,
+     "station_hours": 1692
+    }
+   },
+   "noise_floor": {
+    "station, direction, hour": 0.05495190672585678,
+    "station, hour": 0.039909023151464516
+   }
+  }
+ },
+ "rain_effect_2025": {
+  "light rain, 1 to 5 mm": {
+   "station_days": 1225,
+   "weekday commute (6-9am, 4-7pm)": {
+    "model_says": -0.013,
+    "actually_happened": -0.0171
+   },
+   "weekday midday and evening": {
+    "model_says": -0.0144,
+    "actually_happened": -0.017
+   },
+   "weekend": {
+    "model_says": -0.0411,
+    "actually_happened": -0.035
+   }
+  },
+  "rainy, 5 to 20 mm": {
+   "station_days": 1071,
+   "weekday commute (6-9am, 4-7pm)": {
+    "model_says": -0.0502,
+    "actually_happened": -0.0781
+   },
+   "weekday midday and evening": {
+    "model_says": -0.0594,
+    "actually_happened": -0.0749
+   },
+   "weekend": {
+    "model_says": -0.1072,
+    "actually_happened": -0.1515
+   }
+  },
+  "heavy rain, over 20 mm": {
+   "station_days": 388,
+   "weekday commute (6-9am, 4-7pm)": {
+    "model_says": -0.0878,
+    "actually_happened": -0.1255
+   },
+   "weekday midday and evening": {
+    "model_says": -0.1054,
+    "actually_happened": -0.1328
+   }
+  }
+ },
+ "rainy_day_mm": 5.0
+}

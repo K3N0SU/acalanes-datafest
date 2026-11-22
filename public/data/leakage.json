@@ -1,0 +1,341 @@
+{
+ "what": "extra riders arriving at an event by BART who did not leave by BART, 2025, from the hourly origin-destination file",
+ "rows_crunched": 9143257,
+ "average_fare": 4.63,
+ "venues": [
+  {
+   "venue": "Arena concerts at Oakland Arena (found by the search agent)",
+   "station": "COLS",
+   "events": 9,
+   "avg_extra_arrivals": 2426,
+   "avg_extra_departures": 2331,
+   "avg_not_carried_home": 95,
+   "share_not_carried_home": 0.039,
+   "total_not_carried_home": 860,
+   "fare_value": 4000,
+   "extra_departures_by_hour": {
+    "22:00": 179,
+    "23:00": 1428,
+    "0:00": 715,
+    "1:00": 22,
+    "2:00": 1
+   },
+   "where_the_crowd_comes_from": {
+    "San Francisco and Peninsula": 0.327,
+    "South Alameda and San Jose": 0.244,
+    "Oakland core": 0.149,
+    "Berkeley and Richmond": 0.144,
+    "Tri-Valley (Dublin line)": 0.073,
+    "Contra Costa (Antioch line)": 0.063
+   },
+   "where_it_goes_home_to": {
+    "San Francisco and Peninsula": 0.315,
+    "South Alameda and San Jose": 0.233,
+    "Oakland core": 0.17,
+    "Berkeley and Richmond": 0.148,
+    "Tri-Valley (Dublin line)": 0.074,
+    "Contra Costa (Antioch line)": 0.061
+   },
+   "top_origin_stations": {
+    "EMBR": 182,
+    "DBRK": 176,
+    "BERY": 138,
+    "POWL": 124,
+    "CIVC": 112,
+    "DUBL": 100
+   },
+   "nights": [
+    {
+     "date": "2025-11-14",
+     "start_hour": 20,
+     "extra_arrivals": 3292,
+     "extra_departures": 2351,
+     "not_carried_home": 941
+    },
+    {
+     "date": "2025-10-07",
+     "start_hour": 20,
+     "extra_arrivals": 1716,
+     "extra_departures": 1237,
+     "not_carried_home": 478
+    },
+    {
+     "date": "2025-09-29",
+     "start_hour": 20,
+     "extra_arrivals": 2120,
+     "extra_departures": 1978,
+     "not_carried_home": 142
+    },
+    {
+     "date": "2025-02-24",
+     "start_hour": 20,
+     "extra_arrivals": 2399,
+     "extra_departures": 2290,
+     "not_carried_home": 109
+    },
+    {
+     "date": "2025-10-22",
+     "start_hour": 20,
+     "extra_arrivals": 2349,
+     "extra_departures": 2255,
+     "not_carried_home": 94
+    }
+   ]
+  },
+  {
+   "venue": "Giants night games at Oracle Park",
+   "station": "EMBR",
+   "events": 47,
+   "avg_extra_arrivals": 1656,
+   "avg_extra_departures": 1479,
+   "avg_not_carried_home": 177,
+   "share_not_carried_home": 0.107,
+   "total_not_carried_home": 8330,
+   "fare_value": 38600,
+   "extra_departures_by_hour": {
+    "20:00": 35,
+    "21:00": 273,
+    "22:00": 738,
+    "23:00": 409,
+    "0:00": 62,
+    "1:00": 3
+   },
+   "where_the_crowd_comes_from": {
+    "Contra Costa (Antioch line)": 0.266,
+    "Berkeley and Richmond": 0.194,
+    "Oakland core": 0.176,
+    "Tri-Valley (Dublin line)": 0.143,
+    "San Francisco and Peninsula": 0.12,
+    "South Alameda and San Jose": 0.101
+   },
+   "where_it_goes_home_to": {
+    "Contra Costa (Antioch line)": 0.261,
+    "Berkeley and Richmond": 0.186,
+    "Oakland core": 0.185,
+    "Tri-Valley (Dublin line)": 0.149,
+    "San Francisco and Peninsula": 0.11,
+    "South Alameda and San Jose": 0.108
+   },
+   "top_origin_stations": {
+    "DUBL": 159,
+    "WOAK": 113,
+    "DBRK": 104,
+    "WCRK": 102,
+    "LAFY": 95,
+    "ROCK": 72
+   },
+   "nights": [
+    {
+     "date": "2025-04-25",
+     "start_hour": 19,
+     "extra_arrivals": 3148,
+     "extra_departures": 2327,
+     "not_carried_home": 821
+    },
+    {
+     "date": "2025-08-29",
+     "start_hour": 19,
+     "extra_arrivals": 1450,
+     "extra_departures": 643,
+     "not_carried_home": 807
+    },
+    {
+     "date": "2025-05-16",
+     "start_hour": 19,
+     "extra_arrivals": 3433,
+     "extra_departures": 2665,
+     "not_carried_home": 768
+    },
+    {
+     "date": "2025-07-25",
+     "start_hour": 19,
+     "extra_arrivals": 2338,
+     "extra_departures": 1733,
+     "not_carried_home": 605
+    },
+    {
+     "date": "2025-05-02",
+     "start_hour": 19,
+     "extra_arrivals": 2178,
+     "extra_departures": 1624,
+     "not_carried_home": 554
+    }
+   ]
+  },
+  {
+   "venue": "Giants day games at Oracle Park",
+   "station": "EMBR",
+   "events": 34,
+   "avg_extra_arrivals": 2097,
+   "avg_extra_departures": 1570,
+   "avg_not_carried_home": 526,
+   "share_not_carried_home": 0.251,
+   "total_not_carried_home": 17911,
+   "fare_value": 82900,
+   "extra_departures_by_hour": {
+    "14:00": 23,
+    "15:00": 143,
+    "16:00": 631,
+    "17:00": 553,
+    "18:00": 128,
+    "19:00": 31,
+    "20:00": 59,
+    "21:00": 23
+   },
+   "where_the_crowd_comes_from": {
+    "Contra Costa (Antioch line)": 0.304,
+    "Tri-Valley (Dublin line)": 0.19,
+    "Berkeley and Richmond": 0.169,
+    "Oakland core": 0.144,
+    "South Alameda and San Jose": 0.106,
+    "San Francisco and Peninsula": 0.087
+   },
+   "where_it_goes_home_to": {
+    "Contra Costa (Antioch line)": 0.287,
+    "Tri-Valley (Dublin line)": 0.181,
+    "Berkeley and Richmond": 0.178,
+    "Oakland core": 0.147,
+    "San Francisco and Peninsula": 0.11,
+    "South Alameda and San Jose": 0.097
+   },
+   "top_origin_stations": {
+    "DUBL": 293,
+    "WCRK": 161,
+    "LAFY": 149,
+    "WOAK": 125,
+    "PHIL": 97,
+    "ROCK": 91
+   },
+   "nights": [
+    {
+     "date": "2025-06-19",
+     "start_hour": 13,
+     "extra_arrivals": 2164,
+     "extra_departures": -3999,
+     "not_carried_home": 6163
+    },
+    {
+     "date": "2025-05-21",
+     "start_hour": 12,
+     "extra_arrivals": 2562,
+     "extra_departures": 989,
+     "not_carried_home": 1573
+    },
+    {
+     "date": "2025-04-09",
+     "start_hour": 12,
+     "extra_arrivals": 2877,
+     "extra_departures": 1462,
+     "not_carried_home": 1415
+    },
+    {
+     "date": "2025-04-04",
+     "start_hour": 13,
+     "extra_arrivals": 2480,
+     "extra_departures": 1334,
+     "not_carried_home": 1146
+    },
+    {
+     "date": "2025-06-21",
+     "start_hour": 13,
+     "extra_arrivals": 2447,
+     "extra_departures": 1535,
+     "not_carried_home": 911
+    }
+   ]
+  },
+  {
+   "venue": "Cal football at Memorial Stadium",
+   "station": "DBRK",
+   "events": 6,
+   "avg_extra_arrivals": 1345,
+   "avg_extra_departures": 1090,
+   "avg_not_carried_home": 255,
+   "share_not_carried_home": 0.19,
+   "total_not_carried_home": 1531,
+   "fare_value": 7100,
+   "extra_departures_by_hour": {
+    "15:00": -3,
+    "16:00": 27,
+    "17:00": 103,
+    "18:00": 137,
+    "19:00": 138,
+    "20:00": 60,
+    "21:00": 66,
+    "22:00": 114,
+    "23:00": 268,
+    "0:00": 226,
+    "1:00": 22,
+    "2:00": 2
+   },
+   "where_the_crowd_comes_from": {
+    "San Francisco and Peninsula": 0.325,
+    "Berkeley and Richmond": 0.237,
+    "Contra Costa (Antioch line)": 0.15,
+    "South Alameda and San Jose": 0.147,
+    "Oakland core": 0.092,
+    "Tri-Valley (Dublin line)": 0.05
+   },
+   "where_it_goes_home_to": {
+    "San Francisco and Peninsula": 0.266,
+    "Berkeley and Richmond": 0.265,
+    "South Alameda and San Jose": 0.16,
+    "Contra Costa (Antioch line)": 0.15,
+    "Oakland core": 0.112,
+    "Tri-Valley (Dublin line)": 0.047
+   },
+   "top_origin_stations": {
+    "EMBR": 122,
+    "DELN": 108,
+    "PLZA": 102,
+    "POWL": 70,
+    "CIVC": 67,
+    "WCRK": 59
+   },
+   "nights": [
+    {
+     "date": "2025-09-13",
+     "start_hour": 19,
+     "extra_arrivals": 1651,
+     "extra_departures": 1046,
+     "not_carried_home": 605
+    },
+    {
+     "date": "2025-10-17",
+     "start_hour": 19,
+     "extra_arrivals": 1816,
+     "extra_departures": 1226,
+     "not_carried_home": 590
+    },
+    {
+     "date": "2025-10-04",
+     "start_hour": 19,
+     "extra_arrivals": 1456,
+     "extra_departures": 1125,
+     "not_carried_home": 331
+    },
+    {
+     "date": "2025-11-01",
+     "start_hour": 12,
+     "extra_arrivals": 1237,
+     "extra_departures": 1135,
+     "not_carried_home": 102
+    },
+    {
+     "date": "2025-09-06",
+     "start_hour": 15,
+     "extra_arrivals": 1730,
+     "extra_departures": 1773,
+     "not_carried_home": -43
+    }
+   ]
+  }
+ ],
+ "total_not_carried_home": 28632,
+ "fare_value": 132600,
+ "limits": [
+  "only events we have dates for: 81 Giants games, 6 Cal football games and the arena concerts the search agent identified",
+  "concert start time assumed 8 PM",
+  "some riders leave from a different station, which this counts as not carried home"
+ ]
+}

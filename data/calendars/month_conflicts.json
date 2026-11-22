@@ -1,0 +1,86 @@
+[
+ {
+  "event": "Stanford vs SMU football",
+  "date": "2026-11-28",
+  "venue": "Stanford Stadium",
+  "field": "venue",
+  "claims": [
+   {
+    "value": "Stanford Stadium",
+    "source_url": "https://gostanford.com/sports/football/schedule",
+    "from": "south_bay",
+    "note": "listed as a Stanford home game at 12:30",
+    "quote": "Sat, Nov 28 SMU Home Stanford Stadium 12:30 PM PST"
+   },
+   {
+    "value": "neutral site, venue not named",
+    "source_url": null,
+    "from": "sports",
+    "note": "the sports list read this game as a neutral-site game with the time to be decided; the page was not recorded"
+   }
+  ]
+ },
+ {
+  "event": "Rush: Fifty Something tour",
+  "date": "2026-12-06",
+  "venue": "SAP Center",
+  "field": "start_time",
+  "claims": [
+   {
+    "value": "19:30",
+    "source_url": "https://www.ticketmaster.com/venue/229393",
+    "from": "south_bay",
+    "note": "Ticketmaster venue listing",
+    "quote": "Sun, Dec 6, 7:30 PM: RUSH: Fifty Something (sapcenter.com lists 7:00 PM)"
+   },
+   {
+    "value": "19:00",
+    "source_url": "https://www.sapcenter.com/events",
+    "from": "south_bay",
+    "note": "the venue's own calendar was read as 7:00 pm"
+   }
+  ]
+ },
+ {
+  "event": "Anthony Jeselnik: Wrath of Man",
+  "date": "2026-11-21",
+  "venue": "The Masonic",
+  "field": "date",
+  "claims": [
+   {
+    "value": "2026-11-21",
+    "source_url": "https://sfmasonic.com/",
+    "from": "sf_venues",
+    "note": "the venue's calendar",
+    "quote": "Sat, Nov 21, 2026: Anthony Jeselnik: Wrath of Man (Songkick lists Nov 20; venue site says Nov 21)"
+   },
+   {
+    "value": "2026-11-20",
+    "source_url": null,
+    "from": "sf_venues",
+    "note": "a Songkick listing gave the night before; the page was not recorded"
+   }
+  ]
+ },
+ {
+  "event": "SantaCon San Francisco",
+  "date": "2026-12-12",
+  "venue": "Union Square (meet at noon), citywide bar crawl",
+  "field": "date",
+  "claims": [
+   {
+    "value": "2026-12-12",
+    "source_url": "https://www.goldengate.org/events/san-francisco-santacon-2026/",
+    "from": "holiday_civic",
+    "note": "Golden Gate Transit's event notice",
+    "quote": "Saturday, December 12, 2026, 12:00 PM - 08:00 PM, Meet at 12 noon at Union Square"
+   },
+   {
+    "value": "2026-12-14",
+    "source_url": null,
+    "from": "holiday_civic",
+    "note": "one outlier listing gave Monday 14 Dec; the page was not recorded"
+   }
+  ]
+ }
+]

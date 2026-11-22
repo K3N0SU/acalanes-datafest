@@ -1,0 +1,162 @@
+{
+ "model": "gemini-3.8-flash",
+ "by_type": {
+  "parade or festival": {
+   "days": 1,
+   "min": 0.162,
+   "max": 0.162
+  }
+ },
+ "days": [
+  {
+   "date": "2025-06-29",
+   "weekday": "Sunday",
+   "actual_vs_forecast": 0.602,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-02-15",
+   "weekday": "Saturday",
+   "actual_vs_forecast": 0.57,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-09-05",
+   "weekday": "Friday",
+   "actual_vs_forecast": -0.515,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-07-01",
+   "weekday": "Tuesday",
+   "actual_vs_forecast": -0.432,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-05-09",
+   "weekday": "Friday",
+   "actual_vs_forecast": -0.38,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-06-14",
+   "weekday": "Saturday",
+   "actual_vs_forecast": 0.318,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-04-05",
+   "weekday": "Saturday",
+   "actual_vs_forecast": 0.289,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-02-16",
+   "weekday": "Sunday",
+   "actual_vs_forecast": 0.28,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-10-18",
+   "weekday": "Saturday",
+   "actual_vs_forecast": 0.253,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-05-18",
+   "weekday": "Sunday",
+   "actual_vs_forecast": 0.233,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-01-02",
+   "weekday": "Thursday",
+   "actual_vs_forecast": -0.214,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-12-23",
+   "weekday": "Tuesday",
+   "actual_vs_forecast": -0.197,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-05-20",
+   "weekday": "Tuesday",
+   "actual_vs_forecast": -0.189,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-12-22",
+   "weekday": "Monday",
+   "actual_vs_forecast": -0.186,
+   "type": "unknown",
+   "cause": null,
+   "source_url": null,
+   "verified": false,
+   "note": "no cause with a retrievable source"
+  },
+  {
+   "date": "2025-05-25",
+   "weekday": "Sunday",
+   "actual_vs_forecast": 0.162,
+   "type": "parade or festival",
+   "cause": "The Carnaval San Francisco celebration and Grand Parade took place in the Mission District, drawing massive crowds that were encouraged to use nearby BART stations.",
+   "source_url": "https://www.kqed.org/news/12037920/carnaval-san-francisco-2025-parade-route-parking-street-closures",
+   "quote": "The Carnaval Grand Parade takes place on Sunday, May 25",
+   "verified": true
+  }
+ ]
+}

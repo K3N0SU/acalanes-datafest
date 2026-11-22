@@ -1,0 +1,2109 @@
+{
+ "what": "a model trained only on days within 6 days of a holiday: system day, then station day, then station hour",
+ "trained_on": {
+  "years": "2019, 2021 to the year before the test year",
+  "window_days_in_final_model": 915,
+  "holidays": [
+   "New Year's Day",
+   "MLK Day",
+   "Presidents' Day",
+   "Easter",
+   "Memorial Day",
+   "Juneteenth",
+   "Independence Day",
+   "Labor Day",
+   "Columbus Day",
+   "Halloween",
+   "Veterans Day",
+   "Thanksgiving",
+   "Day after Thanksgiving",
+   "Christmas Eve",
+   "Christmas Day",
+   "New Year's Eve"
+  ]
+ },
+ "test": {
+  "2024": {
+   "chosen_on_earlier_years": {
+    "weight_on_holiday_model": 0.5,
+    "reach_days": 6,
+    "years_used": [
+     2023
+    ]
+   },
+   "days_changed": 163,
+   "hourly_error_on_those_days": {
+    "day model": 0.1377,
+    "holiday model alone": 0.1216,
+    "blend": 0.1196
+   },
+   "system_daily_total_error_on_those_days": {
+    "day model": 0.0967,
+    "holiday model alone": 0.0708,
+    "blend": 0.0714
+   },
+   "holiday_days_that_were_10pct_off": {
+    "days": 27,
+    "day model": 0.325,
+    "blend": 0.2275
+   },
+   "whole_year_hourly_error": {
+    "day model": 0.1163,
+    "blend": 0.1086
+   },
+   "grid_this_year_for_reference": {
+    "w0.0 k0": 0.1163,
+    "w0.0 k1": 0.1163,
+    "w0.0 k2": 0.1163,
+    "w0.0 k3": 0.1163,
+    "w0.0 k6": 0.1163,
+    "w0.25 k0": 0.1142,
+    "w0.25 k1": 0.1138,
+    "w0.25 k2": 0.1132,
+    "w0.25 k3": 0.1128,
+    "w0.25 k6": 0.1116,
+    "w0.5 k0": 0.1126,
+    "w0.5 k1": 0.1119,
+    "w0.5 k2": 0.1108,
+    "w0.5 k3": 0.1103,
+    "w0.5 k6": 0.1086,
+    "w0.75 k0": 0.1116,
+    "w0.75 k1": 0.1108,
+    "w0.75 k2": 0.1095,
+    "w0.75 k3": 0.109,
+    "w0.75 k6": 0.1077,
+    "w1.0 k0": 0.1116,
+    "w1.0 k1": 0.1108,
+    "w1.0 k2": 0.1098,
+    "w1.0 k3": 0.1097,
+    "w1.0 k6": 0.1095
+   },
+   "holidays": [
+    {
+     "date": "2024-01-01",
+     "weekday": "Mon",
+     "holiday": "New Year's Day",
+     "actual_riders": 102476,
+     "day_model_off_by": 0.1778,
+     "holiday_model_off_by": -0.231,
+     "blend_off_by": -0.0266,
+     "day_model_hourly_error": 0.5069,
+     "holiday_model_hourly_error": 0.3492,
+     "blend_hourly_error": 0.3719
+    },
+    {
+     "date": "2024-01-15",
+     "weekday": "Mon",
+     "holiday": "MLK Day",
+     "actual_riders": 149326,
+     "day_model_off_by": 0.1847,
+     "holiday_model_off_by": -0.0243,
+     "blend_off_by": 0.0802,
+     "day_model_hourly_error": 0.2103,
+     "holiday_model_hourly_error": 0.1486,
+     "blend_hourly_error": 0.1469
+    },
+    {
+     "date": "2024-02-19",
+     "weekday": "Mon",
+     "holiday": "Presidents' Day",
+     "actual_riders": 145398,
+     "day_model_off_by": -0.0544,
+     "holiday_model_off_by": 0.0918,
+     "blend_off_by": 0.0187,
+     "day_model_hourly_error": 0.1847,
+     "holiday_model_hourly_error": 0.2935,
+     "blend_hourly_error": 0.2051
+    },
+    {
+     "date": "2024-03-31",
+     "weekday": "Sun",
+     "holiday": "Easter",
+     "actual_riders": 126276,
+     "day_model_off_by": 0.0445,
+     "holiday_model_off_by": 0.0289,
+     "blend_off_by": 0.0367,
+     "day_model_hourly_error": 0.1584,
+     "holiday_model_hourly_error": 0.1689,
+     "blend_hourly_error": 0.1595
+    },
+    {
+     "date": "2024-05-27",
+     "weekday": "Mon",
+     "holiday": "Memorial Day",
+     "actual_riders": 135684,
+     "day_model_off_by": -0.0266,
+     "holiday_model_off_by": -0.0555,
+     "blend_off_by": -0.0411,
+     "day_model_hourly_error": 0.1671,
+     "holiday_model_hourly_error": 0.1903,
+     "blend_hourly_error": 0.1622
+    },
+    {
+     "date": "2024-06-19",
+     "weekday": "Wed",
+     "holiday": "Juneteenth",
+     "actual_riders": 240206,
+     "day_model_off_by": 0.1567,
+     "holiday_model_off_by": 0.0252,
+     "blend_off_by": 0.091,
+     "day_model_hourly_error": 0.2155,
+     "holiday_model_hourly_error": 0.1245,
+     "blend_hourly_error": 0.1538
+    },
+    {
+     "date": "2024-07-04",
+     "weekday": "Thu",
+     "holiday": "Independence Day",
+     "actual_riders": 156162,
+     "day_model_off_by": 0.5999,
+     "holiday_model_off_by": -0.1337,
+     "blend_off_by": 0.2331,
+     "day_model_hourly_error": 0.8022,
+     "holiday_model_hourly_error": 0.2556,
+     "blend_hourly_error": 0.4746
+    },
+    {
+     "date": "2024-09-02",
+     "weekday": "Mon",
+     "holiday": "Labor Day",
+     "actual_riders": 147446,
+     "day_model_off_by": -0.052,
+     "holiday_model_off_by": -0.0756,
+     "blend_off_by": -0.0638,
+     "day_model_hourly_error": 0.1916,
+     "holiday_model_hourly_error": 0.2138,
+     "blend_hourly_error": 0.191
+    },
+    {
+     "date": "2024-10-14",
+     "weekday": "Mon",
+     "holiday": "Columbus Day",
+     "actual_riders": 272998,
+     "day_model_off_by": -0.0025,
+     "holiday_model_off_by": -0.0244,
+     "blend_off_by": -0.0135,
+     "day_model_hourly_error": 0.1024,
+     "holiday_model_hourly_error": 0.0915,
+     "blend_hourly_error": 0.0879
+    },
+    {
+     "date": "2024-10-31",
+     "weekday": "Thu",
+     "holiday": "Halloween",
+     "actual_riders": 360656,
+     "day_model_off_by": 0.0799,
+     "holiday_model_off_by": -0.0528,
+     "blend_off_by": 0.0136,
+     "day_model_hourly_error": 0.1209,
+     "holiday_model_hourly_error": 0.0923,
+     "blend_hourly_error": 0.0907
+    },
+    {
+     "date": "2024-11-11",
+     "weekday": "Mon",
+     "holiday": "Veterans Day",
+     "actual_riders": 215962,
+     "day_model_off_by": 0.1181,
+     "holiday_model_off_by": 0.1256,
+     "blend_off_by": 0.1218,
+     "day_model_hourly_error": 0.1761,
+     "holiday_model_hourly_error": 0.165,
+     "blend_hourly_error": 0.1617
+    },
+    {
+     "date": "2024-11-28",
+     "weekday": "Thu",
+     "holiday": "Thanksgiving",
+     "actual_riders": 90390,
+     "day_model_off_by": 1.7892,
+     "holiday_model_off_by": 0.1257,
+     "blend_off_by": 0.9574,
+     "day_model_hourly_error": 1.8223,
+     "holiday_model_hourly_error": 0.2544,
+     "blend_hourly_error": 1.0103
+    },
+    {
+     "date": "2024-11-29",
+     "weekday": "Fri",
+     "holiday": "Day after Thanksgiving",
+     "actual_riders": 177854,
+     "day_model_off_by": 0.5892,
+     "holiday_model_off_by": -0.0711,
+     "blend_off_by": 0.259,
+     "day_model_hourly_error": 0.6579,
+     "holiday_model_hourly_error": 0.1336,
+     "blend_hourly_error": 0.3379
+    },
+    {
+     "date": "2024-12-24",
+     "weekday": "Tue",
+     "holiday": "Christmas Eve",
+     "actual_riders": 161772,
+     "day_model_off_by": 0.1735,
+     "holiday_model_off_by": -0.065,
+     "blend_off_by": 0.0542,
+     "day_model_hourly_error": 0.2665,
+     "holiday_model_hourly_error": 0.183,
+     "blend_hourly_error": 0.1691
+    },
+    {
+     "date": "2024-12-25",
+     "weekday": "Wed",
+     "holiday": "Christmas Day",
+     "actual_riders": 76010,
+     "day_model_off_by": 0.9711,
+     "holiday_model_off_by": 0.0954,
+     "blend_off_by": 0.5332,
+     "day_model_hourly_error": 0.9993,
+     "holiday_model_hourly_error": 0.2787,
+     "blend_hourly_error": 0.606
+    },
+    {
+     "date": "2024-12-31",
+     "weekday": "Tue",
+     "holiday": "New Year's Eve",
+     "actual_riders": 219840,
+     "day_model_off_by": 0.3638,
+     "holiday_model_off_by": -0.2285,
+     "blend_off_by": 0.0676,
+     "day_model_hourly_error": 0.5168,
+     "holiday_model_hourly_error": 0.2423,
+     "blend_hourly_error": 0.2789
+    }
+   ]
+  },
+  "2025": {
+   "chosen_on_earlier_years": {
+    "weight_on_holiday_model": 0.75,
+    "reach_days": 6,
+    "years_used": [
+     2023,
+     2024
+    ]
+   },
+   "days_changed": 163,
+   "hourly_error_on_those_days": {
+    "day model": 0.1263,
+    "holiday model alone": 0.1297,
+    "blend": 0.1223
+   },
+   "system_daily_total_error_on_those_days": {
+    "day model": 0.0779,
+    "holiday model alone": 0.0833,
+    "blend": 0.0758
+   },
+   "holiday_days_that_were_10pct_off": {
+    "days": 24,
+    "day model": 0.2693,
+    "blend": 0.2148
+   },
+   "whole_year_hourly_error": {
+    "day model": 0.1087,
+    "blend": 0.107
+   },
+   "grid_this_year_for_reference": {
+    "w0.0 k0": 0.1087,
+    "w0.0 k1": 0.1087,
+    "w0.0 k2": 0.1087,
+    "w0.0 k3": 0.1087,
+    "w0.0 k6": 0.1087,
+    "w0.25 k0": 0.1074,
+    "w0.25 k1": 0.1071,
+    "w0.25 k2": 0.1071,
+    "w0.25 k3": 0.1068,
+    "w0.25 k6": 0.1064,
+    "w0.5 k0": 0.1065,
+    "w0.5 k1": 0.1061,
+    "w0.5 k2": 0.1062,
+    "w0.5 k3": 0.1059,
+    "w0.5 k6": 0.1057,
+    "w0.75 k0": 0.1061,
+    "w0.75 k1": 0.1059,
+    "w0.75 k2": 0.1063,
+    "w0.75 k3": 0.1062,
+    "w0.75 k6": 0.107,
+    "w1.0 k0": 0.1064,
+    "w1.0 k1": 0.1066,
+    "w1.0 k2": 0.1075,
+    "w1.0 k3": 0.1078,
+    "w1.0 k6": 0.1101
+   },
+   "holidays": [
+    {
+     "date": "2025-01-01",
+     "weekday": "Wed",
+     "holiday": "New Year's Day",
+     "actual_riders": 116078,
+     "day_model_off_by": 0.0871,
+     "holiday_model_off_by": -0.1571,
+     "blend_off_by": -0.0961,
+     "day_model_hourly_error": 0.3746,
+     "holiday_model_hourly_error": 0.2923,
+     "blend_hourly_error": 0.2986
+    },
+    {
+     "date": "2025-01-20",
+     "weekday": "Mon",
+     "holiday": "MLK Day",
+     "actual_riders": 167880,
+     "day_model_off_by": 0.2559,
+     "holiday_model_off_by": -0.1576,
+     "blend_off_by": -0.0542,
+     "day_model_hourly_error": 0.3571,
+     "holiday_model_hourly_error": 0.1926,
+     "blend_hourly_error": 0.1678
+    },
+    {
+     "date": "2025-02-17",
+     "weekday": "Mon",
+     "holiday": "Presidents' Day",
+     "actual_riders": 184412,
+     "day_model_off_by": -0.1661,
+     "holiday_model_off_by": -0.0859,
+     "blend_off_by": -0.1059,
+     "day_model_hourly_error": 0.1879,
+     "holiday_model_hourly_error": 0.1732,
+     "blend_hourly_error": 0.1604
+    },
+    {
+     "date": "2025-04-20",
+     "weekday": "Sun",
+     "holiday": "Easter",
+     "actual_riders": 159788,
+     "day_model_off_by": -0.0255,
+     "holiday_model_off_by": -0.1458,
+     "blend_off_by": -0.1157,
+     "day_model_hourly_error": 0.1383,
+     "holiday_model_hourly_error": 0.1774,
+     "blend_hourly_error": 0.158
+    },
+    {
+     "date": "2025-05-26",
+     "weekday": "Mon",
+     "holiday": "Memorial Day",
+     "actual_riders": 140376,
+     "day_model_off_by": 0.0477,
+     "holiday_model_off_by": 0.0535,
+     "blend_off_by": 0.0521,
+     "day_model_hourly_error": 0.1446,
+     "holiday_model_hourly_error": 0.1732,
+     "blend_hourly_error": 0.1561
+    },
+    {
+     "date": "2025-06-19",
+     "weekday": "Thu",
+     "holiday": "Juneteenth",
+     "actual_riders": 279820,
+     "day_model_off_by": -0.1929,
+     "holiday_model_off_by": -0.0092,
+     "blend_off_by": -0.0551,
+     "day_model_hourly_error": 0.2172,
+     "holiday_model_hourly_error": 0.1457,
+     "blend_hourly_error": 0.1399
+    },
+    {
+     "date": "2025-07-04",
+     "weekday": "Fri",
+     "holiday": "Independence Day",
+     "actual_riders": 171020,
+     "day_model_off_by": 0.0364,
+     "holiday_model_off_by": -0.0746,
+     "blend_off_by": -0.0468,
+     "day_model_hourly_error": 0.2571,
+     "holiday_model_hourly_error": 0.2409,
+     "blend_hourly_error": 0.2258
+    },
+    {
+     "date": "2025-09-01",
+     "weekday": "Mon",
+     "holiday": "Labor Day",
+     "actual_riders": 147414,
+     "day_model_off_by": 0.0706,
+     "holiday_model_off_by": 0.0624,
+     "blend_off_by": 0.0645,
+     "day_model_hourly_error": 0.1684,
+     "holiday_model_hourly_error": 0.2035,
+     "blend_hourly_error": 0.1851
+    },
+    {
+     "date": "2025-10-13",
+     "weekday": "Mon",
+     "holiday": "Columbus Day",
+     "actual_riders": 256586,
+     "day_model_off_by": -0.0422,
+     "holiday_model_off_by": 0.0813,
+     "blend_off_by": 0.0504,
+     "day_model_hourly_error": 0.1183,
+     "holiday_model_hourly_error": 0.1249,
+     "blend_hourly_error": 0.1062
+    },
+    {
+     "date": "2025-10-31",
+     "weekday": "Fri",
+     "holiday": "Halloween",
+     "actual_riders": 305460,
+     "day_model_off_by": 0.0356,
+     "holiday_model_off_by": -0.0077,
+     "blend_off_by": 0.0031,
+     "day_model_hourly_error": 0.1134,
+     "holiday_model_hourly_error": 0.1005,
+     "blend_hourly_error": 0.1017
+    },
+    {
+     "date": "2025-11-11",
+     "weekday": "Tue",
+     "holiday": "Veterans Day",
+     "actual_riders": 286566,
+     "day_model_off_by": -0.1949,
+     "holiday_model_off_by": 0.0214,
+     "blend_off_by": -0.0327,
+     "day_model_hourly_error": 0.2182,
+     "holiday_model_hourly_error": 0.1359,
+     "blend_hourly_error": 0.1263
+    },
+    {
+     "date": "2025-11-27",
+     "weekday": "Thu",
+     "holiday": "Thanksgiving",
+     "actual_riders": 89758,
+     "day_model_off_by": -0.2176,
+     "holiday_model_off_by": 0.1207,
+     "blend_off_by": 0.0361,
+     "day_model_hourly_error": 0.2732,
+     "holiday_model_hourly_error": 0.2583,
+     "blend_hourly_error": 0.1858
+    },
+    {
+     "date": "2025-11-28",
+     "weekday": "Fri",
+     "holiday": "Day after Thanksgiving",
+     "actual_riders": 167548,
+     "day_model_off_by": 0.0288,
+     "holiday_model_off_by": 0.0334,
+     "blend_off_by": 0.0323,
+     "day_model_hourly_error": 0.1219,
+     "holiday_model_hourly_error": 0.1422,
+     "blend_hourly_error": 0.1285
+    },
+    {
+     "date": "2025-12-24",
+     "weekday": "Wed",
+     "holiday": "Christmas Eve",
+     "actual_riders": 142686,
+     "day_model_off_by": 0.2891,
+     "holiday_model_off_by": 0.034,
+     "blend_off_by": 0.0978,
+     "day_model_hourly_error": 0.3727,
+     "holiday_model_hourly_error": 0.1663,
+     "blend_hourly_error": 0.1855
+    },
+    {
+     "date": "2025-12-25",
+     "weekday": "Thu",
+     "holiday": "Christmas Day",
+     "actual_riders": 56626,
+     "day_model_off_by": 0.8608,
+     "holiday_model_off_by": 0.2971,
+     "blend_off_by": 0.438,
+     "day_model_hourly_error": 0.8663,
+     "holiday_model_hourly_error": 0.4141,
+     "blend_hourly_error": 0.5048
+    },
+    {
+     "date": "2025-12-31",
+     "weekday": "Wed",
+     "holiday": "New Year's Eve",
+     "actual_riders": 159352,
+     "day_model_off_by": -0.0045,
+     "holiday_model_off_by": 0.1023,
+     "blend_off_by": 0.0756,
+     "day_model_hourly_error": 0.1452,
+     "holiday_model_hourly_error": 0.2181,
+     "blend_hourly_error": 0.1863
+    }
+   ]
+  }
+ },
+ "reach_and_depth": {
+  "Easter": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0338,
+     "model": 0.0322,
+     "days": 6
+    },
+    "-5": {
+     "measured": 0.056,
+     "model": 0.0368,
+     "days": 6
+    },
+    "-4": {
+     "measured": 0.0346,
+     "model": 0.0283,
+     "days": 6
+    },
+    "-3": {
+     "measured": 0.018,
+     "model": 0.0076,
+     "days": 6
+    },
+    "-2": {
+     "measured": -0.0136,
+     "model": 0.001,
+     "days": 6
+    },
+    "-1": {
+     "measured": 0.0923,
+     "model": 0.0639,
+     "days": 6
+    },
+    "0": {
+     "measured": 0.0439,
+     "model": 0.0776,
+     "days": 6
+    },
+    "1": {
+     "measured": 0.0424,
+     "model": 0.0437,
+     "days": 6
+    },
+    "2": {
+     "measured": 0.0634,
+     "model": 0.055,
+     "days": 6
+    },
+    "3": {
+     "measured": 0.0509,
+     "model": 0.0472,
+     "days": 6
+    },
+    "4": {
+     "measured": 0.0334,
+     "model": 0.0415,
+     "days": 6
+    },
+    "5": {
+     "measured": 0.0494,
+     "model": 0.0502,
+     "days": 6
+    },
+    "6": {
+     "measured": 0.0618,
+     "model": 0.0415,
+     "days": 6
+    }
+   },
+   "deepest": "-2",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Memorial Day": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0065,
+     "model": 0.005,
+     "days": 6
+    },
+    "-5": {
+     "measured": 0.0078,
+     "model": 0.0177,
+     "days": 6
+    },
+    "-4": {
+     "measured": -0.0025,
+     "model": 0.0094,
+     "days": 6
+    },
+    "-3": {
+     "measured": -0.0392,
+     "model": -0.0209,
+     "days": 6
+    },
+    "-2": {
+     "measured": 0.0139,
+     "model": 0.0238,
+     "days": 6
+    },
+    "-1": {
+     "measured": 0.2544,
+     "model": 0.2185,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.5542,
+     "model": -0.5465,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.0588,
+     "model": -0.0593,
+     "days": 6
+    },
+    "2": {
+     "measured": -0.0136,
+     "model": -0.0129,
+     "days": 6
+    },
+    "3": {
+     "measured": -0.0042,
+     "model": 0.001,
+     "days": 6
+    },
+    "4": {
+     "measured": 0.0204,
+     "model": 0.0047,
+     "days": 6
+    },
+    "5": {
+     "measured": 0.0014,
+     "model": 0.0042,
+     "days": 6
+    },
+    "6": {
+     "measured": 0.0168,
+     "model": 0.0104,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Independence Day": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0404,
+     "model": 0.0702,
+     "days": 6
+    },
+    "-5": {
+     "measured": 0.1898,
+     "model": 0.2265,
+     "days": 6
+    },
+    "-4": {
+     "measured": 0.0971,
+     "model": 0.1283,
+     "days": 6
+    },
+    "-3": {
+     "measured": -0.0398,
+     "model": -0.0268,
+     "days": 6
+    },
+    "-2": {
+     "measured": -0.05,
+     "model": -0.0384,
+     "days": 6
+    },
+    "-1": {
+     "measured": -0.1236,
+     "model": -0.0701,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.5356,
+     "model": -0.4387,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.1494,
+     "model": -0.1362,
+     "days": 5
+    },
+    "2": {
+     "measured": -0.0907,
+     "model": -0.0838,
+     "days": 5
+    },
+    "3": {
+     "measured": -0.0284,
+     "model": -0.0247,
+     "days": 5
+    },
+    "4": {
+     "measured": -0.0186,
+     "model": -0.0182,
+     "days": 5
+    },
+    "5": {
+     "measured": -0.007,
+     "model": -0.0132,
+     "days": 5
+    },
+    "6": {
+     "measured": -0.0013,
+     "model": -0.0048,
+     "days": 5
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 2
+  },
+  "Labor Day": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0607,
+     "model": 0.059,
+     "days": 6
+    },
+    "-5": {
+     "measured": 0.0654,
+     "model": 0.0563,
+     "days": 6
+    },
+    "-4": {
+     "measured": 0.0379,
+     "model": 0.0289,
+     "days": 6
+    },
+    "-3": {
+     "measured": 0.0127,
+     "model": 0.0138,
+     "days": 6
+    },
+    "-2": {
+     "measured": 0.0023,
+     "model": 0.0042,
+     "days": 6
+    },
+    "-1": {
+     "measured": 0.078,
+     "model": 0.0459,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.5248,
+     "model": -0.5198,
+     "days": 6
+    },
+    "1": {
+     "measured": 0.0318,
+     "model": 0.0254,
+     "days": 6
+    },
+    "2": {
+     "measured": 0.0706,
+     "model": 0.0647,
+     "days": 6
+    },
+    "3": {
+     "measured": 0.0877,
+     "model": 0.0714,
+     "days": 6
+    },
+    "4": {
+     "measured": 0.0844,
+     "model": 0.0763,
+     "days": 6
+    },
+    "5": {
+     "measured": 0.0845,
+     "model": 0.0999,
+     "days": 6
+    },
+    "6": {
+     "measured": 0.0713,
+     "model": 0.0501,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Columbus Day": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0151,
+     "model": 0.0229,
+     "days": 6
+    },
+    "-5": {
+     "measured": 0.0227,
+     "model": 0.0222,
+     "days": 6
+    },
+    "-4": {
+     "measured": 0.0137,
+     "model": 0.0251,
+     "days": 6
+    },
+    "-3": {
+     "measured": 0.0561,
+     "model": 0.0544,
+     "days": 6
+    },
+    "-2": {
+     "measured": 0.1733,
+     "model": 0.1097,
+     "days": 6
+    },
+    "-1": {
+     "measured": 0.2208,
+     "model": 0.1735,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.151,
+     "model": -0.1819,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.0051,
+     "model": -0.0014,
+     "days": 6
+    },
+    "2": {
+     "measured": 0.0015,
+     "model": 0.0025,
+     "days": 6
+    },
+    "3": {
+     "measured": 0.0111,
+     "model": 0.015,
+     "days": 6
+    },
+    "4": {
+     "measured": 0.0213,
+     "model": 0.0192,
+     "days": 6
+    },
+    "5": {
+     "measured": 0.0127,
+     "model": 0.0252,
+     "days": 6
+    },
+    "6": {
+     "measured": -0.0495,
+     "model": -0.024,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Halloween": {
+   "by_offset": {
+    "-6": {
+     "measured": -0.0178,
+     "model": -0.0215,
+     "days": 6
+    },
+    "-5": {
+     "measured": -0.021,
+     "model": -0.0345,
+     "days": 6
+    },
+    "-4": {
+     "measured": -0.0026,
+     "model": -0.0089,
+     "days": 6
+    },
+    "-3": {
+     "measured": -0.0054,
+     "model": 0.0066,
+     "days": 6
+    },
+    "-2": {
+     "measured": 0.0034,
+     "model": 0.0048,
+     "days": 6
+    },
+    "-1": {
+     "measured": -0.0021,
+     "model": 0.0014,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.0687,
+     "model": -0.0608,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.0386,
+     "model": -0.0374,
+     "days": 6
+    },
+    "2": {
+     "measured": 0.0362,
+     "model": 0.0374,
+     "days": 6
+    },
+    "3": {
+     "measured": 0.0043,
+     "model": 0.0084,
+     "days": 6
+    },
+    "4": {
+     "measured": 0.0086,
+     "model": 0.0185,
+     "days": 6
+    },
+    "5": {
+     "measured": -0.0318,
+     "model": -0.0134,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Veterans Day": {
+   "by_offset": {
+    "-5": {
+     "measured": 0.0047,
+     "model": 0.0254,
+     "days": 5
+    },
+    "-4": {
+     "measured": -0.006,
+     "model": 0.0107,
+     "days": 5
+    },
+    "-3": {
+     "measured": -0.0351,
+     "model": -0.0237,
+     "days": 5
+    },
+    "-2": {
+     "measured": -0.0139,
+     "model": -0.0144,
+     "days": 5
+    },
+    "-1": {
+     "measured": -0.0349,
+     "model": -0.0116,
+     "days": 5
+    },
+    "0": {
+     "measured": -0.2121,
+     "model": -0.2052,
+     "days": 6
+    },
+    "1": {
+     "measured": 0.0061,
+     "model": 0.0079,
+     "days": 6
+    },
+    "2": {
+     "measured": -0.0055,
+     "model": -0.0112,
+     "days": 6
+    },
+    "3": {
+     "measured": -0.0026,
+     "model": -0.0001,
+     "days": 6
+    },
+    "4": {
+     "measured": -0.0076,
+     "model": -0.0044,
+     "days": 6
+    },
+    "5": {
+     "measured": -0.0135,
+     "model": -0.0148,
+     "days": 6
+    },
+    "6": {
+     "measured": -0.0112,
+     "model": -0.0111,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Thanksgiving": {
+   "by_offset": {
+    "-6": {
+     "measured": -0.0193,
+     "model": -0.0407,
+     "days": 5
+    },
+    "-5": {
+     "measured": -0.037,
+     "model": -0.0263,
+     "days": 6
+    },
+    "-4": {
+     "measured": -0.0358,
+     "model": -0.0352,
+     "days": 6
+    },
+    "-3": {
+     "measured": -0.0791,
+     "model": -0.0919,
+     "days": 6
+    },
+    "-2": {
+     "measured": -0.1709,
+     "model": -0.1866,
+     "days": 6
+    },
+    "-1": {
+     "measured": -0.3096,
+     "model": -0.2984,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.7683,
+     "model": -0.7379,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": -3,
+   "reaches_to": 0
+  },
+  "Day after Thanksgiving": {
+   "by_offset": {
+    "0": {
+     "measured": -0.434,
+     "model": -0.45,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.1634,
+     "model": -0.1649,
+     "days": 6
+    },
+    "2": {
+     "measured": -0.0853,
+     "model": -0.0849,
+     "days": 6
+    },
+    "3": {
+     "measured": -0.0308,
+     "model": -0.0267,
+     "days": 6
+    },
+    "4": {
+     "measured": -0.0398,
+     "model": -0.0428,
+     "days": 6
+    },
+    "5": {
+     "measured": -0.0262,
+     "model": -0.0271,
+     "days": 6
+    },
+    "6": {
+     "measured": -0.0293,
+     "model": -0.0315,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 2
+  },
+  "Christmas Eve": {
+   "by_offset": {
+    "-6": {
+     "measured": -0.0387,
+     "model": -0.0619,
+     "days": 6
+    },
+    "-5": {
+     "measured": -0.0904,
+     "model": -0.0846,
+     "days": 6
+    },
+    "-4": {
+     "measured": -0.1065,
+     "model": -0.0852,
+     "days": 6
+    },
+    "-3": {
+     "measured": -0.1731,
+     "model": -0.1607,
+     "days": 6
+    },
+    "-2": {
+     "measured": -0.2415,
+     "model": -0.2075,
+     "days": 6
+    },
+    "-1": {
+     "measured": -0.2834,
+     "model": -0.2815,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.5766,
+     "model": -0.5071,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": -5,
+   "reaches_to": 0
+  },
+  "Christmas Day": {
+   "by_offset": {
+    "0": {
+     "measured": -0.7856,
+     "model": -0.735,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.4901,
+     "model": -0.4692,
+     "days": 5
+    },
+    "2": {
+     "measured": -0.3586,
+     "model": -0.3465,
+     "days": 5
+    },
+    "3": {
+     "measured": -0.1872,
+     "model": -0.2526,
+     "days": 5
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 3
+  },
+  "New Year's Eve": {
+   "by_offset": {
+    "-2": {
+     "measured": -0.3719,
+     "model": -0.3207,
+     "days": 6
+    },
+    "-1": {
+     "measured": -0.3638,
+     "model": -0.3434,
+     "days": 6
+    },
+    "0": {
+     "measured": -0.4487,
+     "model": -0.4243,
+     "days": 6
+    }
+   },
+   "deepest": "0",
+   "reaches_from": -2,
+   "reaches_to": 0
+  },
+  "Presidents' Day": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0564,
+     "model": 0.0725,
+     "days": 5
+    },
+    "-5": {
+     "measured": 0.0444,
+     "model": 0.0655,
+     "days": 5
+    },
+    "-4": {
+     "measured": 0.0365,
+     "model": 0.0596,
+     "days": 5
+    },
+    "-3": {
+     "measured": 0.0761,
+     "model": 0.0833,
+     "days": 5
+    },
+    "-2": {
+     "measured": 0.0862,
+     "model": 0.1018,
+     "days": 5
+    },
+    "-1": {
+     "measured": 0.1938,
+     "model": 0.187,
+     "days": 5
+    },
+    "0": {
+     "measured": -0.4316,
+     "model": -0.4147,
+     "days": 5
+    },
+    "1": {
+     "measured": 0.0095,
+     "model": 0.0167,
+     "days": 5
+    },
+    "2": {
+     "measured": 0.063,
+     "model": 0.0391,
+     "days": 5
+    },
+    "3": {
+     "measured": 0.049,
+     "model": 0.0571,
+     "days": 5
+    },
+    "4": {
+     "measured": 0.0563,
+     "model": 0.0611,
+     "days": 5
+    },
+    "5": {
+     "measured": 0.1346,
+     "model": 0.136,
+     "days": 5
+    },
+    "6": {
+     "measured": 0.243,
+     "model": 0.1739,
+     "days": 5
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "Observed holiday": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.2252,
+     "model": 0.2413,
+     "days": 1
+    },
+    "-5": {
+     "measured": 0.2702,
+     "model": 0.3227,
+     "days": 1
+    },
+    "-4": {
+     "measured": 0.0876,
+     "model": 0.0554,
+     "days": 2
+    },
+    "-3": {
+     "measured": 0.1089,
+     "model": 0.0646,
+     "days": 2
+    },
+    "-2": {
+     "measured": 0.1215,
+     "model": 0.0726,
+     "days": 2
+    },
+    "-1": {
+     "measured": 0.1136,
+     "model": 0.068,
+     "days": 2
+    },
+    "0": {
+     "measured": -0.2065,
+     "model": -0.3065,
+     "days": 6
+    },
+    "1": {
+     "measured": -0.1024,
+     "model": -0.1682,
+     "days": 4
+    },
+    "2": {
+     "measured": -0.1796,
+     "model": -0.2194,
+     "days": 4
+    },
+    "3": {
+     "measured": 0.0402,
+     "model": 0.0002,
+     "days": 3
+    },
+    "4": {
+     "measured": 0.0766,
+     "model": 0.0159,
+     "days": 3
+    },
+    "5": {
+     "measured": 0.1932,
+     "model": 0.0605,
+     "days": 3
+    },
+    "6": {
+     "measured": 0.2027,
+     "model": 0.0894,
+     "days": 3
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 2
+  },
+  "Juneteenth": {
+   "by_offset": {
+    "-6": {
+     "measured": 0.0181,
+     "model": 0.0081,
+     "days": 4
+    },
+    "-5": {
+     "measured": 0.0117,
+     "model": 0.0578,
+     "days": 4
+    },
+    "-4": {
+     "measured": 0.0172,
+     "model": 0.0189,
+     "days": 4
+    },
+    "-3": {
+     "measured": 0.0129,
+     "model": -0.0028,
+     "days": 4
+    },
+    "-2": {
+     "measured": 0.0143,
+     "model": 0.0101,
+     "days": 4
+    },
+    "-1": {
+     "measured": 0.0117,
+     "model": 0.0252,
+     "days": 4
+    },
+    "0": {
+     "measured": -0.2938,
+     "model": -0.1624,
+     "days": 5
+    },
+    "1": {
+     "measured": 0.0086,
+     "model": 0.0339,
+     "days": 4
+    },
+    "2": {
+     "measured": 0.0219,
+     "model": 0.0486,
+     "days": 4
+    },
+    "3": {
+     "measured": 0.0878,
+     "model": 0.0723,
+     "days": 4
+    },
+    "4": {
+     "measured": 0.017,
+     "model": 0.0155,
+     "days": 4
+    },
+    "5": {
+     "measured": 0.1069,
+     "model": 0.0573,
+     "days": 4
+    },
+    "6": {
+     "measured": 0.1176,
+     "model": 0.1241,
+     "days": 4
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  },
+  "New Year's Day": {
+   "by_offset": {
+    "0": {
+     "measured": -0.5888,
+     "model": -0.5406,
+     "days": 4
+    },
+    "1": {
+     "measured": -0.3103,
+     "model": -0.2928,
+     "days": 3
+    },
+    "2": {
+     "measured": -0.2618,
+     "model": -0.2516,
+     "days": 3
+    },
+    "3": {
+     "measured": -0.1802,
+     "model": -0.192,
+     "days": 3
+    },
+    "4": {
+     "measured": -0.1562,
+     "model": -0.1695,
+     "days": 3
+    },
+    "5": {
+     "measured": -0.2369,
+     "model": -0.1564,
+     "days": 3
+    },
+    "6": {
+     "measured": -0.0691,
+     "model": -0.0676,
+     "days": 3
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 5
+  },
+  "MLK Day": {
+   "by_offset": {
+    "-6": {
+     "measured": -0.122,
+     "model": -0.0745,
+     "days": 4
+    },
+    "-5": {
+     "measured": -0.1552,
+     "model": -0.098,
+     "days": 4
+    },
+    "-4": {
+     "measured": -0.037,
+     "model": -0.0568,
+     "days": 4
+    },
+    "-3": {
+     "measured": -0.1507,
+     "model": -0.1107,
+     "days": 4
+    },
+    "-2": {
+     "measured": -0.2286,
+     "model": -0.1604,
+     "days": 4
+    },
+    "-1": {
+     "measured": -0.0676,
+     "model": 0.0169,
+     "days": 4
+    },
+    "0": {
+     "measured": -0.4641,
+     "model": -0.4691,
+     "days": 4
+    },
+    "1": {
+     "measured": -0.0329,
+     "model": -0.0435,
+     "days": 4
+    },
+    "2": {
+     "measured": -0.0034,
+     "model": -0.0091,
+     "days": 4
+    },
+    "3": {
+     "measured": 0.0218,
+     "model": 0.013,
+     "days": 4
+    },
+    "4": {
+     "measured": -0.0277,
+     "model": -0.0064,
+     "days": 4
+    },
+    "5": {
+     "measured": -0.0406,
+     "model": 0.0359,
+     "days": 4
+    },
+    "6": {
+     "measured": -0.0449,
+     "model": -0.0096,
+     "days": 4
+    }
+   },
+   "deepest": "0",
+   "reaches_from": 0,
+   "reaches_to": 0
+  }
+ },
+ "coming": [
+  {
+   "date": "2026-11-21",
+   "weekday": "Sat",
+   "holiday": "Thanksgiving",
+   "days_from_it": -5,
+   "system_change": -0.0446,
+   "stations_most_down": [
+    "MCAR",
+    "ASHB",
+    "ROCK"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "PITT"
+   ]
+  },
+  {
+   "date": "2026-11-22",
+   "weekday": "Sun",
+   "holiday": "Thanksgiving",
+   "days_from_it": -4,
+   "system_change": -0.0379,
+   "stations_most_down": [
+    "MCAR",
+    "ASHB",
+    "ROCK"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "MLBR"
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "weekday": "Mon",
+   "holiday": "Thanksgiving",
+   "days_from_it": -3,
+   "system_change": -0.0941,
+   "stations_most_down": [
+    "DALY",
+    "EMBR",
+    "MONT"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-11-24",
+   "weekday": "Tue",
+   "holiday": "Thanksgiving",
+   "days_from_it": -2,
+   "system_change": -0.1853,
+   "stations_most_down": [
+    "EMBR",
+    "MONT",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-11-25",
+   "weekday": "Wed",
+   "holiday": "Thanksgiving",
+   "days_from_it": -1,
+   "system_change": -0.296,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "EMBR"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-11-26",
+   "weekday": "Thu",
+   "holiday": "Thanksgiving",
+   "days_from_it": 0,
+   "system_change": -0.7327,
+   "stations_most_down": [
+    "MONT",
+    "EMBR",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-11-27",
+   "weekday": "Fri",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 0,
+   "system_change": -0.445,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "EMBR"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-11-28",
+   "weekday": "Sat",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 1,
+   "system_change": -0.1606,
+   "stations_most_down": [
+    "19TH",
+    "ROCK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "COLM"
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "weekday": "Sun",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 2,
+   "system_change": -0.0858,
+   "stations_most_down": [
+    "24TH",
+    "19TH",
+    "MCAR"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "COLM",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-11-30",
+   "weekday": "Mon",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 3,
+   "system_change": -0.0237,
+   "stations_most_down": [
+    "DBRK",
+    "LAKE",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "MLBR"
+   ]
+  },
+  {
+   "date": "2026-12-01",
+   "weekday": "Tue",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 4,
+   "system_change": -0.0447,
+   "stations_most_down": [
+    "DBRK",
+    "19TH",
+    "BERY"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "MLBR"
+   ]
+  },
+  {
+   "date": "2026-12-02",
+   "weekday": "Wed",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 5,
+   "system_change": -0.0306,
+   "stations_most_down": [
+    "DBRK",
+    "BERY",
+    "DALY"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "WCRK"
+   ]
+  },
+  {
+   "date": "2026-12-03",
+   "weekday": "Thu",
+   "holiday": "Day after Thanksgiving",
+   "days_from_it": 6,
+   "system_change": -0.0371,
+   "stations_most_down": [
+    "DBRK",
+    "BERY",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "MLBR"
+   ]
+  },
+  {
+   "date": "2026-12-18",
+   "weekday": "Fri",
+   "holiday": "Christmas Eve",
+   "days_from_it": -6,
+   "system_change": -0.099,
+   "stations_most_down": [
+    "DBRK",
+    "ASHB",
+    "BERY"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-19",
+   "weekday": "Sat",
+   "holiday": "Christmas Eve",
+   "days_from_it": -5,
+   "system_change": 0.0511,
+   "stations_most_down": [
+    "DBRK",
+    "ASHB",
+    "LAKE"
+   ],
+   "stations_least_down": [
+    "POWL",
+    "DUBL",
+    "LAFY"
+   ]
+  },
+  {
+   "date": "2026-12-20",
+   "weekday": "Sun",
+   "holiday": "Christmas Eve",
+   "days_from_it": -4,
+   "system_change": -0.1252,
+   "stations_most_down": [
+    "DBRK",
+    "ASHB",
+    "NBRK"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "COLM"
+   ]
+  },
+  {
+   "date": "2026-12-21",
+   "weekday": "Mon",
+   "holiday": "Christmas Eve",
+   "days_from_it": -3,
+   "system_change": -0.197,
+   "stations_most_down": [
+    "DBRK",
+    "19TH",
+    "MONT"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-22",
+   "weekday": "Tue",
+   "holiday": "Christmas Eve",
+   "days_from_it": -2,
+   "system_change": -0.2766,
+   "stations_most_down": [
+    "DBRK",
+    "19TH",
+    "MONT"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-23",
+   "weekday": "Wed",
+   "holiday": "Christmas Eve",
+   "days_from_it": -1,
+   "system_change": -0.3225,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "DBRK"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-24",
+   "weekday": "Thu",
+   "holiday": "Christmas Eve",
+   "days_from_it": 0,
+   "system_change": -0.6083,
+   "stations_most_down": [
+    "MONT",
+    "EMBR",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-25",
+   "weekday": "Fri",
+   "holiday": "Christmas Day",
+   "days_from_it": 0,
+   "system_change": -0.7631,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "EMBR"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-26",
+   "weekday": "Sat",
+   "holiday": "Christmas Day",
+   "days_from_it": 1,
+   "system_change": -0.374,
+   "stations_most_down": [
+    "19TH",
+    "DBRK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-27",
+   "weekday": "Sun",
+   "holiday": "Christmas Day",
+   "days_from_it": 2,
+   "system_change": -0.2897,
+   "stations_most_down": [
+    "DBRK",
+    "ASHB",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2026-12-28",
+   "weekday": "Mon",
+   "holiday": "Christmas Day",
+   "days_from_it": 3,
+   "system_change": -0.3393,
+   "stations_most_down": [
+    "DBRK",
+    "MONT",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-12-29",
+   "weekday": "Tue",
+   "holiday": "New Year's Eve",
+   "days_from_it": -2,
+   "system_change": -0.381,
+   "stations_most_down": [
+    "DBRK",
+    "MONT",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-12-30",
+   "weekday": "Wed",
+   "holiday": "New Year's Eve",
+   "days_from_it": -1,
+   "system_change": -0.3802,
+   "stations_most_down": [
+    "MONT",
+    "DBRK",
+    "19TH"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2026-12-31",
+   "weekday": "Thu",
+   "holiday": "New Year's Eve",
+   "days_from_it": 0,
+   "system_change": -0.5527,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "DBRK"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2027-01-01",
+   "weekday": "Fri",
+   "holiday": "New Year's Day",
+   "days_from_it": 0,
+   "system_change": -0.6587,
+   "stations_most_down": [
+    "MONT",
+    "19TH",
+    "PHIL"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "OAKL"
+   ]
+  },
+  {
+   "date": "2027-01-02",
+   "weekday": "Sat",
+   "holiday": "New Year's Day",
+   "days_from_it": 1,
+   "system_change": -0.2534,
+   "stations_most_down": [
+    "DBRK",
+    "ROCK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "SBRN"
+   ]
+  },
+  {
+   "date": "2027-01-03",
+   "weekday": "Sun",
+   "holiday": "New Year's Day",
+   "days_from_it": 2,
+   "system_change": -0.2601,
+   "stations_most_down": [
+    "DBRK",
+    "ROCK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "POWL",
+    "RICH"
+   ]
+  },
+  {
+   "date": "2027-01-04",
+   "weekday": "Mon",
+   "holiday": "New Year's Day",
+   "days_from_it": 3,
+   "system_change": -0.226,
+   "stations_most_down": [
+    "DBRK",
+    "ROCK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "POWL"
+   ]
+  },
+  {
+   "date": "2027-01-05",
+   "weekday": "Tue",
+   "holiday": "New Year's Day",
+   "days_from_it": 4,
+   "system_change": -0.1904,
+   "stations_most_down": [
+    "DBRK",
+    "ROCK",
+    "ASHB"
+   ],
+   "stations_least_down": [
+    "SFIA",
+    "OAKL",
+    "SBRN"
+   ]
+  },
+  {
+   "date": "2027-01-06",
+   "weekday": "Wed",
+   "holiday": "New Year's Day",
+   "days_from_it": 5,
+   "system_change": -0.1347,
+   "stations_most_down": [
+    "DBRK",
+    "BERY",
+    "DALY"
+   ],
+   "stations_least_down": [
+    "SBRN",
+    "BAYF",
+    "SFIA"
+   ]
+  },
+  {
+   "date": "2027-01-07",
+   "weekday": "Thu",
+   "holiday": "New Year's Day",
+   "days_from_it": 6,
+   "system_change": -0.0736,
+   "stations_most_down": [
+    "DBRK",
+    "DALY",
+    "BERY"
+   ],
+   "stations_least_down": [
+    "COLM",
+    "SBRN",
+    "BAYF"
+   ]
+  }
+ ]
+}

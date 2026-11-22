@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+.DS_Store
+.vscode/
+.wrangler/
+data/raw/
+data/clean/
+__pycache__/
+data/cache/
+studio/history/
+deck/history/
+
+# video build files (raw footage, frames, audio)
+showcase/build/

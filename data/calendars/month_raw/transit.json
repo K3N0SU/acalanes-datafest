@@ -1,0 +1,363 @@
+[
+ {
+  "dates": [
+   "2026-11-26"
+  ],
+  "start_time": "08:00",
+  "end_time": "23:59",
+  "agency": "BART",
+  "name": "Thanksgiving Day Sunday schedule",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "Sunday service 8am to midnight; all five lines run until 9pm, three lines 9pm to midnight. Parking free at stations except Milpitas and Berryessa/North San Jose.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20261113-0",
+  "source_quote": "BART will operate on a Sunday schedule for Thanksgiving",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-11-27"
+  ],
+  "start_time": "05:00",
+  "end_time": "23:59",
+  "agency": "BART",
+  "name": "Day after Thanksgiving regular weekday service",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "unclear",
+  "detail": "Regular weekday hours 5am to midnight; not a parking holiday.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20261113-0",
+  "source_quote": "regular weekday service, 5am to midnight",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-11-21"
+  ],
+  "start_time": "22:00",
+  "end_time": null,
+  "agency": "BART",
+  "name": "Transbay Tube single tracking, Saturday night Nov 21",
+  "kind": "single_tracking",
+  "where": "system-wide",
+  "expected_effect": "later or earlier travel",
+  "detail": "Lighting work starts 10pm Saturday Nov 21 and continues through end of service that night; two tracks reduced to one, trains every 30 min systemwide, only Blue, Yellow, Orange run (no Red or Green), Yellow shuttle SFO-Millbrae.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20260330",
+  "source_quote": "next happen on Saturday, November 21 at 10pm and continue through the end of service that night",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-12-06"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "BART",
+  "name": "Transbay Tube single tracking all day Sunday Dec 6",
+  "kind": "single_tracking",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "All-day lighting work, Transbay Tube reduced to one track. Trains about every 30 min systemwide; only Blue, Yellow, Orange lines; Red and Green do not operate; Yellow Line shuttle SFO-Millbrae all day, riders beyond SFO must transfer. Page gives no clock hours beyond 'the entire day'.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20261117",
+  "source_quote": "Red and Green Line service will not operate",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-11-23",
+   "2026-12-03",
+   "2026-12-04",
+   "2026-12-05",
+   "2026-12-07",
+   "2026-12-17",
+   "2026-12-18",
+   "2026-12-19",
+   "2026-12-21"
+  ],
+  "start_time": "00:00",
+  "end_time": null,
+  "agency": "BART",
+  "name": "Yellow Line late-night single tracking Lafayette-Walnut Creek",
+  "kind": "single_tracking",
+  "where": [
+   "Lafayette",
+   "Walnut Creek"
+  ],
+  "expected_effect": "later or earlier travel",
+  "detail": "Single tracking from midnight until service starts; 20-30 minute delays on work nights. Page says dates are updated continually. The URL slug carries a 2025 id but the page content is dated 11.20.26 and lists 2026 dates.",
+  "source_url": "https://www.bart.gov/news/articles/2025/news20250326-1",
+  "source_quote": "November 23, 2026; December 3-5; December 7; December 17-19; and December 21",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-11-30",
+   "2026-12-02",
+   "2026-12-08",
+   "2026-12-09",
+   "2026-12-10",
+   "2026-12-11"
+  ],
+  "start_time": "00:00",
+  "end_time": null,
+  "agency": "BART",
+  "name": "Yellow Line late-night Digital Railway work North Concord/Martinez to Pittsburg/Bay Point",
+  "kind": "single_tracking",
+  "where": [
+   "North Concord/Martinez",
+   "Pittsburg/Bay Point"
+  ],
+  "expected_effect": "later or earlier travel",
+  "detail": "Overnight single tracking starting just before midnight; 10-15 minute delays from midnight; may delay final train transfers (Grand Meet at MacArthur, Antioch DMU transfer). More dates may be added.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20260902",
+  "source_quote": "November 30, December 2, and December 8-11",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-11-21",
+   "2026-11-22",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
+   "2026-11-28",
+   "2026-11-29",
+   "2026-11-30",
+   "2026-12-01",
+   "2026-12-02",
+   "2026-12-03",
+   "2026-12-04",
+   "2026-12-05",
+   "2026-12-06",
+   "2026-12-07",
+   "2026-12-08",
+   "2026-12-09",
+   "2026-12-10",
+   "2026-12-11",
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16",
+   "2026-12-17",
+   "2026-12-18"
+  ],
+  "start_time": null,
+  "end_time": "14:00",
+  "agency": "BART",
+  "name": "Powell St. 4th and Market (south side) entrance closed for escalator replacement",
+  "kind": "station_or_entrance_closure",
+  "where": [
+   "Powell St."
+  ],
+  "expected_effect": "riders shift between stations",
+  "detail": "South-side entrance at 4th/Market near Stockton closed (street escalator and stairway) from Nov 16 through Dec 18, ending 2pm on Dec 18 (end_time applies to the last date only). North-side entrance at 4th and Market and all other entrances stay open.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20261112",
+  "source_quote": "closed from Monday, November 16, 2026 through Friday, December 18, 2026",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-12-05"
+  ],
+  "start_time": "12:00",
+  "end_time": "14:00",
+  "agency": "BART",
+  "name": "SweaterFest at Rockridge Station Plaza",
+  "kind": "other",
+  "where": [
+   "Rockridge"
+  ],
+  "expected_effect": "unclear",
+  "detail": "Annual holiday event, noon to 2pm; page mentions no train changes.",
+  "source_url": "https://www.bart.gov/news/articles/2026/news20261113",
+  "source_quote": "Saturday, December 5, from noon to 2pm, at Rockridge Station Plaza",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-12-25"
+  ],
+  "start_time": "08:00",
+  "end_time": "23:59",
+  "agency": "BART",
+  "name": "Christmas Day Sunday schedule",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "BART holiday table lists Christmas Day Friday Dec 25 as Sunday service 8am-midnight under the 2026 heading. No Christmas-specific news article or advisory found; Christmas Eve is not listed on the BART page.",
+  "source_url": "https://www.bart.gov/guide/holidays",
+  "source_quote": "Christmas Day: Friday, December 25, Sunday Service (8am-midnight)",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-11-21",
+   "2026-11-22",
+   "2026-11-25",
+   "2026-11-28",
+   "2026-11-29",
+   "2026-12-01"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "Chase Center / Muni",
+  "name": "Chase Center events with Muni 78X shuttles from 16th St. BART",
+  "kind": "extra_service",
+  "where": [
+   "16th St. Mission"
+  ],
+  "expected_effect": "more riders",
+  "detail": "Sat Nov 21 Jonas Brothers 7:30pm; Sun Nov 22 Warriors-Celtics 5:30pm; Wed Nov 25 Warriors-Kings 7pm; Sat Nov 28 Journey 7:30pm; Sun Nov 29 Warriors-Clippers 5:30pm; Tue Dec 1 Warriors-Jazz 8pm. 78X shuttles from 16th St. BART start 2.5h before and end 1h after event start.",
+  "source_url": "https://www.sfmta.com/index%2Ephp/press-releases/sfmta-transit-and-traffic-advisory-two-weeks-including-thanksgiving-holiday-thursday-november-19-through-wednesday-december-2-2026",
+  "source_quote": "Muni 78X Arena Express: Pre-event shuttles run from 16th St. BART",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-11-26"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "SFMTA Muni",
+  "name": "Muni Sunday schedule on Thanksgiving",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "Nov 23-25 weekday non-school schedule, Nov 26 Sunday schedule, Nov 27 weekday non-school schedule.",
+  "source_url": "https://www.sfmta.com/index%2Ephp/press-releases/sfmta-transit-and-traffic-advisory-two-weeks-including-thanksgiving-holiday-thursday-november-19-through-wednesday-december-2-2026",
+  "source_quote": "Nov. 26 runs a Sunday schedule",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16",
+   "2026-12-17"
+  ],
+  "start_time": "21:30",
+  "end_time": "23:59",
+  "agency": "SFMTA Muni",
+  "name": "Fix It Week Market Street Subway weatherization, early shuttle replacement",
+  "kind": "planned_closure",
+  "where": "system-wide",
+  "expected_effect": "later or earlier travel",
+  "detail": "Bus shuttles replace J K L M N trains between Embarcadero and West Portal (shuttles serve Muni Metro stops Steuart & Market to St. Francis Circle) from 9:30pm to end of service at midnight each night. Page names no BART stations; the downtown Market St BART/Muni stations are likely affected (inference). where is set to system-wide because no BART station list was published.",
+  "source_url": "https://www.sfmta.com/ar/node/46051",
+  "source_quote": "Monday, December 14 through Thursday, December 17, 2026",
+  "confidence": "high"
+ },
+ {
+  "dates": [
+   "2026-11-26",
+   "2026-11-27",
+   "2026-12-24",
+   "2026-12-25"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "Caltrain",
+  "name": "Caltrain holiday service 2026",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "Thanksgiving Nov 26 weekend schedule; Nov 27 modified; Christmas Eve Dec 24 modified; Christmas Day Dec 25 weekend schedule. Modified timetables were not yet published when read.",
+  "source_url": "https://www.caltrain.com/holidays",
+  "source_quote": "Thanksgiving Day (November 26): Weekend Schedule",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-12-25"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "SF Bay Ferry / Golden Gate Ferry",
+  "name": "Ferries no service Christmas Day",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "SF Bay Ferry lists no service Dec 25; Golden Gate Ferry no service Dec 25 and weekday hours Dec 24. Taken from search-result snippets, pages not opened directly.",
+  "source_url": "https://sanfranciscobayferry.com/holiday",
+  "source_quote": "Christmas Day December 25 No Service",
+  "confidence": "low"
+ },
+ {
+  "dates": [
+   "2026-11-22",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
+   "2026-11-28",
+   "2026-11-29",
+   "2026-11-30",
+   "2026-12-01",
+   "2026-12-02",
+   "2026-12-03",
+   "2026-12-04",
+   "2026-12-05",
+   "2026-12-06",
+   "2026-12-07",
+   "2026-12-08",
+   "2026-12-09",
+   "2026-12-10",
+   "2026-12-11",
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15"
+  ],
+  "start_time": "22:00",
+  "end_time": "07:00",
+  "agency": "Caltrans",
+  "name": "Bay Bridge eastbound overnight lane closures (Sun-Thu nights)",
+  "kind": "road_closure",
+  "where": "system-wide",
+  "expected_effect": "unclear",
+  "detail": "Four of five eastbound I-80 lanes closed from SF Anchorage/Rincon Hill to Yerba Buena Island Tunnel, Sunday through Thursday nights 10pm-7am, 'most nights through mid-December' (no exact end date; the date list is an approximation and includes Fri/Sat nights that are NOT closed; apply only Sun-Thu).",
+  "source_url": "https://dot.ca.gov/caltrans-near-me/district-4/d4-news/2026-11-05-i80-sfobb-lane-closures",
+  "source_quote": "will continue most nights through mid-December",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-12-04",
+   "2026-12-05",
+   "2026-12-06"
+  ],
+  "start_time": "22:00",
+  "end_time": "06:00",
+  "agency": "Caltrans",
+  "name": "Northbound US-101 Central Viaduct closure, Dec 4 10pm to Dec 7 6am",
+  "kind": "road_closure",
+  "where": "system-wide",
+  "expected_effect": "unclear",
+  "detail": "Northbound US-101 Central Viaduct closed between I-80 and Market St.; I-280 lane closures Fri 10pm-Mon 5am on Dec 4-7, 11-14, 18-21.",
+  "source_url": "https://www.sfmta.com/index%2Ephp/press-releases/sfmta-transit-and-traffic-advisory-two-weeks-including-thanksgiving-holiday-thursday-november-19-through-wednesday-december-2-2026",
+  "source_quote": "Dec. 4 (10 p.m.) to Dec 7 (6 a.m.)",
+  "confidence": "medium"
+ },
+ {
+  "dates": [
+   "2026-11-26",
+   "2026-11-27"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "agency": "AC Transit",
+  "name": "AC Transit Thanksgiving schedule",
+  "kind": "holiday_schedule",
+  "where": "system-wide",
+  "expected_effect": "fewer riders",
+  "detail": "pattern from earlier years, no 2026 notice found: Sunday service on Thanksgiving, regular weekday the day after.",
+  "source_url": "https://511.ccta.ca.gov/thanksgiving-2025",
+  "source_quote": "AC Transit \u2013 Sunday service",
+  "confidence": "low"
+ }
+]

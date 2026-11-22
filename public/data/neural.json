@@ -1,0 +1,173 @@
+{
+ "models": [
+  {
+   "model": "tf_ens",
+   "settings": "Transformer, 11 tokens (8 prior same-weekday profiles, med8, ewm8, last-year-grown profile) plus station/kind/weekday/month and 8 numeric context values; data from 2021-03; 14 epochs max, 200 s cap, early stop on last 61 days before test year",
+   "single_seed_2024": [
+    0.1421,
+    0.1434,
+    0.1432
+   ],
+   "error_2024_ensemble": 0.14,
+   "error_2025": 0.1421,
+   "seeds_2025": 3,
+   "training_seconds_per_seed": 213.9826,
+   "parameters": 76120
+  },
+  {
+   "model": "mlp_ens",
+   "settings": "MLP 512-256 over the same 11 profiles plus embeddings and numerics; same data and stopping rule; 3 seeds averaged",
+   "single_seed_2024": [
+    0.1365,
+    0.1372,
+    0.1371
+   ],
+   "error_2024_ensemble": 0.1357,
+   "error_2025": 0.1294,
+   "seeds_2025": 3,
+   "training_seconds_per_seed": 92.695,
+   "parameters": 345080
+  },
+  {
+   "model": "resmlp_ens",
+   "settings": "MLP trained on (actual - tree forecast)/level; tree forecast is also an input; trained on 2023 only for the 2024 check and on 2023-2024 for 2025; 3 seeds averaged",
+   "single_seed_2024": [
+    0.1514,
+    0.148,
+    0.1512
+   ],
+   "error_2024_ensemble": 0.1478,
+   "error_2025": 0.1309,
+   "seeds_2025": 3,
+   "training_seconds_per_seed": 40.1594,
+   "parameters": 357368
+  }
+ ],
+ "extra_2024_variants": {
+  "mlp_start_2022_instead_of_2021_2024": [
+   0.1409,
+   0.1408,
+   0.1414
+  ],
+  "mlp_30_epochs_2024": [
+   0.1372,
+   0.137,
+   0.1376
+  ],
+  "residual_transformer_2024_first_try": "0.2101 (a bug: the base profile was added twice; discarded, the residual MLP was fixed and rerun; residual transformer was not re-run for lack of time)"
+ },
+ "baselines": {
+  "trees": {
+   "2024": 0.1379,
+   "2025": 0.1305
+  },
+  "old_transformer": {
+   "2024": 0.1355,
+   "2025": 0.1369
+  },
+  "similar_days": {
+   "2024": 0.1438,
+   "2025": 0.1486
+  },
+  "previous_blend": {
+   "2024": 0.1276,
+   "2025": 0.1284
+  }
+ },
+ "final_blend": {
+  "weights": {
+   "trees": 0.2,
+   "old_tf": 0.3,
+   "similar": 0.2,
+   "mlp_ens": 0.2,
+   "resmlp_ens": 0.1,
+   "tf_ens": 0.0
+  },
+  "weight_grid": "steps of 0.1, chosen on 2024 (in-sample for the weights)",
+  "error_2024_in_sample_for_weights": 0.1269,
+  "error_2025": 0.1266,
+  "segments_2025": {
+   "all": 0.1266,
+   "ordinary_days": 0.1218,
+   "weekends": 0.1872,
+   "busiest_quarter": 0.104
+  },
+  "segments_2025_trees": {
+   "all": 0.1305,
+   "ordinary_days": 0.1263,
+   "weekends": 0.1842,
+   "busiest_quarter": 0.111
+  },
+  "segments_2025_previous_blend": {
+   "all": 0.1284,
+   "ordinary_days": 0.1233,
+   "weekends": 0.1888,
+   "busiest_quarter": 0.1057
+  },
+  "top5_2024_grid": [
+   [
+    0.12685445931746342,
+    {
+     "trees": 2,
+     "old_tf": 3,
+     "similar": 2,
+     "mlp_ens": 2,
+     "resmlp_ens": 1,
+     "tf_ens": 0
+    }
+   ],
+   [
+    0.1268822867538594,
+    {
+     "trees": 2,
+     "old_tf": 3,
+     "similar": 3,
+     "mlp_ens": 1,
+     "resmlp_ens": 1,
+     "tf_ens": 0
+    }
+   ],
+   [
+    0.12689521232682902,
+    {
+     "trees": 2,
+     "old_tf": 2,
+     "similar": 3,
+     "mlp_ens": 2,
+     "resmlp_ens": 1,
+     "tf_ens": 0
+    }
+   ],
+   [
+    0.12697458071910792,
+    {
+     "trees": 2,
+     "old_tf": 4,
+     "similar": 2,
+     "mlp_ens": 1,
+     "resmlp_ens": 1,
+     "tf_ens": 0
+    }
+   ],
+   [
+    0.12698994922397838,
+    {
+     "trees": 1,
+     "old_tf": 3,
+     "similar": 3,
+     "mlp_ens": 2,
+     "resmlp_ens": 1,
+     "tf_ens": 0
+    }
+   ]
+  ],
+  "saved_nn_pred": true
+ },
+ "leakage_checks": [
+  "Ridership inputs come from adv_common.inputs: c.Y at day d-7*j, j=1..8, with an assertion that the first target index >= 56. Extra profiles (med8, ewm8, lag364_grown) are built in bart_core from lags of 7 days or more; the year-over-year and trend windows end at day d-7 (window(cs, a, b) sums days d-a .. d-b-1 with b >= 6).",
+  "Calendar, holiday flags and the target day's weather are the only same-day inputs.",
+  "Residual models use the tree forecast of day d as input and training target base. Those forecasts are the walk-forward arrays (pred_2023 from models trained before 2023, pred_2024 before 2024, pred_2025 before 2025); for the 2024 check only pred_2023 was used for training and pred_2024 only at test time.",
+  "Every network is trained only on days before the test year; early stopping uses the last 61 days before the test year. Blend weights were chosen on 2024 only, in steps of 0.1. All hyperparameters were fixed from the 2024 runs before any 2025 run was read; the 2025 runs were started in the same sitting as final 2024 runs of sibling models, once each per model, with no setting changed after seeing 2025.",
+  "Not done: no automated test that perturbs future ridership and checks that forecasts do not move; the checks above are by reading the code."
+ ]
+}

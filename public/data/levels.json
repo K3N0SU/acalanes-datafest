@@ -1,0 +1,240 @@
+{
+ "baseline": {
+  "trees_2025": {
+   "station_hour": 0.10481216838815607,
+   "station_day": 0.061211162274575355,
+   "system_hour": 0.059628244330287725,
+   "system_day": 0.0405154046436513,
+   "cells_ordinary": 0.12631394739381457,
+   "cells_all": 0.13051002897673833
+  },
+  "adv_2025": {
+   "station_hour": 0.10227583370683088,
+   "station_day": 0.0626642901579101,
+   "system_hour": 0.0616811065636257,
+   "system_day": 0.04456291992171768,
+   "cells_ordinary": 0.1232564412671687,
+   "cells_all": 0.1283952269736741
+  },
+  "trees_2024": {
+   "station_hour": 0.10931963830093437,
+   "station_day": 0.06784557878105715,
+   "system_hour": 0.06552983365691674,
+   "system_day": 0.047876895894088854,
+   "cells_ordinary": 0.13052949376334866,
+   "cells_all": 0.13792278685828707
+  },
+  "adv_2024": {
+   "station_hour": 0.1000856825773887,
+   "station_day": 0.06015604030222373,
+   "system_hour": 0.05914715938265044,
+   "system_day": 0.04181200752592768,
+   "cells_ordinary": 0.121128314934461,
+   "cells_all": 0.12755104811345108
+  }
+ },
+ "system_hour": {
+  "members_2024_ordinary": {
+   "abs_ratio": 0.06739016287737912,
+   "abs_ratio_big": 0.06928863623861858,
+   "pois": 0.07411400615462292,
+   "pois_big": 0.07378991582225336,
+   "abs_small": 0.06632250278055009,
+   "ridge_a1": 0.08024218463831391,
+   "ridge_a30": 0.08104006189111446,
+   "adv_sum": 0.05914715938265044
+  },
+  "chosen_hgb": "abs_small",
+  "chosen_ridge": "ridge_a1",
+  "blend_weights": {
+   "abs_small": 0.2,
+   "ridge_a1": 0.0,
+   "adv_sum": 0.8
+  },
+  "blend_2024_ordinary": 0.05850425869680395,
+  "members_2025_ordinary": {
+   "abs_small": 0.06501927035708721,
+   "ridge_a1": 0.08507536559069087
+  },
+  "blend_2025_ordinary": 0.06067052939300094,
+  "blend_2025_all": 0.06530373776688948,
+  "adv_sum_2025_ordinary": 0.0616811065636257
+ },
+ "station_day": {
+  "members_2024_ordinary": {
+   "abs_ratio": 0.06666770117295044,
+   "abs_ratio_big": 0.06626565894577748,
+   "pois": 0.07546956772258946,
+   "pois_big": 0.07672499019193414,
+   "abs_small": 0.06738849031127593,
+   "adv_sum": 0.06015604030222373
+  },
+  "chosen_hgb": "abs_ratio_big",
+  "blend_weights": {
+   "abs_ratio_big": 0.2,
+   "adv_sum": 0.8
+  },
+  "blend_2024_ordinary": 0.05981486988423228,
+  "members_2025_ordinary": {
+   "abs_ratio_big": 0.06342733299247716
+  },
+  "blend_2025_ordinary": 0.06134034799297272,
+  "blend_2025_all": 0.06529908040848911,
+  "adv_sum_2025_ordinary": 0.0626642901579101
+ },
+ "reconciliation": {
+  "base_2024": {
+   "station_hour": 0.1000856825773887,
+   "station_day": 0.06015604030222373,
+   "system_hour": 0.05914715938265044,
+   "system_day": 0.04181200752592768,
+   "cells_ordinary": 0.121128314934461,
+   "cells_all": 0.12755104811345108
+  },
+  "modes_2024": {
+   "stn": {
+    "station_hour": 0.09982915046478205,
+    "station_day": 0.0598148698842323,
+    "system_hour": 0.05896079841947266,
+    "system_day": 0.041706263241007874,
+    "cells_ordinary": 0.12088262871825921,
+    "cells_all": 0.1272668952453397
+   },
+   "sys": {
+    "station_hour": 0.09957201861533546,
+    "station_day": 0.05965151138509507,
+    "system_hour": 0.05850425869680394,
+    "system_day": 0.041420385479078156,
+    "cells_ordinary": 0.12063812817536636,
+    "cells_all": 0.1274569522602313
+   },
+   "stn_then_sys": {
+    "station_hour": 0.09944855930168285,
+    "station_day": 0.05940839109367533,
+    "system_hour": 0.05850425869680395,
+    "system_day": 0.041420385479078156,
+    "cells_ordinary": 0.12050913966107694,
+    "cells_all": 0.12735363001241834
+   },
+   "sys_then_stn": {
+    "station_hour": 0.09983775744603653,
+    "station_day": 0.05981486988423228,
+    "system_hour": 0.058991299805673324,
+    "system_day": 0.041706263241007874,
+    "cells_ordinary": 0.12089661569010696,
+    "cells_all": 0.12739943974914356
+   },
+   "rake3": {
+    "station_hour": 0.09983989330233962,
+    "station_day": 0.0598148698842323,
+    "system_hour": 0.0589948863221653,
+    "system_day": 0.04170626324100786,
+    "cells_ordinary": 0.12089863233854804,
+    "cells_all": 0.12740198202368214
+   }
+  },
+  "best_mode": "stn_then_sys",
+  "adopted": true,
+  "mode_used_2025": "stn_then_sys",
+  "detailed_2025": {
+   "station_hour": 0.10146585751882102,
+   "station_day": 0.06175953136254352,
+   "system_hour": 0.06067052939300094,
+   "system_day": 0.04372446052224907,
+   "cells_ordinary": 0.12252943936674786,
+   "cells_all": 0.1273798950410858
+  },
+  "every_mode_2025_for_information_only": {
+   "stn": {
+    "station_hour": 0.10144540173527998,
+    "station_day": 0.06134034799297272,
+    "system_hour": 0.06061855653157799,
+    "system_day": 0.04299615541149575,
+    "cells_ordinary": 0.12251381330391957,
+    "cells_all": 0.12729909850485258
+   },
+   "sys": {
+    "station_hour": 0.1015775607548568,
+    "station_day": 0.06193558559042151,
+    "system_hour": 0.06067052939300094,
+    "system_day": 0.043724460522249056,
+    "cells_ordinary": 0.1226307022076052,
+    "cells_all": 0.12748102421516228
+   },
+   "stn_then_sys": {
+    "station_hour": 0.10146585751882102,
+    "station_day": 0.06175953136254352,
+    "system_hour": 0.06067052939300094,
+    "system_day": 0.04372446052224907,
+    "cells_ordinary": 0.12252943936674786,
+    "cells_all": 0.1273798950410858
+   },
+   "rake3": {
+    "station_hour": 0.1013224420249014,
+    "station_day": 0.06134034799297272,
+    "system_hour": 0.06041074282891453,
+    "system_day": 0.04299615541149575,
+    "cells_ordinary": 0.12240861795772512,
+    "cells_all": 0.12719913413110812
+   }
+  }
+ },
+ "leakage_checks": [
+  "system-hour inputs for every day before day d0+7 are unchanged when all ridership from day d0 onward is overwritten with noise: pass (so no input for day d uses ridership newer than d-7)",
+  "station-day inputs for every day before day d0+7 are unchanged when all ridership from day d0 onward is overwritten with noise: pass (so no input for day d uses ridership newer than d-7)",
+  "level models use ridership only through shifts of 7, 14, ..., 56 and 364 days, windows ending at day d-7, and daily totals of the same kind",
+  "calendar (including holiday yesterday/tomorrow) and weather of day d are the only same-day inputs",
+  "2024 choices: models trained on 2022-2023 only; 2025 rows never read before the final scoring step",
+  "the summed current-best forecast is an out-of-sample blend member (adv_pred_2024 / adv_pred_2025 were produced by walk-forward training)"
+ ],
+ "elapsed_min": 3.5,
+ "mlp_extra_member": {
+  "system_hour": {
+   "members_2024": {
+    "mlp": 0.08058683393927475,
+    "hgb": 0.06632250278055009,
+    "adv": 0.05914715938265044
+   },
+   "weights_2024": {
+    "mlp": 0.0,
+    "hgb": 0.2,
+    "adv": 0.8
+   },
+   "blend_2024": 0.05850425869680395,
+   "members_2025": {
+    "mlp": 0.07677669855018272,
+    "hgb": 0.06501927035708721,
+    "adv": 0.0616811065636257
+   },
+   "blend_2025_ordinary": 0.06067052939300094,
+   "blend_2025_all": 0.06530373776688948
+  },
+  "station_day": {
+   "members_2024": {
+    "mlp": 0.06826596344619947,
+    "hgb": 0.06626565894577748,
+    "adv": 0.06015604030222373
+   },
+   "weights_2024": {
+    "mlp": 0.2,
+    "hgb": 0.1,
+    "adv": 0.7
+   },
+   "blend_2024": 0.05907789575256684,
+   "members_2025": {
+    "mlp": 0.06496810056907219,
+    "hgb": 0.06342733299247716,
+    "adv": 0.0626642901579101
+   },
+   "blend_2025_ordinary": 0.060729279042420654,
+   "blend_2025_all": 0.06462922528324534
+  }
+ },
+ "note": "Errors are WAPE = sum|pred-actual|/sum(actual). Ordinary = days that are not holidays, day after Thanksgiving or Christmas week. Choices made on 2024 with models trained 2022-2023; 2025 scored once with models trained 2022-2024. Station totals are entering+leaving.",
+ "adopted": {
+  "system_hour": "blend 0.2 abs_small HGB + 0.8 current best summed (small gain, not 5%)",
+  "station_day": "blend 0.2 HGB + 0.8 current best summed (small gain, not 5%)",
+  "reconciliation": "stn_then_sys (adopted: improved 2024 detailed error; 2025 also improved slightly)",
+  "mlp": "measured only; station-day MLP blend 6.07% vs 6.13% on 2025 but not used in the saved reconciled arrays"
+ }
+}

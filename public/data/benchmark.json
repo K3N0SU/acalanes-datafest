@@ -1,0 +1,329 @@
+{
+ "summary": {
+  "final_error_2025": 0.1305,
+  "vs_last_week": 0.349,
+  "vs_best_simple_method": 0.114,
+  "best_simple_method": "ridge regression on the same lags",
+  "vs_first_model": 0.073,
+  "chosen": "v2, deeper, absolute error",
+  "blend": {
+   "weight": 0.5,
+   "with": "second",
+   "second": {
+    "names": [
+     "lag7",
+     "lag14",
+     "lag21",
+     "lag28",
+     "mean8",
+     "med8",
+     "lag364",
+     "hour",
+     "dow",
+     "month",
+     "holiday",
+     "day_after_tg",
+     "xmas_week",
+     "station",
+     "kind",
+     "rain_h",
+     "rain_3h",
+     "rain_day",
+     "rain_day_lag7",
+     "tmax_day",
+     "wind_max_day",
+     "std8",
+     "ewm8",
+     "lag7_prev_hour",
+     "lag7_next_hour",
+     "day_total_lag7",
+     "day_total_4wk",
+     "station_trend",
+     "system_trend",
+     "yoy_growth",
+     "lag364_grown",
+     "lag7_was_special",
+     "lag364_was_special",
+     "week_of_year"
+    ],
+    "max_iter": 700,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 127,
+    "min_samples_leaf": 40,
+    "l2_regularization": 1.0
+   }
+  },
+  "station_hours_scored": 876000,
+  "riders_2025": 54507356
+ },
+ "selection_on_2024": {
+  "v1: first model (15 everyday inputs + weather)": {
+   "error_2024": 0.14479,
+   "fit_seconds": 23
+  },
+  "v2: + 13 new inputs": {
+   "error_2024": 0.14711,
+   "fit_seconds": 28
+  },
+  "v2, optimise absolute error": {
+   "error_2024": 0.14641,
+   "fit_seconds": 35
+  },
+  "v2, deeper and slower": {
+   "error_2024": 0.14238,
+   "fit_seconds": 104
+  },
+  "v2, deeper, absolute error": {
+   "error_2024": 0.14141,
+   "fit_seconds": 91
+  }
+ },
+ "blends_on_2024": {
+  "0.5*best + 0.5*second": 0.13792,
+  "0.5*best + 0.5*median8": 0.14015,
+  "0.6*best + 0.4*second": 0.13802,
+  "0.6*best + 0.4*median8": 0.13918,
+  "0.7*best + 0.3*second": 0.13843,
+  "0.7*best + 0.3*median8": 0.13883,
+  "0.8*best + 0.2*second": 0.13913,
+  "0.8*best + 0.2*median8": 0.13908,
+  "0.9*best + 0.1*second": 0.14012,
+  "0.9*best + 0.1*median8": 0.13991
+ },
+ "error_2025": {
+  "same hour last week": {
+   "all hours": 0.2005,
+   "ordinary days (no holidays)": 0.1825,
+   "weekday commute hours": 0.1532,
+   "weekday off-peak": 0.1869,
+   "weekends": 0.2639,
+   "busiest quarter of hours": 0.1678,
+   "rainy days (5 mm+)": 0.2464,
+   "Oakland stations": 0.2078,
+   "avg miss, riders per station-hour": 24.95,
+   "bias": 0.0018,
+   "r2": 0.8808
+  },
+  "average of last 4 weeks": {
+   "all hours": 0.1756,
+   "ordinary days (no holidays)": 0.1542,
+   "weekday commute hours": 0.1304,
+   "weekday off-peak": 0.1569,
+   "weekends": 0.2215,
+   "busiest quarter of hours": 0.1463,
+   "rainy days (5 mm+)": 0.2459,
+   "Oakland stations": 0.1823,
+   "avg miss, riders per station-hour": 21.86,
+   "bias": 0.0044,
+   "r2": 0.9166
+  },
+  "median of last 8 weeks": {
+   "all hours": 0.1584,
+   "ordinary days (no holidays)": 0.1331,
+   "weekday commute hours": 0.1056,
+   "weekday off-peak": 0.1448,
+   "weekends": 0.1973,
+   "busiest quarter of hours": 0.1261,
+   "rainy days (5 mm+)": 0.2713,
+   "Oakland stations": 0.1583,
+   "avg miss, riders per station-hour": 19.71,
+   "bias": 0.0165,
+   "r2": 0.922
+  },
+  "weighted average of last 8 weeks": {
+   "all hours": 0.1719,
+   "ordinary days (no holidays)": 0.1507,
+   "weekday commute hours": 0.1265,
+   "weekday off-peak": 0.1536,
+   "weekends": 0.2191,
+   "busiest quarter of hours": 0.1423,
+   "rainy days (5 mm+)": 0.2428,
+   "Oakland stations": 0.1784,
+   "avg miss, riders per station-hour": 21.39,
+   "bias": 0.0037,
+   "r2": 0.9179
+  },
+  "last year, grown to this year": {
+   "all hours": 0.1743,
+   "ordinary days (no holidays)": 0.1657,
+   "weekday commute hours": 0.1272,
+   "weekday off-peak": 0.1867,
+   "weekends": 0.2477,
+   "busiest quarter of hours": 0.1382,
+   "rainy days (5 mm+)": 0.2077,
+   "Oakland stations": 0.1932,
+   "avg miss, riders per station-hour": 21.69,
+   "bias": 0.008,
+   "r2": 0.9334
+  },
+  "ridge regression on the same lags": {
+   "all hours": 0.1473,
+   "ordinary days (no holidays)": 0.1308,
+   "weekday commute hours": 0.1013,
+   "weekday off-peak": 0.1448,
+   "weekends": 0.1973,
+   "busiest quarter of hours": 0.1159,
+   "rainy days (5 mm+)": 0.2051,
+   "Oakland stations": 0.1553,
+   "avg miss, riders per station-hour": 18.33,
+   "bias": 0.0111,
+   "r2": 0.9465
+  },
+  "first model (v1)": {
+   "all hours": 0.1408,
+   "ordinary days (no holidays)": 0.1359,
+   "weekday commute hours": 0.1113,
+   "weekday off-peak": 0.1442,
+   "weekends": 0.1962,
+   "busiest quarter of hours": 0.1193,
+   "rainy days (5 mm+)": 0.1636,
+   "Oakland stations": 0.14,
+   "avg miss, riders per station-hour": 17.52,
+   "bias": 0.0163,
+   "r2": 0.9508
+  },
+  "final model": {
+   "all hours": 0.1305,
+   "ordinary days (no holidays)": 0.1263,
+   "weekday commute hours": 0.1015,
+   "weekday off-peak": 0.137,
+   "weekends": 0.1838,
+   "busiest quarter of hours": 0.111,
+   "rainy days (5 mm+)": 0.144,
+   "Oakland stations": 0.1273,
+   "avg miss, riders per station-hour": 16.24,
+   "bias": 0.003,
+   "r2": 0.9531
+  }
+ },
+ "rider_tests_2025": {
+  "same hour last week": {
+   "names the busiest hour exactly": 0.5202,
+   "within one hour": 0.6798,
+   "packed hours caught": 0.8443,
+   "packed warnings that were right": 0.8434,
+   "daily total error": 0.1239
+  },
+  "average of last 4 weeks": {
+   "names the busiest hour exactly": 0.5729,
+   "within one hour": 0.7228,
+   "packed hours caught": 0.8415,
+   "packed warnings that were right": 0.8567,
+   "daily total error": 0.1152
+  },
+  "median of last 8 weeks": {
+   "names the busiest hour exactly": 0.5814,
+   "within one hour": 0.7264,
+   "packed hours caught": 0.8987,
+   "packed warnings that were right": 0.8559,
+   "daily total error": 0.1018
+  },
+  "weighted average of last 8 weeks": {
+   "names the busiest hour exactly": 0.5768,
+   "within one hour": 0.7264,
+   "packed hours caught": 0.8459,
+   "packed warnings that were right": 0.8618,
+   "daily total error": 0.1112
+  },
+  "last year, grown to this year": {
+   "names the busiest hour exactly": 0.5066,
+   "within one hour": 0.671,
+   "packed hours caught": 0.8942,
+   "packed warnings that were right": 0.8677,
+   "daily total error": 0.089
+  },
+  "ridge regression on the same lags": {
+   "names the busiest hour exactly": 0.5802,
+   "within one hour": 0.7314,
+   "packed hours caught": 0.9014,
+   "packed warnings that were right": 0.8845,
+   "daily total error": 0.0856
+  },
+  "first model (v1)": {
+   "names the busiest hour exactly": 0.5883,
+   "within one hour": 0.7402,
+   "packed hours caught": 0.9243,
+   "packed warnings that were right": 0.8906,
+   "daily total error": 0.0755
+  },
+  "final model": {
+   "names the busiest hour exactly": 0.5895,
+   "within one hour": 0.7442,
+   "packed hours caught": 0.9208,
+   "packed warnings that were right": 0.9087,
+   "daily total error": 0.0648
+  }
+ },
+ "input_importance": {
+  "med8": 0.5818,
+  "lag364_grown": 0.1473,
+  "ewm8": 0.0817,
+  "mean8": 0.0466,
+  "lag7": 0.021,
+  "holiday": 0.0157,
+  "lag7_prev_hour": 0.0134,
+  "station": 0.0093,
+  "lag7_next_hour": 0.0092,
+  "week_of_year": 0.0074,
+  "lag14": 0.0071,
+  "lag364": 0.0071,
+  "hour": 0.0063,
+  "std8": 0.0061,
+  "lag28": 0.006,
+  "day_total_lag7": 0.0056,
+  "dow": 0.0042,
+  "xmas_week": 0.0039,
+  "lag21": 0.0016,
+  "month": 0.0016,
+  "rain_day": 0.0016,
+  "system_trend": 0.0011,
+  "day_after_tg": 0.0006,
+  "lag7_was_special": 0.0005,
+  "rain_3h": 0.0004,
+  "lag364_was_special": 0.0004,
+  "tmax_day": 0.0003,
+  "day_total_4wk": 0.0003,
+  "rain_day_lag7": 0.0002,
+  "station_trend": 0.0002,
+  "kind": 0.0,
+  "rain_h": 0.0,
+  "wind_max_day": 0.0,
+  "yoy_growth": -0.0
+ },
+ "inputs": [
+  "lag7",
+  "lag14",
+  "lag21",
+  "lag28",
+  "mean8",
+  "med8",
+  "lag364",
+  "hour",
+  "dow",
+  "month",
+  "holiday",
+  "day_after_tg",
+  "xmas_week",
+  "station",
+  "kind",
+  "rain_h",
+  "rain_3h",
+  "rain_day",
+  "rain_day_lag7",
+  "tmax_day",
+  "wind_max_day",
+  "std8",
+  "ewm8",
+  "lag7_prev_hour",
+  "lag7_next_hour",
+  "day_total_lag7",
+  "day_total_4wk",
+  "station_trend",
+  "system_trend",
+  "yoy_growth",
+  "lag364_grown",
+  "lag7_was_special",
+  "lag364_was_special",
+  "week_of_year"
+ ]
+}

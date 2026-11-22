@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'nothing to install'",
+  "buildCommand": "rm -rf dist && mkdir dist && cp index.html dist/ && cp -R src dist/src && cp -R public/. dist/",
+  "outputDirectory": "dist",
+  "headers": [
+    { "source": "/config/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/data/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+  ]
+}

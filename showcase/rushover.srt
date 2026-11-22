@@ -1,0 +1,52 @@
+1
+00:00:00,300 --> 00:00:04,800
+Rushover
+How many cars does each hour need?
+
+2
+00:00:05,400 --> 00:00:09,200
+BART pays for every car it runs, full or empty.
+
+3
+00:00:09,200 --> 00:00:12,900
+Fares cover 23% of what it costs to run.
+
+4
+00:00:13,300 --> 00:00:18,600
+We trained five forecasters on 222 million BART trips.
+
+5
+00:00:18,600 --> 00:00:24,900
+On 2025, a year they never saw, the blend is off by 12.7%.
+Last week's count is off by 20%.
+
+6
+00:00:25,300 --> 00:00:30,400
+A timetable cannot know about next week's game or concert.
+
+7
+00:00:30,400 --> 00:00:35,900
+Agents find the events, and our code opens
+every source page before a claim is kept.
+
+8
+00:00:36,300 --> 00:00:40,200
+We trained a model on the cost of running short, not on average error.
+
+9
+00:00:40,200 --> 00:00:44,100
+Same crowding standard: 5 to 12% fewer cars than a timetable.
+
+10
+00:00:44,100 --> 00:00:48,000
+About $2.1M to $5.8M a year in electricity alone.
+
+11
+00:00:48,000 --> 00:00:51,900
+Or keep the cars: about 60% fewer overcrowded hours.
+
+12
+00:00:52,400 --> 00:00:59,500
+Tested on 2025. Every number is measured.
+github.com/K3N0SU/acalanes-datafest
+

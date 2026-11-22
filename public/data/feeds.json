@@ -1,0 +1,242 @@
+{
+ "week_of": "2026-11-23",
+ "generated_at": "2026-11-21 13:25",
+ "sources": [
+  {
+   "feed": "ESPN schedules",
+   "status": "ok",
+   "items": 8
+  },
+  {
+   "feed": "MLB Stats",
+   "status": "ok",
+   "items": 0
+  },
+  {
+   "feed": "Ticketmaster Discovery",
+   "status": "off: add TICKETMASTER_API_KEY to .env",
+   "items": 0
+  },
+  {
+   "feed": "SeatGeek",
+   "status": "off: add SEATGEEK_CLIENT_ID to .env",
+   "items": 0
+  },
+  {
+   "feed": "BART advisories",
+   "status": "ok",
+   "items": 0
+  },
+  {
+   "feed": "SF open data street closures",
+   "status": "failed: HTTPError 404 Client Error: Not Found for url: https://data.sf.gov/resource/ium9-iqtc.json?%24where=start_date",
+   "items": 0
+  },
+  {
+   "feed": "511.org service alerts",
+   "status": "ok",
+   "items": 0
+  }
+ ],
+ "search_agent_grade": {
+  "events_in_feeds_at_mapped_venues": 7,
+  "search_agent_also_found": 7,
+  "start_times_within_15_minutes": 7,
+  "largest_time_gap_minutes": 0,
+  "search_agent_events_not_in_any_feed": 6
+ },
+ "comparison": [
+  {
+   "feed_event": "Golden State Warriors vs Sacramento Kings",
+   "venue": "Chase Center",
+   "date": "2026-11-25",
+   "feed_time": "19:00",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "19:00",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "Golden State Warriors vs LA Clippers",
+   "venue": "Chase Center",
+   "date": "2026-11-29",
+   "feed_time": "17:30",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "17:30",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "San Jose Sharks vs Minnesota Wild",
+   "venue": "SAP Center",
+   "date": "2026-11-23",
+   "feed_time": "19:00",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "19:00",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "San Jose Sharks vs Vegas Golden Knights",
+   "venue": "SAP Center",
+   "date": "2026-11-27",
+   "feed_time": "13:00",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "13:00",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "Cal football vs Pittsburgh Panthers",
+   "venue": "California Memorial Stadium",
+   "date": "2026-11-28",
+   "feed_time": "16:30",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "16:30",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "Cal men's basketball vs Alabama State Hornets",
+   "venue": "Haas Pavilion",
+   "date": "2026-11-23",
+   "feed_time": "19:00",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "19:00",
+   "minutes_apart": 0
+  },
+  {
+   "feed_event": "Cal women's basketball vs Delaware Blue Hens",
+   "venue": "Haas Pavilion",
+   "date": "2026-11-27",
+   "feed_time": "12:00",
+   "feed": "ESPN schedule",
+   "search_agent_found_it": true,
+   "search_agent_time": "12:00",
+   "minutes_apart": 0
+  }
+ ],
+ "search_agent_only": [
+  "Rishab Rikhiram Sharma: Sitar For Mental Health",
+  "Song Dongye: Take Another Moment",
+  "Steve Lacy: Oh yeah? Tour",
+  "Steve Lacy: Oh yeah? Tour",
+  "Raising the B.A.R. Invitational Day 2: Consolation & Championship",
+  "Journey: Final Frontier Tour 2026"
+ ],
+ "events": [
+  {
+   "name": "Golden State Warriors vs Sacramento Kings",
+   "venue": "Chase Center",
+   "date": "2026-11-25",
+   "start_time": "19:00",
+   "start_hour": 19.0,
+   "type": "basketball",
+   "source_url": "https://www.espn.com/nba/game/_/gameId/401909324/kings-warriors",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "EMBR",
+   "curve": "GENERIC",
+   "capacity": 18064
+  },
+  {
+   "name": "Golden State Warriors vs LA Clippers",
+   "venue": "Chase Center",
+   "date": "2026-11-29",
+   "start_time": "17:30",
+   "start_hour": 17.5,
+   "type": "basketball",
+   "source_url": "https://www.espn.com/nba/game/_/gameId/401910059/clippers-warriors",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "EMBR",
+   "curve": "GENERIC",
+   "capacity": 18064
+  },
+  {
+   "name": "San Jose Sharks vs Minnesota Wild",
+   "venue": "SAP Center",
+   "date": "2026-11-23",
+   "start_time": "19:00",
+   "start_hour": 19.0,
+   "type": "hockey",
+   "source_url": "https://www.espn.com/nhl/game/_/gameId/401892779/wild-sharks",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "BERY",
+   "curve": "GENERIC",
+   "capacity": 17562
+  },
+  {
+   "name": "San Jose Sharks vs Vegas Golden Knights",
+   "venue": "SAP Center",
+   "date": "2026-11-27",
+   "start_time": "13:00",
+   "start_hour": 13.0,
+   "type": "hockey",
+   "source_url": "https://www.espn.com/nhl/game/_/gameId/401892805/golden-knights-sharks",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "BERY",
+   "curve": "GENERIC",
+   "capacity": 17562
+  },
+  {
+   "name": "Cal football vs Pittsburgh Panthers",
+   "venue": "California Memorial Stadium",
+   "date": "2026-11-28",
+   "start_time": "16:30",
+   "start_hour": 16.5,
+   "type": "football",
+   "source_url": "https://www.espn.com/college-football/game/_/gameId/401858315/pitt-california",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "DBRK",
+   "curve": "DBRK",
+   "capacity": 62467
+  },
+  {
+   "name": "Cal men's basketball vs Alabama State Hornets",
+   "venue": "Haas Pavilion",
+   "date": "2026-11-23",
+   "start_time": "19:00",
+   "start_hour": 19.0,
+   "type": "basketball",
+   "source_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918057/alabama-st-california",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "DBRK",
+   "curve": "GENERIC",
+   "capacity": 11858
+  },
+  {
+   "name": "Cal women's basketball vs Delaware Blue Hens",
+   "venue": "Haas Pavilion",
+   "date": "2026-11-27",
+   "start_time": "12:00",
+   "start_hour": 12.0,
+   "type": "basketball",
+   "source_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927985/delaware-california",
+   "feed": "ESPN schedule",
+   "time_is_set": true,
+   "station": "DBRK",
+   "curve": "GENERIC",
+   "capacity": 11858
+  }
+ ],
+ "events_at_venues_we_do_not_map": [
+  {
+   "name": "Cal women's basketball vs Gonzaga Bulldogs",
+   "venue": "George Q. Cannon Activities Center",
+   "date": "2026-11-23",
+   "start_time": "14:00",
+   "start_hour": 14.0,
+   "type": "basketball",
+   "source_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906068/gonzaga-california",
+   "feed": "ESPN schedule",
+   "time_is_set": true
+  }
+ ],
+ "disruptions": []
+}

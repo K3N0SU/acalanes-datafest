@@ -1,0 +1,1053 @@
+{
+ "what": "capacity each planning method must run so that it covers the riders in a given share of hours; margin set on 2024, tested on 2025",
+ "demand_measure": "entries plus exits by station and hour, 5 AM to midnight, 50 stations",
+ "decisions_a_year": 346750,
+ "levels": {
+  "station": {
+   "0.90": [
+    {
+     "method": "same hour last week",
+     "margin": 0.3636,
+     "covered_2025": 0.9041,
+     "capacity_per_rider": 1.3661,
+     "idle_capacity": 0.3955,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.066,
+      "fixed timetable": -0.0856,
+      "timetable with its own margin per hour": -0.0865,
+      "weekly rolling rule": -0.1064
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.2759,
+     "covered_2025": 0.8999,
+     "capacity_per_rider": 1.2815,
+     "idle_capacity": 0.2971,
+     "less_capacity_than": {
+      "same hour last week": 0.0619,
+      "fixed timetable": -0.0184,
+      "timetable with its own margin per hour": -0.0192,
+      "weekly rolling rule": -0.0379
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.257,
+     "covered_2025": 0.8917,
+     "capacity_per_rider": 1.2584,
+     "idle_capacity": 0.2725,
+     "less_capacity_than": {
+      "same hour last week": 0.0788,
+      "average of last 4 weeks": 0.018,
+      "timetable with its own margin per hour": -0.0009,
+      "weekly rolling rule": -0.0192
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": 0.0248,
+     "covered_2025": 0.91,
+     "capacity_per_rider": 1.2573,
+     "idle_capacity": 0.2688,
+     "less_capacity_than": {
+      "same hour last week": 0.0796,
+      "average of last 4 weeks": 0.0189,
+      "fixed timetable": 0.0009,
+      "weekly rolling rule": -0.0183
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": 0.0031,
+     "covered_2025": 0.9067,
+     "capacity_per_rider": 1.2347,
+     "idle_capacity": 0.2462,
+     "less_capacity_than": {
+      "same hour last week": 0.0962,
+      "average of last 4 weeks": 0.0365,
+      "fixed timetable": 0.0188,
+      "timetable with its own margin per hour": 0.018
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.2151,
+     "covered_2025": 0.9156,
+     "capacity_per_rider": 1.2198,
+     "idle_capacity": 0.2314,
+     "less_capacity_than": {
+      "same hour last week": 0.1071,
+      "average of last 4 weeks": 0.0481,
+      "fixed timetable": 0.0307,
+      "timetable with its own margin per hour": 0.0298,
+      "weekly rolling rule": 0.0121
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.2136,
+     "covered_2025": 0.9112,
+     "capacity_per_rider": 1.2193,
+     "idle_capacity": 0.2305,
+     "less_capacity_than": {
+      "same hour last week": 0.1075,
+      "average of last 4 weeks": 0.0485,
+      "fixed timetable": 0.0311,
+      "timetable with its own margin per hour": 0.0302,
+      "weekly rolling rule": 0.0125
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.0727,
+     "covered_2025": 0.905,
+     "capacity_per_rider": 1.1725,
+     "idle_capacity": 0.1863,
+     "less_capacity_than": {
+      "same hour last week": 0.1417,
+      "average of last 4 weeks": 0.0851,
+      "fixed timetable": 0.0683,
+      "timetable with its own margin per hour": 0.0674,
+      "weekly rolling rule": 0.0504
+     }
+    }
+   ],
+   "0.95": [
+    {
+     "method": "same hour last week",
+     "margin": 0.6269,
+     "covered_2025": 0.9489,
+     "capacity_per_rider": 1.6298,
+     "idle_capacity": 0.6515,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.1473,
+      "fixed timetable": -0.1883,
+      "timetable with its own margin per hour": -0.2187,
+      "weekly rolling rule": -0.2483
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.4143,
+     "covered_2025": 0.9509,
+     "capacity_per_rider": 1.4206,
+     "idle_capacity": 0.4298,
+     "less_capacity_than": {
+      "same hour last week": 0.1284,
+      "fixed timetable": -0.0358,
+      "timetable with its own margin per hour": -0.0623,
+      "weekly rolling rule": -0.0881
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.37,
+     "covered_2025": 0.9444,
+     "capacity_per_rider": 1.3715,
+     "idle_capacity": 0.3804,
+     "less_capacity_than": {
+      "same hour last week": 0.1585,
+      "average of last 4 weeks": 0.0346,
+      "timetable with its own margin per hour": -0.0256,
+      "weekly rolling rule": -0.0505
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": 0.0899,
+     "covered_2025": 0.9541,
+     "capacity_per_rider": 1.3373,
+     "idle_capacity": 0.3446,
+     "less_capacity_than": {
+      "same hour last week": 0.1795,
+      "average of last 4 weeks": 0.0586,
+      "fixed timetable": 0.0249,
+      "weekly rolling rule": -0.0243
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": 0.0607,
+     "covered_2025": 0.9538,
+     "capacity_per_rider": 1.3056,
+     "idle_capacity": 0.3132,
+     "less_capacity_than": {
+      "same hour last week": 0.1989,
+      "average of last 4 weeks": 0.081,
+      "fixed timetable": 0.048,
+      "timetable with its own margin per hour": 0.0237
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.3479,
+     "covered_2025": 0.9593,
+     "capacity_per_rider": 1.3531,
+     "idle_capacity": 0.3605,
+     "less_capacity_than": {
+      "same hour last week": 0.1698,
+      "average of last 4 weeks": 0.0475,
+      "fixed timetable": 0.0134,
+      "timetable with its own margin per hour": -0.0118,
+      "weekly rolling rule": -0.0364
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.3398,
+     "covered_2025": 0.9557,
+     "capacity_per_rider": 1.3461,
+     "idle_capacity": 0.3534,
+     "less_capacity_than": {
+      "same hour last week": 0.1741,
+      "average of last 4 weeks": 0.0524,
+      "fixed timetable": 0.0185,
+      "timetable with its own margin per hour": -0.0066,
+      "weekly rolling rule": -0.031
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.0231,
+     "covered_2025": 0.9564,
+     "capacity_per_rider": 1.2352,
+     "idle_capacity": 0.2432,
+     "less_capacity_than": {
+      "same hour last week": 0.2421,
+      "average of last 4 weeks": 0.1305,
+      "fixed timetable": 0.0994,
+      "timetable with its own margin per hour": 0.0763,
+      "weekly rolling rule": 0.0539
+     }
+    }
+   ],
+   "0.99": [
+    {
+     "method": "same hour last week",
+     "margin": 2.1037,
+     "covered_2025": 0.9832,
+     "capacity_per_rider": 3.1093,
+     "idle_capacity": 2.1201,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.5478,
+      "fixed timetable": -0.6488,
+      "timetable with its own margin per hour": -0.9336,
+      "weekly rolling rule": -0.9734
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 1.0,
+     "covered_2025": 0.991,
+     "capacity_per_rider": 2.0089,
+     "idle_capacity": 1.0117,
+     "less_capacity_than": {
+      "same hour last week": 0.3539,
+      "fixed timetable": -0.0653,
+      "timetable with its own margin per hour": -0.2493,
+      "weekly rolling rule": -0.275
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.8837,
+     "covered_2025": 0.9877,
+     "capacity_per_rider": 1.8858,
+     "idle_capacity": 0.8894,
+     "less_capacity_than": {
+      "same hour last week": 0.3935,
+      "average of last 4 weeks": 0.0613,
+      "timetable with its own margin per hour": -0.1728,
+      "weekly rolling rule": -0.1969
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": 0.3106,
+     "covered_2025": 0.9881,
+     "capacity_per_rider": 1.608,
+     "idle_capacity": 0.6116,
+     "less_capacity_than": {
+      "same hour last week": 0.4828,
+      "average of last 4 weeks": 0.1996,
+      "fixed timetable": 0.1473,
+      "weekly rolling rule": -0.0206
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": 0.28,
+     "covered_2025": 0.9894,
+     "capacity_per_rider": 1.5756,
+     "idle_capacity": 0.5793,
+     "less_capacity_than": {
+      "same hour last week": 0.4933,
+      "average of last 4 weeks": 0.2157,
+      "fixed timetable": 0.1645,
+      "timetable with its own margin per hour": 0.0201
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 1.0047,
+     "covered_2025": 0.9919,
+     "capacity_per_rider": 2.0124,
+     "idle_capacity": 1.0149,
+     "less_capacity_than": {
+      "same hour last week": 0.3528,
+      "average of last 4 weeks": -0.0017,
+      "fixed timetable": -0.0671,
+      "timetable with its own margin per hour": -0.2515,
+      "weekly rolling rule": -0.2772
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.9432,
+     "covered_2025": 0.99,
+     "capacity_per_rider": 1.9523,
+     "idle_capacity": 0.9549,
+     "less_capacity_than": {
+      "same hour last week": 0.3721,
+      "average of last 4 weeks": 0.0282,
+      "fixed timetable": -0.0353,
+      "timetable with its own margin per hour": -0.2141,
+      "weekly rolling rule": -0.2391
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": 0.166,
+     "covered_2025": 0.9918,
+     "capacity_per_rider": 1.4742,
+     "idle_capacity": 0.4773,
+     "less_capacity_than": {
+      "same hour last week": 0.5259,
+      "average of last 4 weeks": 0.2662,
+      "fixed timetable": 0.2183,
+      "timetable with its own margin per hour": 0.0832,
+      "weekly rolling rule": 0.0644
+     }
+    }
+   ]
+  },
+  "system": {
+   "0.90": [
+    {
+     "method": "same hour last week",
+     "margin": 0.2244,
+     "covered_2025": 0.9044,
+     "capacity_per_rider": 1.2266,
+     "idle_capacity": 0.252,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.0279,
+      "fixed timetable": -0.0604,
+      "timetable with its own margin per hour": -0.0341,
+      "weekly rolling rule": -0.0533
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.188,
+     "covered_2025": 0.9002,
+     "capacity_per_rider": 1.1933,
+     "idle_capacity": 0.2063,
+     "less_capacity_than": {
+      "same hour last week": 0.0271,
+      "fixed timetable": -0.0316,
+      "timetable with its own margin per hour": -0.006,
+      "weekly rolling rule": -0.0247
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.1554,
+     "covered_2025": 0.8439,
+     "capacity_per_rider": 1.1567,
+     "idle_capacity": 0.1682,
+     "less_capacity_than": {
+      "same hour last week": 0.057,
+      "average of last 4 weeks": 0.0307,
+      "timetable with its own margin per hour": 0.0249,
+      "weekly rolling rule": 0.0067
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": -0.0332,
+     "covered_2025": 0.9328,
+     "capacity_per_rider": 1.1862,
+     "idle_capacity": 0.1907,
+     "less_capacity_than": {
+      "same hour last week": 0.0329,
+      "average of last 4 weeks": 0.0059,
+      "fixed timetable": -0.0255,
+      "weekly rolling rule": -0.0186
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": -0.054,
+     "covered_2025": 0.9123,
+     "capacity_per_rider": 1.1645,
+     "idle_capacity": 0.1709,
+     "less_capacity_than": {
+      "same hour last week": 0.0506,
+      "average of last 4 weeks": 0.0241,
+      "fixed timetable": -0.0067,
+      "timetable with its own margin per hour": 0.0183
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.1265,
+     "covered_2025": 0.909,
+     "capacity_per_rider": 1.1308,
+     "idle_capacity": 0.1378,
+     "less_capacity_than": {
+      "same hour last week": 0.0781,
+      "average of last 4 weeks": 0.0524,
+      "fixed timetable": 0.0224,
+      "timetable with its own margin per hour": 0.0467,
+      "weekly rolling rule": 0.0289
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.1328,
+     "covered_2025": 0.9097,
+     "capacity_per_rider": 1.1381,
+     "idle_capacity": 0.1449,
+     "less_capacity_than": {
+      "same hour last week": 0.0722,
+      "average of last 4 weeks": 0.0463,
+      "fixed timetable": 0.0161,
+      "timetable with its own margin per hour": 0.0405,
+      "weekly rolling rule": 0.0227
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.1196,
+     "covered_2025": 0.8973,
+     "capacity_per_rider": 1.1132,
+     "idle_capacity": 0.1205,
+     "less_capacity_than": {
+      "same hour last week": 0.0925,
+      "average of last 4 weeks": 0.0671,
+      "fixed timetable": 0.0376,
+      "timetable with its own margin per hour": 0.0615,
+      "weekly rolling rule": 0.0441
+     }
+    }
+   ],
+   "0.95": [
+    {
+     "method": "same hour last week",
+     "margin": 0.4087,
+     "covered_2025": 0.9513,
+     "capacity_per_rider": 1.4113,
+     "idle_capacity": 0.4299,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.0973,
+      "fixed timetable": -0.1584,
+      "timetable with its own margin per hour": -0.1545,
+      "weekly rolling rule": -0.182
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.2805,
+     "covered_2025": 0.9428,
+     "capacity_per_rider": 1.2862,
+     "idle_capacity": 0.2937,
+     "less_capacity_than": {
+      "same hour last week": 0.0886,
+      "fixed timetable": -0.0557,
+      "timetable with its own margin per hour": -0.0522,
+      "weekly rolling rule": -0.0772
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.2169,
+     "covered_2025": 0.9171,
+     "capacity_per_rider": 1.2183,
+     "idle_capacity": 0.2246,
+     "less_capacity_than": {
+      "same hour last week": 0.1368,
+      "average of last 4 weeks": 0.0528,
+      "timetable with its own margin per hour": 0.0034,
+      "weekly rolling rule": -0.0204
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": -0.0037,
+     "covered_2025": 0.9635,
+     "capacity_per_rider": 1.2224,
+     "idle_capacity": 0.2254,
+     "less_capacity_than": {
+      "same hour last week": 0.1338,
+      "average of last 4 weeks": 0.0496,
+      "fixed timetable": -0.0034,
+      "weekly rolling rule": -0.0238
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": -0.03,
+     "covered_2025": 0.948,
+     "capacity_per_rider": 1.194,
+     "idle_capacity": 0.1982,
+     "less_capacity_than": {
+      "same hour last week": 0.154,
+      "average of last 4 weeks": 0.0717,
+      "fixed timetable": 0.0199,
+      "timetable with its own margin per hour": 0.0232
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.2244,
+     "covered_2025": 0.9554,
+     "capacity_per_rider": 1.2291,
+     "idle_capacity": 0.2329,
+     "less_capacity_than": {
+      "same hour last week": 0.1291,
+      "average of last 4 weeks": 0.0444,
+      "fixed timetable": -0.0089,
+      "timetable with its own margin per hour": -0.0055,
+      "weekly rolling rule": -0.0294
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.2301,
+     "covered_2025": 0.9532,
+     "capacity_per_rider": 1.2358,
+     "idle_capacity": 0.2396,
+     "less_capacity_than": {
+      "same hour last week": 0.1244,
+      "average of last 4 weeks": 0.0392,
+      "fixed timetable": -0.0144,
+      "timetable with its own margin per hour": -0.011,
+      "weekly rolling rule": -0.035
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.091,
+     "covered_2025": 0.9546,
+     "capacity_per_rider": 1.1493,
+     "idle_capacity": 0.1529,
+     "less_capacity_than": {
+      "same hour last week": 0.1856,
+      "average of last 4 weeks": 0.1064,
+      "fixed timetable": 0.0566,
+      "timetable with its own margin per hour": 0.0598,
+      "weekly rolling rule": 0.0374
+     }
+    }
+   ],
+   "0.99": [
+    {
+     "method": "same hour last week",
+     "margin": 1.6236,
+     "covered_2025": 0.986,
+     "capacity_per_rider": 2.6284,
+     "idle_capacity": 1.637,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.5569,
+      "fixed timetable": -0.7065,
+      "timetable with its own margin per hour": -0.9437,
+      "weekly rolling rule": -0.9345
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.6807,
+     "covered_2025": 0.9892,
+     "capacity_per_rider": 1.6882,
+     "idle_capacity": 0.6893,
+     "less_capacity_than": {
+      "same hour last week": 0.3577,
+      "fixed timetable": -0.0961,
+      "timetable with its own margin per hour": -0.2484,
+      "weekly rolling rule": -0.2425
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.5385,
+     "covered_2025": 0.9835,
+     "capacity_per_rider": 1.5402,
+     "idle_capacity": 0.5418,
+     "less_capacity_than": {
+      "same hour last week": 0.414,
+      "average of last 4 weeks": 0.0877,
+      "timetable with its own margin per hour": -0.1389,
+      "weekly rolling rule": -0.1336
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": 0.1022,
+     "covered_2025": 0.9866,
+     "capacity_per_rider": 1.3523,
+     "idle_capacity": 0.3538,
+     "less_capacity_than": {
+      "same hour last week": 0.4855,
+      "average of last 4 weeks": 0.199,
+      "fixed timetable": 0.122,
+      "weekly rolling rule": 0.0047
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": 0.1038,
+     "covered_2025": 0.9893,
+     "capacity_per_rider": 1.3587,
+     "idle_capacity": 0.3604,
+     "less_capacity_than": {
+      "same hour last week": 0.4831,
+      "average of last 4 weeks": 0.1952,
+      "fixed timetable": 0.1178,
+      "timetable with its own margin per hour": -0.0047
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.7259,
+     "covered_2025": 0.9919,
+     "capacity_per_rider": 1.7325,
+     "idle_capacity": 0.7329,
+     "less_capacity_than": {
+      "same hour last week": 0.3409,
+      "average of last 4 weeks": -0.0262,
+      "fixed timetable": -0.1249,
+      "timetable with its own margin per hour": -0.2812,
+      "weekly rolling rule": -0.2751
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.8141,
+     "covered_2025": 0.9908,
+     "capacity_per_rider": 1.8226,
+     "idle_capacity": 0.8228,
+     "less_capacity_than": {
+      "same hour last week": 0.3066,
+      "average of last 4 weeks": -0.0796,
+      "fixed timetable": -0.1834,
+      "timetable with its own margin per hour": -0.3478,
+      "weekly rolling rule": -0.3414
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": 0.0463,
+     "covered_2025": 0.9938,
+     "capacity_per_rider": 1.323,
+     "idle_capacity": 0.3241,
+     "less_capacity_than": {
+      "same hour last week": 0.4967,
+      "average of last 4 weeks": 0.2163,
+      "fixed timetable": 0.141,
+      "timetable with its own margin per hour": 0.0217,
+      "weekly rolling rule": 0.0263
+     }
+    }
+   ]
+  }
+ },
+ "same_cars": {
+  "station": {
+   "cars_run_per_rider": 1.4206,
+   "methods": [
+    {
+     "method": "same hour last week",
+     "hours_over_capacity": 0.0818,
+     "riders_over_capacity": 0.0272
+    },
+    {
+     "method": "average of last 4 weeks",
+     "hours_over_capacity": 0.049,
+     "riders_over_capacity": 0.0093
+    },
+    {
+     "method": "fixed timetable",
+     "hours_over_capacity": 0.0445,
+     "riders_over_capacity": 0.0077
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "hours_over_capacity": 0.0264,
+     "riders_over_capacity": 0.0055
+    },
+    {
+     "method": "weekly rolling rule",
+     "hours_over_capacity": 0.0208,
+     "riders_over_capacity": 0.0052
+    },
+    {
+     "method": "tree models",
+     "hours_over_capacity": 0.0308,
+     "riders_over_capacity": 0.0062
+    },
+    {
+     "method": "final ensemble",
+     "hours_over_capacity": 0.0324,
+     "riders_over_capacity": 0.006
+    },
+    {
+     "method": "cost-trained trees",
+     "hours_over_capacity": 0.0103,
+     "riders_over_capacity": 0.0036
+    }
+   ]
+  },
+  "system": {
+   "cars_run_per_rider": 1.2862,
+   "methods": [
+    {
+     "method": "same hour last week",
+     "hours_over_capacity": 0.0737,
+     "riders_over_capacity": 0.0226
+    },
+    {
+     "method": "average of last 4 weeks",
+     "hours_over_capacity": 0.0572,
+     "riders_over_capacity": 0.0075
+    },
+    {
+     "method": "fixed timetable",
+     "hours_over_capacity": 0.0482,
+     "riders_over_capacity": 0.0042
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "hours_over_capacity": 0.0217,
+     "riders_over_capacity": 0.0021
+    },
+    {
+     "method": "weekly rolling rule",
+     "hours_over_capacity": 0.0172,
+     "riders_over_capacity": 0.0023
+    },
+    {
+     "method": "tree models",
+     "hours_over_capacity": 0.0296,
+     "riders_over_capacity": 0.0028
+    },
+    {
+     "method": "final ensemble",
+     "hours_over_capacity": 0.0339,
+     "riders_over_capacity": 0.003
+    },
+    {
+     "method": "cost-trained trees",
+     "hours_over_capacity": 0.0078,
+     "riders_over_capacity": 0.0014
+    }
+   ]
+  }
+ },
+ "equal_standard_2025": {
+  "what": "capacity needed when every method covers exactly 95% of 2025 hours",
+  "levels": {
+   "station": [
+    {
+     "method": "same hour last week",
+     "margin": 0.5714,
+     "capacity_per_rider": 1.5743,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.1142,
+      "fixed timetable": -0.1326,
+      "timetable with its own margin per hour": -0.1883,
+      "weekly rolling rule": -0.215
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.4067,
+     "capacity_per_rider": 1.413,
+     "less_capacity_than": {
+      "same hour last week": 0.1025,
+      "fixed timetable": -0.0165,
+      "timetable with its own margin per hour": -0.0666,
+      "weekly rolling rule": -0.0905
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.3885,
+     "capacity_per_rider": 1.39,
+     "less_capacity_than": {
+      "same hour last week": 0.1171,
+      "average of last 4 weeks": 0.0163,
+      "timetable with its own margin per hour": -0.0492,
+      "weekly rolling rule": -0.0728
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": 0.0798,
+     "capacity_per_rider": 1.3248,
+     "less_capacity_than": {
+      "same hour last week": 0.1585,
+      "average of last 4 weeks": 0.0624,
+      "fixed timetable": 0.0469,
+      "weekly rolling rule": -0.0225
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": 0.0526,
+     "capacity_per_rider": 1.2957,
+     "less_capacity_than": {
+      "same hour last week": 0.177,
+      "average of last 4 weeks": 0.083,
+      "fixed timetable": 0.0678,
+      "timetable with its own margin per hour": 0.022
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.3059,
+     "capacity_per_rider": 1.3109,
+     "less_capacity_than": {
+      "same hour last week": 0.1673,
+      "average of last 4 weeks": 0.0723,
+      "fixed timetable": 0.0569,
+      "timetable with its own margin per hour": 0.0105,
+      "weekly rolling rule": -0.0117
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.3141,
+     "capacity_per_rider": 1.3202,
+     "less_capacity_than": {
+      "same hour last week": 0.1614,
+      "average of last 4 weeks": 0.0657,
+      "fixed timetable": 0.0502,
+      "timetable with its own margin per hour": 0.0035,
+      "weekly rolling rule": -0.0189
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.0321,
+     "capacity_per_rider": 1.2238,
+     "less_capacity_than": {
+      "same hour last week": 0.2226,
+      "average of last 4 weeks": 0.1339,
+      "fixed timetable": 0.1196,
+      "timetable with its own margin per hour": 0.0762,
+      "weekly rolling rule": 0.0555
+     }
+    }
+   ],
+   "system": [
+    {
+     "method": "same hour last week",
+     "margin": 0.383,
+     "capacity_per_rider": 1.3855,
+     "less_capacity_than": {
+      "average of last 4 weeks": -0.0571,
+      "fixed timetable": -0.084,
+      "timetable with its own margin per hour": -0.1519,
+      "weekly rolling rule": -0.1584
+     }
+    },
+    {
+     "method": "average of last 4 weeks",
+     "margin": 0.3048,
+     "capacity_per_rider": 1.3106,
+     "less_capacity_than": {
+      "same hour last week": 0.0541,
+      "fixed timetable": -0.0254,
+      "timetable with its own margin per hour": -0.0896,
+      "weekly rolling rule": -0.0958
+     }
+    },
+    {
+     "method": "fixed timetable",
+     "margin": 0.2767,
+     "capacity_per_rider": 1.2781,
+     "less_capacity_than": {
+      "same hour last week": 0.0775,
+      "average of last 4 weeks": 0.0248,
+      "timetable with its own margin per hour": -0.0626,
+      "weekly rolling rule": -0.0686
+     }
+    },
+    {
+     "method": "timetable with its own margin per hour",
+     "margin": -0.0197,
+     "capacity_per_rider": 1.2028,
+     "less_capacity_than": {
+      "same hour last week": 0.1319,
+      "average of last 4 weeks": 0.0823,
+      "fixed timetable": 0.0589,
+      "weekly rolling rule": -0.0057
+     }
+    },
+    {
+     "method": "weekly rolling rule",
+     "margin": -0.0284,
+     "capacity_per_rider": 1.196,
+     "less_capacity_than": {
+      "same hour last week": 0.1368,
+      "average of last 4 weeks": 0.0874,
+      "fixed timetable": 0.0642,
+      "timetable with its own margin per hour": 0.0057
+     }
+    },
+    {
+     "method": "tree models",
+     "margin": 0.2082,
+     "capacity_per_rider": 1.2128,
+     "less_capacity_than": {
+      "same hour last week": 0.1246,
+      "average of last 4 weeks": 0.0746,
+      "fixed timetable": 0.0511,
+      "timetable with its own margin per hour": -0.0083,
+      "weekly rolling rule": -0.014
+     }
+    },
+    {
+     "method": "final ensemble",
+     "margin": 0.2199,
+     "capacity_per_rider": 1.2256,
+     "less_capacity_than": {
+      "same hour last week": 0.1154,
+      "average of last 4 weeks": 0.0649,
+      "fixed timetable": 0.0411,
+      "timetable with its own margin per hour": -0.019,
+      "weekly rolling rule": -0.0247
+     }
+    },
+    {
+     "method": "cost-trained trees",
+     "margin": -0.094,
+     "capacity_per_rider": 1.1455,
+     "less_capacity_than": {
+      "same hour last week": 0.1732,
+      "average of last 4 weeks": 0.126,
+      "fixed timetable": 0.1037,
+      "timetable with its own margin per hour": 0.0476,
+      "weekly rolling rule": 0.0422
+     }
+    }
+   ]
+  }
+ },
+ "fewer_crowded_hours_with_the_same_cars": {
+  "station": 0.6098,
+  "system": 0.6406
+ },
+ "fewer_crowded_hours_than_a_plain_timetable": {
+  "station": 0.7685,
+  "system": 0.8382
+ },
+ "headline": {
+  "standard": 0.95,
+  "method": "cost-trained trees",
+  "chosen_on_2024_capacity_per_rider": {
+   "tree models": 1.3528,
+   "final ensemble": 1.341,
+   "cost-trained trees": 1.2404
+  },
+  "savings_against_planning_rules": {
+   "station level, against average of last 4 weeks": 0.1339,
+   "station level, against fixed timetable": 0.1196,
+   "station level, against timetable with its own margin per hour": 0.0762,
+   "system level, against average of last 4 weeks": 0.126,
+   "system level, against fixed timetable": 0.1037,
+   "system level, against timetable with its own margin per hour": 0.0476
+  },
+  "against_same_hour_last_week": {
+   "station": 0.2226,
+   "system": 0.1732
+  },
+  "against_weekly_rolling_rule": {
+   "station": {
+    "less_capacity": 0.0555,
+    "share_of_car_hours": 0.0555,
+    "car_hours_a_year": 129500,
+    "electricity_dollars_a_year": 2410000,
+    "share_of_operating_budget": 0.00227
+   },
+   "system": {
+    "less_capacity": 0.0422,
+    "share_of_car_hours": 0.0422,
+    "car_hours_a_year": 98500,
+    "electricity_dollars_a_year": 1840000,
+    "share_of_operating_budget": 0.00173
+   }
+  },
+  "low": {
+   "basis": "system level, against timetable with its own margin per hour",
+   "share_of_car_hours": 0.0476,
+   "car_hours_a_year": 111100,
+   "electricity_dollars_a_year": 2070000,
+   "share_of_operating_budget": 0.00195
+  },
+  "high": {
+   "basis": "station level, against average of last 4 weeks",
+   "share_of_car_hours": 0.1339,
+   "car_hours_a_year": 312500,
+   "electricity_dollars_a_year": 5820000,
+   "share_of_operating_budget": 0.00549
+  }
+ },
+ "dollar_inputs": {
+  "car_hours_a_year": 2333890,
+  "power_dollars_per_car_hour": 18.64,
+  "all_costs_dollars_per_car_hour": 455,
+  "operating_budget": 1061500000,
+  "bart_saving_from_shorter_trains_2023": 12000000,
+  "sources": [
+   {
+    "what": "car-hours run a year (vehicle revenue hours)",
+    "value": 2333890,
+    "source": "FTA National Transit Database, 2024 agency profile for BART",
+    "status": "from a search excerpt"
+   },
+   {
+    "what": "electricity cost a year",
+    "value": 53700000,
+    "source": "BART FY25 fourth-quarter financial report",
+    "status": "from a search excerpt"
+   },
+   {
+    "what": "share of electricity that moves trains",
+    "value": 0.81,
+    "source": "BART",
+    "status": "from a search excerpt"
+   },
+   {
+    "what": "total operating expense",
+    "value": 1061500000,
+    "source": "BART FY25 fourth-quarter financial report, unaudited",
+    "status": "from a search excerpt"
+   },
+   {
+    "what": "saving from shorter trains, per year",
+    "value": 12000000,
+    "source": "bart.gov/node/41246 (2023)",
+    "status": "confirmed"
+   }
+  ]
+ },
+ "assumptions": [
+  "car-hours scale with the capacity planned; BART already changes train length by schedule",
+  "only electricity is counted, so the dollar figure is a floor: car wear and maintenance are left out because we could not measure them",
+  "drivers, stations and track are paid either way and are not counted",
+  "demand is gate entries and exits, not how full each train is between stations",
+  "the fixed timetable here is our stand-in for one; it is not BART's actual schedule"
+ ]
+}

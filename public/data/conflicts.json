@@ -1,0 +1,396 @@
+{
+ "generated_at": "2026-11-21 13:57",
+ "summary": {
+  "conflicts": 6,
+  "by_level": {
+   "0": 1,
+   "1": 3,
+   "2": 1,
+   "3": 1
+  },
+  "settled": 6,
+  "unresolved": 0,
+  "ai_calls": {
+   "new": 2,
+   "from_cache": 4,
+   "models": {
+    "worker": "deepseek-v4-pro",
+    "reason": "claude-opus-5-5"
+   }
+  },
+  "decided_without_ai": 4
+ },
+ "levels": {
+  "0": "cannot move a station forecast: rule",
+  "1": "one source clearly outranks the other and shows the value: rule",
+  "2": "matters, modest crowd: one reviewer",
+  "3": "matters, large crowd: a reader per claim, then the lead"
+ },
+ "conflicts": [
+  {
+   "event": "Jack London Square Holiday Tree Lighting and laser show",
+   "date": "2026-11-28",
+   "venue": "Jack London Square",
+   "field": "start_time",
+   "found": "two lists disagree",
+   "crowd": null,
+   "level": 2,
+   "why_it_matters": "the start times are 285 minutes apart, which moves the arrival and departure rush by that much; about an unknown number of people at a venue BART serves",
+   "claims": [
+    {
+     "value": "17:45",
+     "source_url": "https://www.510families.com/tree-lightings-in-the-east-bay-san-francisco",
+     "rank": 2,
+     "source_kind": "aggregator or resale (510families.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Saturday, November 28, 2026, 5:45-8 pm",
+     "from": "east_bay",
+     "note": null,
+     "page_excerpt": "=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,\"script\",\"https://chimpstatic.com/mcjs-connected/js/users/1e9802537b1bf35fd219d23db/54f1ec2af524157b6ee44b215.js\"); Christmas Tree Lightings in the East Bay &amp; San Francisco - 510 Families {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.510families.com\\/tree-lightings-in-the-east-bay-san-francisco\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.510families.com\\ ... :\"https"
+    },
+    {
+     "value": "13:00",
+     "source_url": "https://www.visitoakland.com/joytothetown/",
+     "rank": 2,
+     "source_kind": "aggregator or resale (visitoakland.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Saturday, November 28 | 1:00 PM - 8:00 PM ... Holiday Tree Lighting starts 5:45 PM",
+     "from": "holiday_civic",
+     "note": null,
+     "page_excerpt": "8&#xA0;PM at Jack London Square . This free, family-friendly event brings the community together for a day filled with shopping, music, and holiday cheer in conjunction with Jack London Square&apos;s annual Holiday Tree Lighting . Event Highlights: 60+ artisans and local retailers offering unique, handcrafted holiday gifts Live entertainment throughout the day Photos with Daisy Claus Kids Zone with fun activities for all ages Free Hot Chocolate! Holiday Craftmaking with MOCHA &#xA0;  ... ld Xmas"
+    }
+   ],
+   "readers": [
+    {
+     "claim": 1,
+     "value": "17:45",
+     "evidence_kind": "text of the source page, downloaded now",
+     "supports_claim": "unclear",
+     "evidence_says": null,
+     "quote": null,
+     "time_zone": "not stated",
+     "year_ok": "cannot tell",
+     "weakness": "The evidence does not mention a start time or year; it only shows a page title and image caption.",
+     "kept": true,
+     "model": "deepseek-v4-pro",
+     "reasoning": "We need answer JSON only. Need parse evidence. We have event: Jack London Square Holiday Tree Lighting and laser show listed for 2026-11-28 at Jack London Square. Field start_time claim 17:45. Source aggregator 510families. Evidence text provided truncated/messy. Need extract what evidence literally says about start_time. We cannot use memory. Need inspect evidence.\n\nEvidence string:\n\"\"\"=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,\"script\",\"https://chimpstatic.com/mcjs-connected/js/users/1e9802537b1bf35fd219d23db/54f1ec2af524157b6ee44b215.js\"); Christmas Tree Lightings in the East Bay &amp; San Francisco - 510 Families {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.510families.com\\/tree-lightings-in-the-east-bay-san-francisco\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.510families.com\\ ... :\"https:\\/\\/www.5"
+    },
+    {
+     "claim": 2,
+     "value": "13:00",
+     "evidence_kind": "text of the source page, downloaded now",
+     "supports_claim": false,
+     "evidence_says": "5:45 PM",
+     "quote": "The Holiday Tree Lighting at Jack London Square starts at 5:45 PM and runs until 8:00 PM.",
+     "time_zone": "not stated",
+     "year_ok": "cannot tell",
+     "weakness": "Evidence gives the tree lighting start time as 5:45 PM, not 13:00; no year is stated in the evidence.",
+     "kept": true,
+     "model": "deepseek-v4-pro",
+     "reasoning": "We need answer JSON only. Need parse evidence. Need determine if supports claim start_time = 13:00 for event \"Jack London Square Holiday Tree Lighting and laser show\" listed 2026-11-28 at Jack London Square. Evidence text has snippets. Need be careful.\n\nWe need check field start_time. Claim: start_time = 13:00. Evidence includes \"Joy to the Town! Holiday Market at Jack London Square Saturday, November 28 | 1:00 PM - 8:00 PM\" and \"The Holiday Tree Lighting at Jack London Square starts at 5:45 PM and runs until 8:00 PM.\" But the event in dispute is \"Jack London Square Holiday Tree Lighting and laser show\" (listed for 2026-11-28 at Jack London Square). The evidence is a page maybe about Joy to the Town, includes Holiday Market from 1 PM - 8 PM and Tree Lighting starts 5:45 PM. Need know what evidence literally says about this event's start_time. There are two possible events: Holiday Market"
+    }
+   ],
+   "lead": {
+    "verdict": "17:45",
+    "confidence": "medium",
+    "decisive_claim": 2,
+    "why": "The Visit Oakland page downloaded now explicitly says the tree lighting starts at 5:45 PM (17:45), which matches the first claim; the 510 Families evidence has no start time, and no source supports 13:00. The source is an aggregator and gives no time zone or year, so confidence is not high.",
+    "what_would_settle_it": "The official Jack London Square event page or venue calendar confirming the 2026-11-28 start time in Pacific Time."
+   },
+   "lead_reasoning": "We need answer only JSON. Need determine verdict. Need parse. We have claims: 1 start_time 17:45 from 510families aggregator, evidence unclear no time. 2 start_time 13:00 from visitoakland aggregator, evidence actually says 5:45 PM supports False for 13:00 but gives quote 5:45 PM. Hmm claim 2 is 13:00 but source says 5:45 PM. We need choose exactly one claimed value, or unresolved. Claims are 17:45 and 13:00. The evidence from source 2 supports 17:45? Quote says starts at 5:45 PM. 5:45 PM = 17:45. Source 1 lacks evidence. So likely verdict 17:45. But need examine rules. Source 2 is aggregator/resale ladder step 2, but quote downloaded now says 5:45 PM. It contradicts its own claimed 13:00? Actually claim 2 listed start_time = 13:00, source visitoakland. Evidence read says supports=False, evidence says '5:45 PM', quote 'The Holiday Tree Lighting at Jack London Square starts at 5:45 PM and runs until 8:00 PM.' So source 2 actually supports 17:45. We can choose 17:45. Need confidence maybe medium? Since source is aggregator step 2 and zone not stated, year ok cannot tell. But quote clearly says 5:45 PM. Could be high? Need decide. We have two claims, one source supporting 17:45 by actual quote, another aggregator unclear. The dispute start times 285 min apart. Evidence from a source downloaded today explicitly says 5:45 PM, but no zone/year. However for San Francisco Bay Area, 5:45 PM local likely. But year cannot tell? It might be current page? But event listed 2026-11-28. We need feed timestamp? No. We need choose. Confidence maybe medium due to aggregator and no timezone/year. Decisive claim is 2? Wait claim 2 is 13:00, but evidence decided it? It supports 17:45, not claim 2. The decisive_claim: number of the claim whose evidence decided it. The evidence from claim 2 decided verdict 17:45? But claim 2 is 13:00. Hmm instruction: \"decisive_claim\": the number of the claim whose evidence decided it or null. If the evidence from claim 2's source supports 17:45, that evidence decided it, but the claim is 13:00. We can say decisive_claim: 2? It is the evidence associated with claim 2. But \"whose evidence decided it\" likely the claim number that provided decisive evidence. It says the number of the claim whose evidence decided it. Claim 1 evidence unclear; claim 2 evidence actually supports 17:45. So decisive claim might be 2 even though its original claim was 13:00. But could confuse. Alternatively decisive_claim 1? Claim 1 has value 17:45, but its evidence did n",
+   "decided_by": "single reviewer (deepseek-v4-pro) after 2 reader report(s)",
+   "verdict": "17:45",
+   "why": "The Visit Oakland page downloaded now explicitly says the tree lighting starts at 5:45 PM (17:45), which matches the first claim; the 510 Families evidence has no start time, and no source supports 13:00. The source is an aggregator and gives no time zone or year, so confidence is not high.",
+   "rule_log": [],
+   "applied": "start time set to 17:45"
+  },
+  {
+   "event": "Warriors vs Utah Jazz",
+   "date": "2026-12-01",
+   "venue": "Chase Center",
+   "field": "start_time",
+   "found": "two lists disagree",
+   "crowd": 15354,
+   "level": 1,
+   "why_it_matters": "the start times are 60 minutes apart, which moves the arrival and departure rush by that much; about 15354 people at a venue BART serves",
+   "claims": [
+    {
+     "value": "20:00",
+     "source_url": "https://www.ticketmaster.com/golden-state-warriors-tickets/artist/805946?home_away=home",
+     "rank": 3,
+     "source_kind": "league or primary seller (ticketmaster.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Dec 1 Tuesday 8:00 PM Utah Jazz",
+     "from": "sf_venues",
+     "note": null,
+     "page_excerpt": "sTeam\",\"name\":\"LA Clippers\",\"sameAs\":\"https://www.ticketmaster.com/la-clippers-tickets/artist/805958\"}]},{\"@context\":\"http://schema.org\",\"@type\":\"SportsEvent\",\"url\":\"https://www.ticketmaster.com/golden-state-warriors-vs-utah-jazz-san-francisco-california-12-01-2026/event/1C00650AB3A1D834\",\"name\":\"Golden State Warriors vs. Utah Jazz\",\"description\":\"Golden State Warriors vs. Utah Jazz | Tuesday, Dec 1, 2026, 8:00 PM | Chase Center, San Francisco\",\"image\":[\"https://s1.ticketm.net/da"
+    },
+    {
+     "value": "19:00",
+     "source_url": "https://www.espn.com/nba/team/schedule/_/name/gs/golden-state-warriors",
+     "rank": 5,
+     "source_kind": "league or primary seller (espn.com) + schedule feed",
+     "page": "blocked",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": {
+      "feed": "ESPN schedule data",
+      "event": "Golden State Warriors vs Utah Jazz",
+      "date": "2026-12-01",
+      "start_time": "19:00",
+      "venue": "Chase Center",
+      "time_is_set": true
+     },
+     "quote": "Dec 1 Utah Jazz Home 10:00 PM (ET; = 7:00 PM PT; one resale site lists 8:00 PM)",
+     "from": "sports",
+     "note": null,
+     "page_excerpt": ""
+    }
+   ],
+   "readers": [],
+   "lead": null,
+   "lead_reasoning": null,
+   "decided_by": "rule: one source clearly outranks the other",
+   "verdict": "19:00",
+   "why": "league or primary seller (espn.com) + schedule feed (step 5) against step 3, and the higher source shows the value when read now.",
+   "rule_log": [],
+   "applied": "start time set to 19:00"
+  },
+  {
+   "event": "Stanford vs SMU football",
+   "date": "2026-11-28",
+   "venue": "Stanford Stadium",
+   "field": "venue",
+   "found": "noted by a collector",
+   "crowd": 42860,
+   "level": 0,
+   "why_it_matters": "no candidate venue is within reach of a BART station, so no station forecast changes either way",
+   "claims": [
+    {
+     "value": "Stanford Stadium",
+     "source_url": "https://gostanford.com/sports/football/schedule",
+     "rank": 4,
+     "source_kind": "own site (gostanford.com)",
+     "page": "opens",
+     "km_from_bart": 30,
+     "served_by_bart": false,
+     "feed": null,
+     "quote": "Sat, Nov 28 SMU Home Stanford Stadium 12:30 PM PST",
+     "from": "south_bay",
+     "note": "listed as a Stanford home game at 12:30",
+     "page_excerpt": " Football 2026 - Stanford Cardinal - Official Athletics Website {\"imports\":{\"#entry\":\"/_nuxt/C_FDXkge.js\"}} @layer tenant-elements, tailwind-base, oas-content-blocks, oas-frontend, oas-frontend-dropdown-base, oas-frontend-dropdown; .icons-menu.menu--level-0{flex-direction:row;justify- ... nastics Opens in a new window Rowing Schedule for Rowing Roster for Rowing News for Rowing instagram for Rowing Opens in a new window twitter for Rowing Opens in a new window facebook for Rowing Opens in a new "
+    },
+    {
+     "value": "neutral site, venue not named",
+     "source_url": null,
+     "rank": 1,
+     "source_kind": "no page recorded",
+     "page": "no page",
+     "km_from_bart": null,
+     "served_by_bart": false,
+     "feed": null,
+     "quote": null,
+     "from": "sports",
+     "note": "the sports list read this game as a neutral-site game with the time to be decided; the page was not recorded",
+     "page_excerpt": ""
+    }
+   ],
+   "readers": [],
+   "lead": null,
+   "lead_reasoning": null,
+   "decided_by": "rule: it cannot move a station forecast",
+   "verdict": "Stanford Stadium",
+   "why": "no candidate venue is within reach of a BART station, so no station forecast changes either way. Kept the claim from the higher source; no review spent on it.",
+   "rule_log": [],
+   "applied": "venue kept; flagged as not served by BART"
+  },
+  {
+   "event": "Rush: Fifty Something tour",
+   "date": "2026-12-06",
+   "venue": "SAP Center",
+   "field": "start_time",
+   "found": "noted by a collector",
+   "crowd": 14927,
+   "level": 3,
+   "why_it_matters": "the start times are 30 minutes apart, which moves the arrival and departure rush by that much; about 14927 people at a venue BART serves",
+   "claims": [
+    {
+     "value": "19:30",
+     "source_url": "https://www.ticketmaster.com/venue/229393",
+     "rank": 3,
+     "source_kind": "league or primary seller (ticketmaster.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Sun, Dec 6, 7:30 PM: RUSH: Fifty Something (sapcenter.com lists 7:00 PM)",
+     "from": "south_bay",
+     "note": "Ticketmaster venue listing",
+     "page_excerpt": "ornia-12-05-2026/event/1C006539D4C8CBF0\",\"validFrom\":\"2026-09-28T08:00:00\",\"availabilityStarts\":\"2026-09-28T08:00:00\"}},{\"@context\":\"http://schema.org\",\"@type\":\"MusicEvent\",\"url\":\"https://www.ticketmaster.com/rush-fifty-something-san-jose-california-12-06-2026/event/1C006355EC78A84D\",\"name\":\"RUSH: Fifty Something\",\"description\":\"RUSH: Fifty Something | Sunday, Dec 6, 2026, 7:30 PM | SAP Center at San Jose, San Jose\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://mapsapi.tmol.io/maps/ge ... -calif"
+    },
+    {
+     "value": "19:00",
+     "source_url": "https://www.sapcenter.com/events",
+     "rank": 4,
+     "source_kind": "own site (sapcenter.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": null,
+     "from": "south_bay",
+     "note": "the venue's own calendar was read as 7:00 pm",
+     "page_excerpt": "7 , 2026 Youth Hockey Appreciation Sharks vs Golden Knights Event Starts 1:00 PM Buy Tickets Details Dec. 5 , 2026 San Jose Sea Lions vs. Minnesota Frost Event Starts 4:00 PM Buy Tickets Details Dec. 6 , 2026 Rush Fifty Something Tour Event Starts 7:00 PM Buy Tickets Details Dec. 8 , 2026 Sharks vs Kraken Event Starts 7:00 PM Buy Tickets Details More Events Calendar Nov 2026 CLOSE &times; Top Events & Tickets Upcoming Events Sierra Nevada Concert Experience Group Tickets Account Manag ... Nov. 2"
+    }
+   ],
+   "readers": [
+    {
+     "claim": 1,
+     "value": "19:30",
+     "evidence_kind": "text of the source page, downloaded now",
+     "supports_claim": true,
+     "evidence_says": "7:30 PM",
+     "quote": "RUSH: Fifty Something | Sunday, Dec 6, 2026, 7:30 PM | SAP Center at San Jose, San Jose",
+     "time_zone": "not stated",
+     "year_ok": true,
+     "weakness": "time zone not stated, so 7:30 PM could be venue local time or another zone",
+     "kept": true,
+     "model": "deepseek-v4-pro",
+     "reasoning": "We need answer only JSON. Need parse evidence. Need determine if supports claim start_time 19:30. Evidence contains repeated schema MusicEvent description: \"RUSH: Fifty Something | Sunday, Dec 6, 2026, 7:30 PM | SAP Center at San Jose, San Jose\". So start time as written 7:30 PM. Claim 19:30 equals 7:30 PM. Supports true. Need time_zone: not stated? Text does not state time zone. Might be local venue time, but evidence doesn't explicitly show zone. Need note sports sites Eastern? It says times on sports sites can be Eastern; say so if evidence shows time zone or another line makes zone clear. It doesn't. time_zone \"not stated\". Year ok true because Dec 6, 2026. Evidence says description includes year. Need weakness: maybe source page fragment repeated, no timezone. But claim from ticketmaster. Need main reason to doubt: time zone not stated, could be local or Eastern? The source is Ticke"
+    },
+    {
+     "claim": 2,
+     "value": "19:00",
+     "evidence_kind": "text of the source page, downloaded now",
+     "supports_claim": true,
+     "evidence_says": "7:00 PM",
+     "quote": "Dec. 6 , 2026 Rush Fifty Something Tour Event Starts 7:00 PM",
+     "time_zone": "not stated",
+     "year_ok": true,
+     "weakness": "time zone not stated",
+     "kept": true,
+     "model": "deepseek-v4-pro",
+     "reasoning": "We need answer JSON only. Need parse evidence. We must check claim start_time=19:00 for event Rush: Fifty Something tour listed for 2026-12-06 at SAP Center. Evidence text has multiple repeats: \"Dec. 6 , 2026 Rush Fifty Something Tour Event Starts 7:00 PM Buy Tickets Details\". So start time as written 7:00 PM. Does evidence say time zone? Text doesn't show time zone. SAP Center is San Jose CA, but evidence only says event starts 7:00 PM. Need return supports_claim? Claim is start_time = 19:00. Evidence says 7:00 PM, equals 19:00 in 12-hour. Since no time zone stated, but likely local. Supports true? The claim came from sapcenter.com own site, evidence from sapcenter? Actually event text. supports_claim true because 7:00 PM = 19:00. But need be careful: If claim is 19:00 probably in 24-hour. Yes true. time_zone not stated. year_ok true because \"Dec. 6 , 2026\". weakness: maybe no time zone"
+    }
+   ],
+   "lead": {
+    "verdict": "19:00",
+    "confidence": "medium",
+    "decisive_claim": 2,
+    "why": "Both pages were opened and read today, and neither states a time zone. A 30-minute gap cannot come from a time-zone mix-up, so the zone is not what separates them. The venue's own site (ladder step 4, above Ticketmaster at step 3) explicitly labels 7:00 PM as 'Event Starts', and Ticketmaster's later 7:30 PM cannot be a door time because doors open before the start, so the conflict stays unexplained and confidence is only medium.",
+    "what_would_settle_it": "The SAP Center event detail page for the Dec 6, 2026 Rush show, or a timestamped venue schedule feed, listing doors and show start separately in Pacific time, to confirm 7:00 PM is the show start and see whether Ticketmaster's 7:30 PM is a stale or wrong listing."
+   },
+   "lead_reasoning": "The venue's page lists the start as 7:00 PM, but the ticket seller shows 7:30. Door time would usually come before the start, not after it, so that explanation doesn't account for a later time here. The venue labels its time explicitly as the start, so I'm leaning toward trusting it.\n\nI'm settling on 7:00 PM as the start, though with only medium confidence since the 30-minute gap is still unexplained. A timezone difference doesn't account for it, since both listings are presumably in the same zone.",
+   "decided_by": "lead (claude-opus-5-5) after 2 reader report(s)",
+   "verdict": "19:00",
+   "why": "Both pages were opened and read today, and neither states a time zone. A 30-minute gap cannot come from a time-zone mix-up, so the zone is not what separates them. The venue's own site (ladder step 4, above Ticketmaster at step 3) explicitly labels 7:00 PM as 'Event Starts', and Ticketmaster's later 7:30 PM cannot be a door time because doors open before the start, so the conflict stays unexplained and confidence is only medium.",
+   "rule_log": [],
+   "applied": "start time set to 19:00"
+  },
+  {
+   "event": "Anthony Jeselnik: Wrath of Man",
+   "date": "2026-11-21",
+   "venue": "The Masonic",
+   "field": "date",
+   "found": "noted by a collector",
+   "crowd": 2805,
+   "level": 1,
+   "why_it_matters": "the day itself is in doubt; about 2805 people at a venue BART serves",
+   "claims": [
+    {
+     "value": "2026-11-21",
+     "source_url": "https://sfmasonic.com/",
+     "rank": 4,
+     "source_kind": "own site (sfmasonic.com)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Sat, Nov 21, 2026: Anthony Jeselnik: Wrath of Man (Songkick lists Nov 20; venue site says Nov 21)",
+     "from": "sf_venues",
+     "note": "the venue's calendar",
+     "page_excerpt": "tle\\\":\\\"See More Shows\\\",\\\"link\\\":\\\"/shows\\\"},\\\"event_card_layout_control\\\":\\\"default\\\",\\\"events\\\":[{\\\"event_data_type\\\":\\\"discovery\\\",\\\"discovery_id\\\":\\\"G5vYZ_5wtjL0L\\\",\\\"tm_id\\\":\\\"1C0064BCA971F91F\\\",\\\"name\\\":\\\"Anthony Jeselnik: Wrath of Man\\\",\\\"slug\\\":\\\"anthony-jeselnik-wrath-of-man\\\",\\\"url\\\":\\\"https://www.ticketmaster.com/anthony-jeselnik-wrath-of-man-san-francisco-california-11-21-2026/event/1C0064BCA971F91F\\\",\\\"type\\\":\\\"REGULAR\\\",\\\"start_date_local\\\":\\\"2026-11-21\\\",\\\"start_time_ ... \\\":{\\\"t"
+    },
+    {
+     "value": "2026-11-20",
+     "source_url": null,
+     "rank": 1,
+     "source_kind": "no page recorded",
+     "page": "no page",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": null,
+     "from": "sf_venues",
+     "note": "a Songkick listing gave the night before; the page was not recorded",
+     "page_excerpt": ""
+    }
+   ],
+   "readers": [],
+   "lead": null,
+   "lead_reasoning": null,
+   "decided_by": "rule: one source clearly outranks the other",
+   "verdict": "2026-11-21",
+   "why": "own site (sfmasonic.com) (step 4) against step 1, and the higher source shows the value when read now.",
+   "rule_log": [],
+   "applied": "date set to 2026-11-21"
+  },
+  {
+   "event": "SantaCon San Francisco",
+   "date": "2026-12-12",
+   "venue": "Union Square (meet at noon), citywide bar crawl",
+   "field": "date",
+   "found": "noted by a collector",
+   "crowd": null,
+   "level": 1,
+   "why_it_matters": "the day itself is in doubt; about an unknown number of people at a venue BART serves",
+   "claims": [
+    {
+     "value": "2026-12-12",
+     "source_url": "https://www.goldengate.org/events/san-francisco-santacon-2026/",
+     "rank": 4,
+     "source_kind": "own site (goldengate.org)",
+     "page": "opens",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": "Saturday, December 12, 2026, 12:00 PM - 08:00 PM, Meet at 12 noon at Union Square",
+     "from": "holiday_civic",
+     "note": "Golden Gate Transit's event notice",
+     "page_excerpt": " San Francisco SantaCon | Golden Gate (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?i ...  Center - Warriors Games Chase Center - Concerts &amp; Events Special Events at Bridge Passenger Advisory Committees Business Outreach Committee Events Public Meetings General Events Calendar of Events --> San Fr"
+    },
+    {
+     "value": "2026-12-14",
+     "source_url": null,
+     "rank": 1,
+     "source_kind": "no page recorded",
+     "page": "no page",
+     "km_from_bart": null,
+     "served_by_bart": null,
+     "feed": null,
+     "quote": null,
+     "from": "holiday_civic",
+     "note": "one outlier listing gave Monday 14 Dec; the page was not recorded",
+     "page_excerpt": ""
+    }
+   ],
+   "readers": [],
+   "lead": null,
+   "lead_reasoning": null,
+   "decided_by": "rule: one source clearly outranks the other",
+   "verdict": "2026-12-12",
+   "why": "own site (goldengate.org) (step 4) against step 1, and the higher source shows the value when read now.",
+   "rule_log": [],
+   "applied": "date set to 2026-12-12"
+  }
+ ]
+}

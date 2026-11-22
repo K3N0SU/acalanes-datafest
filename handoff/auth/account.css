@@ -1,0 +1,223 @@
+
+/* ---------- account, favorites, history ---------- */
+.topbar {
+  align-items: center;
+}
+.topbar-week {
+  margin-left: auto !important;
+}
+.account {
+  position: relative;
+}
+.account-btn {
+  font: 500 12px var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  background: transparent;
+  border: 1px solid #3a4b57;
+  border-radius: var(--r);
+  padding: 8px 12px;
+  cursor: pointer;
+  max-width: 44vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: border-color 0.25s var(--ease);
+}
+.account-btn:hover {
+  border-color: var(--paper);
+}
+.account-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 20;
+  width: min(320px, calc(100vw - 32px));
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: var(--r);
+  padding: 20px;
+}
+.account-panel form {
+  display: grid;
+  gap: 12px;
+}
+.account-panel label {
+  display: grid;
+  gap: 4px;
+  font: 500 10.5px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+}
+.account-panel input {
+  font: 400 16px var(--sans);
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink-2);
+  border-radius: 0;
+  padding: 7px 0;
+  outline: none;
+}
+.account-panel input:focus {
+  border-bottom-color: var(--accent);
+}
+.account-note {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  margin: 8px 0 14px;
+}
+.account-who {
+  font: 700 1.1rem var(--display);
+  margin: 6px 0 0;
+  word-break: break-all;
+}
+.account-error {
+  font-size: 13.5px;
+  color: var(--accent);
+  margin: 0;
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 400 11px var(--mono);
+  color: var(--muted);
+  margin: 14px 0;
+}
+.or::before,
+.or::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--rule);
+}
+.btn {
+  font: 500 13px var(--mono);
+  letter-spacing: 0.03em;
+  padding: 10px 14px;
+  border: 1px solid var(--ink);
+  border-radius: var(--r);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+.btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn.solid {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn.wide {
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.linkish {
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 3px;
+}
+.linkish:hover {
+  text-decoration-color: var(--accent);
+}
+.linkish.dim {
+  color: var(--ink-2);
+}
+.account-panel .linkish {
+  margin-top: 14px;
+}
+.mine,
+.recent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+.mine {
+  margin-bottom: 22px;
+}
+.mine .label,
+.recent .label {
+  margin: 0 4px 0 0;
+}
+.mine .label:not(:first-child) {
+  margin-left: 12px;
+}
+.chip {
+  font: 500 12.5px var(--sans);
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease);
+}
+.chip:hover,
+.chip[aria-pressed='true'] {
+  border-color: var(--ink);
+}
+.chip .num {
+  font-size: 11px;
+  color: var(--ink-2);
+}
+.pick {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  min-width: 0;
+}
+.pick select {
+  min-width: 0;
+  flex: 1;
+}
+.star {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 0 0 9px;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease);
+}
+.star[aria-pressed='true'] {
+  color: var(--accent);
+}
+.star:active {
+  transform: scale(0.85);
+}
+.recent {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+.recent .saved {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .topbar-week {
+    display: none;
+  }
+}
